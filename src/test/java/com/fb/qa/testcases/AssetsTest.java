@@ -9,7 +9,7 @@ import com.fb.qa.base.TestBase;
 import com.fb.qa.pages.Assets;
 import com.fb.qa.pages.HomePage;
 import com.fb.qa.pages.LoginPage;
-
+//comment updated
 public class AssetsTest extends TestBase{
 	public AssetsTest() {
 		super();
