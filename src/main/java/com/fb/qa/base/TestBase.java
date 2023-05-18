@@ -1,0 +1,77 @@
+package com.fb.qa.base;
+
+import java.util.Properties;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.fb.qa.pages.HomePage;
+import com.fb.qa.pages.LoginPage;
+import com.fb.qa.util.TestUtil;
+
+public class TestBase {
+
+	public WebDriver driver;
+	public Properties prop;
+	public WebDriverWait wait;
+	LoginPage loginPage;
+	HomePage homepage;
+//	public static Properties prop;
+
+	public TestBase() {
+		try {
+			prop = new Properties();
+			FileInputStream ipf = new FileInputStream(
+					"C:\\Users\\muhammad.jabbar\\eclipse-workspace\\fbProject\\src\\main\\java\\com\\fb\\qa\\config\\config.properties");
+			prop.load(ipf);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public WebDriver initilization() {
+		String browserName = prop.getProperty("browser");
+		if (browserName.equals("chrome")) {
+
+			System.setProperty("webdriver.chrome",
+					"C:\\Users\\muhammad.jabbar\\eclipse-workspace\\F_B_POM_TestNG\\chromedriver.exe");
+//		System.setProperty("webdriver.http.factory", "jdk-http-client");
+			driver = new ChromeDriver();
+		}
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
+		driver.get("https://fnbdev.vteamslabs.com/login");
+		wait = new WebDriverWait(driver, Duration.ofSeconds(TestUtil.EXPLICIT_WAIT));
+		driver.get(prop.getProperty("url"));
+		return this.driver;
+	}
+
+	public void scrollDown(WebDriver driver, int x, int y) {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(" + x + "," + y + ")");
+	}
+	
+	public void waitForElementToBeClickable(By locator) {
+		wait.until(ExpectedConditions.elementToBeClickable(locator));
+	}
+
+
+	public void tearDown() throws InterruptedException {
+		// Thread.sleep(1000);
+		driver.quit();
+	}
+}

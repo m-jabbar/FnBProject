@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="FnB Sanity Automation Suite">
+	<listeners>
+		<listener class-name="com.fb.qa.listeners.MyListeners"></listener>
+	</listeners>
+  <test name="F and B Testcases">
+    <classes>
+			
+			<class name="com.fb.qa.testcases.HomePageTest"/>
+			<class name="com.fb.qa.testcases.MaterialIssuanceTest"/>
+		</classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

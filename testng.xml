@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="FnB Automation Suite">
+	<listeners>
+		<listener class-name="com.fb.qa.listeners.MyListeners"></listener>
+	</listeners>
+  <test name="F and B Testcases">
+    <classes>
+			<class name="com.fb.qa.testcases.LoginPageTest"/>
+			<class name="com.fb.qa.testcases.HomePageTest"/>
+			<class name="com.fb.qa.testcases.MaterialRequisitionTest"/>
+			<class name="com.fb.qa.testcases.MaterialIssuanceTest"/>
+			<class name="com.fb.qa.testcases.OutwardPageTest"/>
+			<class name="com.fb.qa.testcases.InwardPageTest"/>
+			<class name="com.fb.qa.testcases.PurchaseOrdersTest" />
+			<class name="com.fb.qa.testcases.MaterialInspectionTest"/>
+			<class name="com.fb.qa.testcases.GoodsReceiveNotesTest"/>
+			<class name="com.fb.qa.testcases.ProductCategoryTest"/>
+			<class name="com.fb.qa.testcases.ProductsTest"/>
+			<class name="com.fb.qa.testcases.BudgetsTest"/>
+			<class name="com.fb.qa.testcases.AssetsTest"/>
+			<class name="com.fb.qa.testcases.InventoryTest"/>
+			<class name="com.fb.qa.testcases.SuppliersTest"/>
+			<class name="com.fb.qa.testcases.SuppliersBillsTest"/>
+			<class name="com.fb.qa.testcases.MaterialReturnTest"/>
+			<class name="com.fb.qa.testcases.PurchaseOrderReturnTest"/>
+		</classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
