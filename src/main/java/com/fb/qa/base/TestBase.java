@@ -1,13 +1,17 @@
 package com.fb.qa.base;
 
 import java.util.Properties;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 
+import org.codehaus.plexus.util.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -59,6 +63,17 @@ public class TestBase {
 		driver.get(prop.getProperty("url"));
 		return this.driver;
 	}
+	
+	public void failTestCases( String testMethodName) {
+		WebDriver driver = new ChromeDriver();
+		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.copyFile(srcFile, new File("C:\\Users\\muhammad.jabbar\\eclipse-workspace\\fbProject\\screenshots\\"+ testMethodName+ "_" + ".jpg"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 
 	public void scrollDown(WebDriver driver, int x, int y) {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;

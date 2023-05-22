@@ -1,65 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-19T18:01:02 PKT" name="FnB Sanity Automation Suite" finished-at="2023-05-19T18:01:48 PKT" duration-ms="46091">
+  <suite started-at="2023-05-22T15:03:05 PKT" name="Default suite" finished-at="2023-05-22T15:03:55 PKT" duration-ms="50177">
     <groups>
     </groups>
-    <test started-at="2023-05-19T18:01:02 PKT" name="F and B Testcases" finished-at="2023-05-19T18:01:48 PKT" duration-ms="46091">
-      <class name="com.fb.qa.testcases.HomePageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.HomePageTest@70cf32e3]" started-at="2023-05-19T18:01:02 PKT" name="setup" finished-at="2023-05-19T18:01:08 PKT" duration-ms="5881" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyHomePageTitleTest()[pri:1, instance:com.fb.qa.testcases.HomePageTest@70cf32e3]" started-at="2023-05-19T18:01:08 PKT" name="verifyHomePageTitleTest" finished-at="2023-05-19T18:01:08 PKT" duration-ms="75" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyHomePageTitleTest -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.HomePageTest@70cf32e3]" started-at="2023-05-19T18:01:08 PKT" name="teardown" finished-at="2023-05-19T18:01:12 PKT" duration-ms="3472" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.fb.qa.testcases.HomePageTest -->
+    <test started-at="2023-05-22T15:03:05 PKT" name="Default test" finished-at="2023-05-22T15:03:55 PKT" duration-ms="50177">
       <class name="com.fb.qa.testcases.MaterialIssuanceTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@6a8658ff]" started-at="2023-05-19T18:01:12 PKT" name="setup" finished-at="2023-05-19T18:01:19 PKT" duration-ms="7558" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@7fab4be7]" started-at="2023-05-22T15:03:06 PKT" name="setup" finished-at="2023-05-22T15:03:20 PKT" duration-ms="14525" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyPageTitle()[pri:1, instance:com.fb.qa.testcases.MaterialIssuanceTest@6a8658ff]" started-at="2023-05-19T18:01:19 PKT" name="verifyPageTitle" finished-at="2023-05-19T18:01:19 PKT" duration-ms="35" status="PASS">
+        <test-method signature="verifyPageTitle()[pri:1, instance:com.fb.qa.testcases.MaterialIssuanceTest@7fab4be7]" started-at="2023-05-22T15:03:21 PKT" name="verifyPageTitle" finished-at="2023-05-22T15:03:21 PKT" duration-ms="540" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyPageTitle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@6a8658ff]" started-at="2023-05-19T18:01:19 PKT" name="tearDown" finished-at="2023-05-19T18:01:20 PKT" duration-ms="500" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@7fab4be7]" started-at="2023-05-22T15:03:21 PKT" name="tearDown" finished-at="2023-05-22T15:03:22 PKT" duration-ms="420" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@6a8658ff]" started-at="2023-05-19T18:01:20 PKT" name="setup" finished-at="2023-05-19T18:01:27 PKT" duration-ms="7316" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@7fab4be7]" started-at="2023-05-22T15:03:22 PKT" name="setup" finished-at="2023-05-22T15:03:33 PKT" duration-ms="10830" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="materialIssuanceProcess()[pri:2, instance:com.fb.qa.testcases.MaterialIssuanceTest@6a8658ff]" started-at="2023-05-19T18:01:27 PKT" name="materialIssuanceProcess" finished-at="2023-05-19T18:01:48 PKT" duration-ms="20371" status="FAIL">
+        <test-method signature="materialIssuanceProcess()[pri:2, instance:com.fb.qa.testcases.MaterialIssuanceTest@7fab4be7]" started-at="2023-05-22T15:03:33 PKT" name="materialIssuanceProcess" finished-at="2023-05-22T15:03:53 PKT" duration-ms="20193" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(@href,"/material-issuance/add")]"}
-  (Session info: chrome=113.0.5672.126)
+  (Session info: chrome=113.0.5672.127)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.9.1', revision: 'eb2032df7f'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cb6646efb5fefc81abfa32c28e76e856, findElement {using=xpath, value=//a[contains(@href,"/material-issuance/add")]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.126, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\MUHAMM~1.JAB\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:61080}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61080/devtoo..., se:cdpVersion: 113.0.5672.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cb6646efb5fefc81abfa32c28e76e856]]>
+Command: [dc918bd4541d109676b6f499d1a77477, findElement {using=xpath, value=//a[contains(@href,"/material-issuance/add")]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.127, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\MUHAMM~1.JAB\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:51889}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51889/devtoo..., se:cdpVersion: 113.0.5672.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: dc918bd4541d109676b6f499d1a77477]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(@href,"/material-issuance/add")]"}
-  (Session info: chrome=113.0.5672.126)
+  (Session info: chrome=113.0.5672.127)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.9.1', revision: 'eb2032df7f'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cb6646efb5fefc81abfa32c28e76e856, findElement {using=xpath, value=//a[contains(@href,"/material-issuance/add")]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.126, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\MUHAMM~1.JAB\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:61080}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61080/devtoo..., se:cdpVersion: 113.0.5672.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cb6646efb5fefc81abfa32c28e76e856
+Command: [dc918bd4541d109676b6f499d1a77477, findElement {using=xpath, value=//a[contains(@href,"/material-issuance/add")]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.127, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\MUHAMM~1.JAB\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:51889}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51889/devtoo..., se:cdpVersion: 113.0.5672.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: dc918bd4541d109676b6f499d1a77477
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -78,9 +64,9 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at jdk.proxy2/jdk.proxy2.$Proxy17.click(Unknown Source)
+at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
 at com.fb.qa.pages.MaterialIssuancePage.clickOnAddMaterialIssuance(MaterialIssuancePage.java:66)
-at com.fb.qa.testcases.MaterialIssuanceTest.materialIssuanceProcess(MaterialIssuanceTest.java:41)
+at com.fb.qa.testcases.MaterialIssuanceTest.materialIssuanceProcess(MaterialIssuanceTest.java:43)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -115,11 +101,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- materialIssuanceProcess -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@6a8658ff]" started-at="2023-05-19T18:01:48 PKT" name="tearDown" finished-at="2023-05-19T18:01:48 PKT" duration-ms="380" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@7fab4be7]" started-at="2023-05-22T15:03:54 PKT" name="tearDown" finished-at="2023-05-22T15:03:55 PKT" duration-ms="715" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.fb.qa.testcases.MaterialIssuanceTest -->
-    </test> <!-- F and B Testcases -->
-  </suite> <!-- FnB Sanity Automation Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

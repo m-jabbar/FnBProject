@@ -15,9 +15,10 @@ import org.testng.ITestResult;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import com.fb.qa.base.TestBase;
 import com.fb.qa.util.MyExtentReport;
 
-public class MyListeners implements ITestListener {
+public class MyListeners extends TestBase implements ITestListener {
 
 	public WebDriver driver;
 	ExtentReports extentReport;
@@ -39,7 +40,11 @@ public class MyListeners implements ITestListener {
 	}
 
 	public void onTestFailure(ITestResult result) {
-		String testName = result.getName();
+		
+		System.out.println("Failed test");
+		failTestCases(result.getMethod().getMethodName());
+		
+		/*String testName = result.getName();
 		WebDriver driver = null;
 		try {
 			driver = (WebDriver) result.getTestClass().getRealClass().getDeclaredField("driver")
@@ -62,7 +67,7 @@ public class MyListeners implements ITestListener {
 		}
 
 		extentTest.log(Status.INFO, result.getThrowable());
-		extentTest.log(Status.FAIL, testName + "Execution failed");
+		extentTest.log(Status.FAIL, testName + "Execution failed");*/
 	}
 
 	public void onTestSkipped(ITestResult result) {
