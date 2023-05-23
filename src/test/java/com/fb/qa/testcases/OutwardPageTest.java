@@ -2,14 +2,16 @@ package com.fb.qa.testcases;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.fb.qa.base.TestBase;
+import com.fb.qa.listeners.MyListeners;
 import com.fb.qa.pages.HomePage;
 import com.fb.qa.pages.LoginPage;
 import com.fb.qa.pages.MaterialIssuancePage;
 import com.fb.qa.pages.OutwardPage;
-
+@Listeners(MyListeners.class)
 public class OutwardPageTest extends TestBase {
 	public OutwardPageTest() {
 		super();
@@ -34,7 +36,8 @@ public class OutwardPageTest extends TestBase {
 		Outward.clickOnAddOutward();
 		Thread.sleep(1000);
 		Outward.selectIssuanceNum();
-		Outward.giveRemarks();
+		Thread.sleep(1000);
+		Outward.give1stRemarks();
 		Thread.sleep(1000);
 		Outward.clickSubmitBtn();
 		Thread.sleep(2000);

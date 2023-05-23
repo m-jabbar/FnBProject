@@ -22,9 +22,9 @@ import com.fb.qa.pages.HomePage;
 import com.fb.qa.pages.LoginPage;
 import com.fb.qa.util.TestUtil;
 
-public class TestBase {
+public class  TestBase {
 
-	public WebDriver driver;
+	public static  WebDriver driver;
 	public Properties prop;
 	public WebDriverWait wait;
 	LoginPage loginPage;
@@ -50,7 +50,7 @@ public class TestBase {
 
 			System.setProperty("webdriver.chrome",
 					"C:\\Users\\muhammad.jabbar\\eclipse-workspace\\F_B_POM_TestNG\\chromedriver.exe");
-//		System.setProperty("webdriver.http.factory", "jdk-http-client");
+		System.setProperty("webdriver.http.factory", "jdk-http-client");
 			driver = new ChromeDriver();
 		}
 		ChromeOptions options = new ChromeOptions();
@@ -65,7 +65,6 @@ public class TestBase {
 	}
 	
 	public void failTestCases( String testMethodName) {
-		WebDriver driver = new ChromeDriver();
 		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
 			FileUtils.copyFile(srcFile, new File("C:\\Users\\muhammad.jabbar\\eclipse-workspace\\fbProject\\screenshots\\"+ testMethodName+ "_" + ".jpg"));

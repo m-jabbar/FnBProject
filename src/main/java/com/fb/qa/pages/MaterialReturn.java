@@ -18,7 +18,7 @@ public class MaterialReturn extends TestBase  {
 	@FindBy(xpath = "//a[normalize-space()='Add Material Return']")
 	WebElement addMaterialReturn;
 
-	@FindBy(xpath = "//div[@class='multi-select__input-container css-ackcql']")
+	@FindBy(xpath = "//div[@class='multi-select__control css-13cymwt-control']")
 	WebElement materialIssuanceNo;
 
 	@FindBy(id = "react-select-2-option-0")
@@ -34,10 +34,25 @@ public class MaterialReturn extends TestBase  {
 	WebElement receivingDepartment;
 
 	@FindBy(name = "items.0.quantity")
-	WebElement enterQuantity;
+	WebElement enter1stQuantity;
+	
+	@FindBy(name = "items.1.quantity")
+	WebElement enter12ndQuantity;
+	
+	@FindBy(name = "items.2.quantity")
+	WebElement enter3rdQuantity;
 	
 	@FindBy(name = "items.0.remarks")
-	WebElement enterRemarks;
+	WebElement enter1stRemarks;
+	
+	@FindBy(name = "items.1.remarks")
+	WebElement enter2ndRemarks;
+	
+	@FindBy(name = "items.2.remarks")
+	WebElement enter3rdRemarks;
+	
+	
+	
 	
 	@FindBy(id = "liveToastBtn")
 	WebElement submitBtn;
@@ -76,29 +91,50 @@ public class MaterialReturn extends TestBase  {
 	public void selectLocation() {
 		selectLoacation.click();
 		Select select = new Select(selectLoacation);
-		select.selectByIndex(1);
+		select.selectByIndex(2);
 	}
 	
 	public void selectProvideDepartment() {
 		providedDepartment.click();
 		Select select = new Select(providedDepartment);
-		select.selectByIndex(1);
+		select.selectByIndex(2);
 	}
 	
 	public void selectReceivedDepartment() {
 		receivingDepartment.click();
 		Select select = new Select(receivingDepartment);
-		select.selectByIndex(1);
+		select.selectByIndex(2);
 	}
-	public void enterQuantity() {
-		enterQuantity.click();
-		enterQuantity.sendKeys(Keys.CLEAR);
-		enterQuantity.sendKeys("1");
+	public void enter1stQuantity() {
+		enter1stQuantity.click();
+		enter1stQuantity.sendKeys(Keys.CLEAR);
+		enter1stQuantity.sendKeys("1");
 	}
-	public void enterRemarks() {
-		enterRemarks.click();
-		enterRemarks.sendKeys("Accepted");
+	public void enter1stRemarks() {
+		enter1stRemarks.click();
+		enter1stRemarks.sendKeys("Accepted");
 	}
+	
+	public void enter2ndQuantity() {
+		enter1stQuantity.click();
+		enter1stQuantity.sendKeys(Keys.CLEAR);
+		enter1stQuantity.sendKeys("1");
+	}
+	public void enter2ndRemarks() {
+		enter2ndRemarks.click();
+		enter2ndRemarks.sendKeys("Accepted");
+	}
+	
+	public void enter3rdQuantity() {
+		enter3rdQuantity.click();
+		enter3rdQuantity.sendKeys(Keys.CLEAR);
+		enter3rdQuantity.sendKeys("1");
+	}
+	public void enter3rdRemarks() {
+		enter3rdRemarks.click();
+		enter3rdRemarks.sendKeys("Accepted");
+	}
+	
 	public void submitBtn() {
 		submitBtn.click();
 	}

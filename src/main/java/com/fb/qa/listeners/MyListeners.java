@@ -19,8 +19,6 @@ import com.fb.qa.base.TestBase;
 import com.fb.qa.util.MyExtentReport;
 
 public class MyListeners extends TestBase implements ITestListener {
-
-	public WebDriver driver;
 	ExtentReports extentReport;
 	ExtentTest extentTest;
 

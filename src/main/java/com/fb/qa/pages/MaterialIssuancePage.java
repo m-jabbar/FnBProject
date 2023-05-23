@@ -13,7 +13,7 @@ public class MaterialIssuancePage extends TestBase {
 	@FindBy(xpath = "//a[contains(@href, \"/material-issuance\")]")
 	WebElement materialIssuance;;
 
-	@FindBy(xpath ="//a[contains(@href,\"/material-issuance/add\")]")
+	@FindBy(xpath ="//a[normalize-space()='Add Material Issuance']")
 	WebElement addMaterialIssuance;
 	
 //	/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/form[1]/div[1]/div[4]/div[1]/div[1]
@@ -61,8 +61,6 @@ public class MaterialIssuancePage extends TestBase {
 	}
 
 	public void clickOnAddMaterialIssuance() {
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//		wait.until(ExpectedConditions.visibilityOf(addMaterialIssuance));
 		addMaterialIssuance.click();
 	}
 
@@ -80,7 +78,6 @@ public class MaterialIssuancePage extends TestBase {
 		base.scrollDown(driver, 0, 600);
 		giveAssetsNumElement.click();
 		giveAssetsNumElement.sendKeys("aaaa");
-		giveAssetsNumElement.sendKeys(Keys.ENTER);
 	}
 
 	public void giveRemarks() {

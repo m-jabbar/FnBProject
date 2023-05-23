@@ -13,7 +13,7 @@ public class MaterialInspection extends TestBase{
 
 	public WebDriver driver;
 	
-	@FindBy(xpath = "//*[@id=\"kt_content_container\"]/section/div/div/div/div/div/div/div[6]/a")
+	@FindBy(xpath = "//a[contains(@href,\"/material-inspection\")]")
 	WebElement materialInspection;
 	
 	@FindBy(id = "kt_toolbar_primary_button")
@@ -88,12 +88,13 @@ public class MaterialInspection extends TestBase{
 		submitBtn.click();
 	}
 	
-	public void approveProcess() {
+	public void approveProcess() throws InterruptedException {
 		approveIconEle.click();
+		Thread.sleep(3000);
 		TestBase base = new TestBase();
-		base.scrollDown(driver, 0, 1400);
+		base.scrollDown(driver, 0, 800);
 		approveBtn.click();
-		againApproveBtn.click();
+//		againApproveBtn.click();
 		
 	}
 	

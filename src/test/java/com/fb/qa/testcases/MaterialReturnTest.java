@@ -2,13 +2,15 @@ package com.fb.qa.testcases;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.fb.qa.base.TestBase;
+import com.fb.qa.listeners.MyListeners;
 import com.fb.qa.pages.HomePage;
 import com.fb.qa.pages.LoginPage;
 import com.fb.qa.pages.MaterialReturn;
-
+@Listeners(MyListeners.class)
 public class MaterialReturnTest extends TestBase{
 	public MaterialReturnTest() {
 		super();
@@ -42,7 +44,11 @@ public class MaterialReturnTest extends TestBase{
 		Thread.sleep(1000);
 //		materialReturn.enterQuantity();
 //		Thread.sleep(1000);
-		materialReturn.enterRemarks();
+		materialReturn.enter1stRemarks();
+		Thread.sleep(1000);
+		materialReturn.enter2ndRemarks();
+		Thread.sleep(1000);
+		materialReturn.enter3rdRemarks();
 		Thread.sleep(1000);
 		materialReturn.submitBtn();
 		Thread.sleep(1000);

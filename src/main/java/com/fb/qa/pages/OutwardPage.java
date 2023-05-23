@@ -1,5 +1,7 @@
 package com.fb.qa.pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,8 +26,11 @@ public class OutwardPage extends TestBase {
 	WebElement selectValueFromList;
 	
 	@FindBy(xpath = "//input[@name='items.0.remarks']")
-	WebElement giveRemarksElement;
+	WebElement giveRemarks;
 
+//	@FindBy(xpath = "//input[@name='items.1.remarks']")
+//	WebElement give2ndRemarks;
+	
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/form[1]/div[3]/button[1]")
 	WebElement submitBtnElement;
 
@@ -63,9 +68,9 @@ public class OutwardPage extends TestBase {
 		selectValueFromList.click();
 	}
 	
-	public void giveRemarks() {
-		giveRemarksElement.click();
-		giveRemarksElement.sendKeys("OK");
+	public void give1stRemarks() {
+		giveRemarks.click();
+		giveRemarks.sendKeys("OK");
 	}
 
 	public void clickSubmitBtn() throws InterruptedException {

@@ -13,7 +13,7 @@ public class PurchaseOrders extends TestBase {
 	
 	public WebDriver driver;
 	
-	@FindBy(xpath = "//*[@id=\"kt_content_container\"]/section/div/div/div/div/div/div/div[5]/a")
+	@FindBy(xpath = "//a[contains(@href,\"/purchase-orders\")]")
 	WebElement purchaseOrders;
 	
 	@FindBy(xpath = "//div[@title='Add Purchase Order']//a[@id='kt_toolbar_primary_button']")

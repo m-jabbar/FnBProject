@@ -38,8 +38,6 @@ public class MaterialIssuanceTest extends TestBase {
 
 	@Test(priority = 2)
 	public void materialIssuanceProcess() throws InterruptedException {
-		materialIssuance.clickOnMaterialIssuance();
-//		Thread.sleep(3000);
 		materialIssuance.clickOnAddMaterialIssuance();
 		Thread.sleep(2000);
 		materialIssuance.selectMaterialNum();
@@ -51,7 +49,7 @@ public class MaterialIssuanceTest extends TestBase {
 		materialIssuance.giveRemarks();
 		Thread.sleep(1000);
 		materialIssuance.clickSubmitBtn();
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 //		materialIssuance.approveMaterialProcess();
 //		Thread.sleep(2000);
 
@@ -61,13 +59,6 @@ public class MaterialIssuanceTest extends TestBase {
 		 * "Title is matched"); System.out.println("Congrats your test is passed");
 		 */
 	}
-
-	/*
-	 * @Test(priority = 4) public void ApproveIssuance() throws InterruptedException
-	 * {
-	 * 
-	 * }
-	 */
 	@AfterMethod
 	public void tearDown() throws InterruptedException {
 		super.tearDown();
