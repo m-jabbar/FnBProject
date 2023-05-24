@@ -16,7 +16,6 @@ public class BudgetsTest extends TestBase {
 	public BudgetsTest() {
 		super();
 	}
-	
 	LoginPage loginPage;
 	HomePage homepage;
 	Budgets budgets;
@@ -69,8 +68,7 @@ public class BudgetsTest extends TestBase {
 		System.out.println("Congrats your tes2t is passed");
 	}
 
-	
-	
+
 	@AfterMethod
 	public void teardown() throws InterruptedException {
 		driver.quit();

@@ -11,7 +11,6 @@ public class HomePage extends TestBase {
 
 	public WebDriver driver;
 	// page factory
-	// Material-Requisition
 	@FindBy(xpath = "//a[contains(@href, \"material-requisition\")]")
 	WebElement materialReq;
 

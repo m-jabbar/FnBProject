@@ -71,7 +71,6 @@ public class MaterialRequisitionTest extends TestBase {
 //		String toastMessage = materialRequisition.getToastMessage();
 //	    Assert.assertEquals(toastMessage, "Material Requisition has been approved (	MR-1681388931957)", "Title is matched");
 	    System.out.println("Congrats your test is passed");
-		
 	}
 
 	@AfterMethod

@@ -50,9 +50,8 @@ public class MaterialIssuanceTest extends TestBase {
 		Thread.sleep(1000);
 		materialIssuance.clickSubmitBtn();
 		Thread.sleep(1000);
-//		materialIssuance.approveMaterialProcess();
-//		Thread.sleep(2000);
-
+		materialIssuance.approveMaterialProcess();
+		Thread.sleep(2000);
 		/*
 		 * String toastMessage = addmaterialreq.getToastMessage();
 		 * Assert.assertEquals(toastMessage, "Material Issuance has been created",

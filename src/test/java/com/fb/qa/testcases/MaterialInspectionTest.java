@@ -16,21 +16,22 @@ public class MaterialInspectionTest extends TestBase {
 	public MaterialInspectionTest() {
 		super();
 	}
-	
+
 	LoginPage loginPage;
 	HomePage homepage;
 	MaterialInspection materialInspection;
-	
+
 	@BeforeMethod
 	public void setup() throws InterruptedException {
 		this.driver = initilization();
 		loginPage = new LoginPage(this.driver);
-		homepage= loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		homepage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 		materialInspection = homepage.clickOnMaterialInspection();
 	}
+
 	@Test
 	public void MaterialInspectionProcess() throws InterruptedException {
-	
+
 		materialInspection.clickOnMaterialInspection();
 		Thread.sleep(1000);
 		materialInspection.clickOnAddMaterialInspection();
@@ -43,18 +44,16 @@ public class MaterialInspectionTest extends TestBase {
 		Thread.sleep(1000);
 		materialInspection.giveRemarksAndSubmit();
 		Thread.sleep(1000);
-//		materialInspection.approveProcess();
-//		Thread.sleep(1000);
 	}
-	
-	@Test(priority=2)
+
+	@Test(priority = 2)
 	public void ApproveInspectionProcess() throws InterruptedException {
 		materialInspection.clickOnMaterialInspection();
 		Thread.sleep(3000);
 		materialInspection.approveProcess();
 		Thread.sleep(1000);
 	}
-	
+
 	@AfterMethod
 	public void teardown() throws InterruptedException {
 		driver.quit();

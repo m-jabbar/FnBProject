@@ -10,17 +10,18 @@ import com.fb.qa.listeners.MyListeners;
 import com.fb.qa.pages.GoodsReceiveNotes;
 import com.fb.qa.pages.HomePage;
 import com.fb.qa.pages.LoginPage;
+
 @Listeners(MyListeners.class)
 public class GoodsReceiveNotesTest extends TestBase {
 
 	public GoodsReceiveNotesTest() {
 		super();
 	}
-	
+
 	LoginPage loginPage;
 	HomePage homepage;
 	GoodsReceiveNotes goodsReceiveNote;
-	
+
 	@BeforeMethod
 	public void setup() throws InterruptedException {
 		this.driver = initilization();
@@ -28,6 +29,7 @@ public class GoodsReceiveNotesTest extends TestBase {
 		homepage = loginPage.login("abdullah.bilal@nxb.com.pk", "Qajob@1234");
 		goodsReceiveNote = homepage.clickOnGoodsRecieveNotes();
 	}
+
 	@Test
 	public void GoodsRecieveProcess() throws InterruptedException {
 		goodsReceiveNote.clickOnGoodsRecieveNotes();
@@ -50,14 +52,12 @@ public class GoodsReceiveNotesTest extends TestBase {
 		Thread.sleep(1000);
 		goodsReceiveNote.clickAgainOnApproveBtn();
 		Thread.sleep(1000);
-	
+
 	}
-	
-	
+
 	@AfterMethod
 	public void teardown() throws InterruptedException {
 		driver.quit();
 
 	}
 }
-

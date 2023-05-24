@@ -10,27 +10,27 @@ import com.fb.qa.listeners.MyListeners;
 import com.fb.qa.pages.HomePage;
 import com.fb.qa.pages.LoginPage;
 import com.fb.qa.pages.PurchaseOrders;
+
 @Listeners(MyListeners.class)
 public class PurchaseOrdersTest extends TestBase {
 
 	public PurchaseOrdersTest() {
 		super();
 	}
-	
+
 	LoginPage loginPage;
 	HomePage homepage;
 	PurchaseOrders purchaseorders;
-	
+
 	@BeforeMethod
 	public void setup() throws InterruptedException {
 		this.driver = initilization();
 		loginPage = new LoginPage(this.driver);
-		homepage= loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		homepage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 		purchaseorders = homepage.clickOnPurchaseOrders();
 	}
-	
-	
-	@Test(priority=1)
+
+	@Test(priority = 1)
 	public void PurchaseOrdersProcess() throws InterruptedException {
 		purchaseorders.clickOnPurchaseOrders();
 		Thread.sleep(2000);
@@ -52,20 +52,17 @@ public class PurchaseOrdersTest extends TestBase {
 		Thread.sleep(1000);
 		purchaseorders.clickOnSubmitBtn();
 		Thread.sleep(2000);
-//		purchaseorders.approvePurchaseProcess();
-		
 	}
-	
-	@Test(priority=2)
+
+	@Test(priority = 2)
 	public void ApprovePurchaseOrdersProcess() throws InterruptedException {
 		purchaseorders.clickOnPurchaseOrders();
 		Thread.sleep(1000);
 		purchaseorders.approvePurchaseProcess();
 		Thread.sleep(2000);
-		
+
 	}
-	
-	
+
 	@AfterMethod
 	public void teardown() throws InterruptedException {
 		driver.quit();

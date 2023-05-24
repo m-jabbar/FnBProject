@@ -17,12 +17,9 @@ public class HomePageTest extends TestBase {
 	public HomePageTest() {
 		super();
 	}
-	
 	LoginPage loginPage;
 	HomePage homepage;
 	WebDriver driver;
-//	MaterialRequisitionPage materialreq;
-//	OutwardPage outward;
 	
 	@BeforeMethod
 	public void setup() throws InterruptedException {

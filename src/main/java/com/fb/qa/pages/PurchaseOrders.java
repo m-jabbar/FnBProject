@@ -43,10 +43,8 @@ public class PurchaseOrders extends TestBase {
 	@FindBy(name = "items.0.discount")
 	WebElement enterDiscountValue;
 	
-	
 	@FindBy(id = "liveToastBtn")
 	WebElement submitBtn;
-	
 	
 	@FindBy(xpath = "//body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[11]/div[1]/a[2]/button[1]/span[1]")
 	WebElement approveIconElement;
@@ -54,12 +52,8 @@ public class PurchaseOrders extends TestBase {
 	@FindBy(id = "liveToastBtn")
 	WebElement approveBtn;
 	
-	
 	@FindBy(xpath = "//button[@class='btn btn-lg btn-primary float-right']")
 	WebElement againApproveBtn;
-	
-	
-	
 	
 	public PurchaseOrders(WebDriver driver) {
 		this.driver = driver;

@@ -54,7 +54,7 @@ public class SuppliersBillsTest extends TestBase {
 		Thread.sleep(1000);
 		String toastMessage = suppliersBills.getToastMessage();
 		Assert.assertEquals(toastMessage, "Supplier bill has been approved", "Title is matched");
-		System.out.println("Congrats your test2 is passed");
+		System.out.println("Congrats your second is passed");
 	}
 
 	@AfterMethod

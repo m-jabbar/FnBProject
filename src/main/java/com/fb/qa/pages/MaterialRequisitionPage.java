@@ -122,7 +122,6 @@ public class MaterialRequisitionPage extends TestBase {
 
 	public void againApproveSumbitBtn() throws InterruptedException {
 		popupApproveBtn.click();
-//		toastMessage1.getText();
 		Thread.sleep(1000);
 	}
 

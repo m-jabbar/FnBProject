@@ -79,11 +79,13 @@ public class GoodsReceiveNotes extends TestBase {
 		uploadFile.sendKeys("D:\\Jabbar'd data\\Before new OS 27-4-23\\pom.png");
 	}
 	public void selectDateProcess() {
-		selectDate.click();
-		selectDateFromCalender.click();
-		TestBase base = new TestBase();
-		base.scrollDown(driver, 0, 800);
-		okBtn.click();
+	    selectDate.click();
+	    String formattedDate = getFormattedCurrentDate();
+	    String calendarXPath = "//input[@placeholder='Select Date']";
+	    selectDateFromCalendar(calendarXPath, formattedDate);
+	    TestBase base = new TestBase();
+	    base.scrollDown(driver, 0, 800);
+	    okBtn.click();
 	}
 	
 	public void clickOnSubmitBtn() {

@@ -6,6 +6,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import org.codehaus.plexus.util.FileUtils;
 import org.openqa.selenium.By;
@@ -64,6 +66,13 @@ public class  TestBase {
 		return this.driver;
 	}
 	
+	/* public void login(String username, String password) {
+	        loginPage = new LoginPage(driver);
+	        loginPage.enterUsername(username);
+	        loginPage.enterPassword(password);
+	        loginPage.clickLoginButton();
+	    }*/
+	
 	public void failTestCases( String testMethodName) {
 		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
@@ -78,6 +87,19 @@ public class  TestBase {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(" + x + "," + y + ")");
 	}
+	
+	 public void selectDateFromCalendar(String calendarXPath, String formattedDate) {
+	        String xpath = String.format(calendarXPath, formattedDate);
+	        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    }
+
+	    public String getFormattedCurrentDate() {
+	        LocalDate currentDate = LocalDate.now();
+	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+	        return currentDate.format(formatter);
+	    }
+	
+	
 	
 	public void waitForElementToBeClickable(By locator) {
 		wait.until(ExpectedConditions.elementToBeClickable(locator));

@@ -43,7 +43,6 @@ public class ProductsTest extends TestBase {
 		Thread.sleep(1000);
 	}
 	
-	
 	@AfterMethod
 	public void teardown() throws InterruptedException {
 		driver.quit();

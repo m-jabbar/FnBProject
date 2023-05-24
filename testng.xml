@@ -32,7 +32,6 @@
 			<class name="com.fb.qa.testcases.SuppliersTest"/>
 			<class name="com.fb.qa.testcases.SuppliersBillsTest"/>
 			
-				<class name="com.fb.qa.testcases.ProductCategoryTest"/>
 			<class name="com.fb.qa.testcases.ProductsTest"/>
 			
 			

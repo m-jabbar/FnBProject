@@ -10,8 +10,9 @@ import com.fb.qa.listeners.MyListeners;
 import com.fb.qa.pages.HomePage;
 import com.fb.qa.pages.LoginPage;
 import com.fb.qa.pages.PurchaseOrderReturn;
+
 @Listeners(MyListeners.class)
-public class PurchaseOrderReturnTest extends TestBase{
+public class PurchaseOrderReturnTest extends TestBase {
 	public PurchaseOrderReturnTest() {
 		super();
 	}
@@ -24,7 +25,7 @@ public class PurchaseOrderReturnTest extends TestBase{
 	public void setup() throws InterruptedException {
 		this.driver = initilization();
 		loginPage = new LoginPage(this.driver);
-		homepage= loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		homepage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 		purchaseOrderReturn = homepage.clickOnPurchaseOrderReturn();
 	}
 

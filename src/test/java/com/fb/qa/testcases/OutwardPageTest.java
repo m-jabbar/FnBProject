@@ -50,7 +50,6 @@ public class OutwardPageTest extends TestBase {
 		Outward.approveProcess();
 		Thread.sleep(2000);
 	}
-	
 
 	@AfterMethod
 	public void teardown() throws InterruptedException {

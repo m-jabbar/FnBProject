@@ -17,7 +17,6 @@ public class SuppliersTest extends TestBase {
 	public SuppliersTest() {
 		super();
 	}
-
 	LoginPage loginPage;
 	HomePage homepage;
 	Suppliers suppliers;

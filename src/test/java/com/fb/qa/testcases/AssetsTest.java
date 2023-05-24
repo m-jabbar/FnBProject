@@ -47,9 +47,7 @@ public class AssetsTest extends TestBase{
 		String toastMessage = assets.getToastMessage();
 	    Assert.assertEquals(toastMessage, "Asset has been created", "Title is matched");
 	    System.out.println("Congrats your test is passed");
-	
 	}
-	
 	
 	@AfterMethod
 	public void teardown() throws InterruptedException {

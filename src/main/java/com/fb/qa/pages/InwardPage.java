@@ -56,7 +56,6 @@ public class InwardPage extends TestBase {
 		inwardNumber.click();
 		inwardNumberList.click();
 	}
-	
 	public void giveRemarks() {
 		TestBase base = new TestBase();
 		base.scrollDown(driver, 0, 1000);

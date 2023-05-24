@@ -24,8 +24,6 @@ public class LoginPage extends TestBase {
 //	@FindBy(id="kt_sign_in_submit")
 //	WebElement getTitle;
 	
-//	
-	
 	@FindBy(xpath="//img[contains(@class,\"logo-default\")]")
 	WebElement logo;
 

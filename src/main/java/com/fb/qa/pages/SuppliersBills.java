@@ -16,7 +16,7 @@ public class SuppliersBills extends TestBase {
 	@FindBy(xpath="//a[normalize-space()='Add Supplier Bill']")
 	WebElement addSuppliersBills;
 	
-	@FindBy(xpath="//div[@class='multi-select__input-container css-ackcql']")
+	@FindBy(xpath="/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]")
 	WebElement goodsReceiveNo;
 	
 	@FindBy(id="react-select-2-option-1")

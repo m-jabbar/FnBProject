@@ -16,7 +16,6 @@ public class MaterialIssuancePage extends TestBase {
 	@FindBy(xpath ="//a[normalize-space()='Add Material Issuance']")
 	WebElement addMaterialIssuance;
 	
-//	/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/form[1]/div[1]/div[4]/div[1]/div[1]
 	@FindBy(xpath = "//div[contains(@class,\"multi-select__input-container css-19bb58m\")]")
 	WebElement materialReqNo;
 	
@@ -92,9 +91,9 @@ public class MaterialIssuancePage extends TestBase {
 
 	}
 
-//	public String getToastMessage() {
-//		return toastMessageElement.getText();
-//	}
+	/*public String getToastMessage() {
+		return toastMessageElement.getText();
+	}*/
 
 
 	public void approveMaterialProcess() {

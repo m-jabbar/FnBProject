@@ -60,13 +60,14 @@ public class Assets extends TestBase  {
 	}
 	public void addAssetsNo() {
 		addAssetsNo.click();
-		addAssetsNo.sendKeys("MR-1679298587741");
+		String baseValue = "MR-";
+	    String uniqueValue = baseValue + System.currentTimeMillis(); // Adding timestamp to create unique value
+	    addAssetsNo.sendKeys(uniqueValue);
+//		addAssetsNo.sendKeys("MR-1679298587741");
 	}
 	public void selectGoodsReceiveNo() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOf(goodsReceiveNo));
-//		TestBase wait = new TestBase(driver);
-//		wait.waitForElementToBeClickable(goodsReceiveNo);
 		goodsReceiveNo.click();
 		selectGoodsReceiveNo.click();
 	}

@@ -16,7 +16,7 @@ public class PurchaseOrderReturn extends TestBase {
 	@FindBy(xpath = "//a[@id='kt_toolbar_primary_button']")
 	WebElement addPurchaseOrderReturn;
 
-	@FindBy(xpath = "//div[@class='multi-select__input-container css-ackcql']")
+	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]")
 	WebElement purchaseOrderNo;
 
 	@FindBy(id = "react-select-2-option-1")

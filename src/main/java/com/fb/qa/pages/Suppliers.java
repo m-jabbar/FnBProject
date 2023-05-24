@@ -1,5 +1,6 @@
 package com.fb.qa.pages;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -105,7 +106,8 @@ public class Suppliers extends TestBase {
 	
 	public void enterName() {
 		enterName.click();
-		enterName.sendKeys("jabbar123");
+		String uniqueName = "jabbar123" + RandomStringUtils.randomAlphabetic(5);
+	    enterName.sendKeys(uniqueName);
 	}
 	public void addAddres() {
 		addAddress.click();

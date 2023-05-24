@@ -51,7 +51,6 @@ public class InventoryTest extends TestBase{
 		String toastMessage = inventory.getToastMessage();
 	    Assert.assertEquals(toastMessage, "Inventory has been created", "Title is matched");
 	    System.out.println("Congrats your test is passed");
-	
 	}
 	
 	
