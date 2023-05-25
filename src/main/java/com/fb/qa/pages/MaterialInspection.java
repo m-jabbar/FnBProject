@@ -37,27 +37,26 @@ public class MaterialInspection extends TestBase {
 	WebElement selectLocation;
 
 	@FindBy(name = "items.0.remarks")
-	WebElement enter1stRemarks;
+	WebElement enterRemarks;
 
 	@FindBy(name = "items.1.remarks")
-	WebElement give2ndRemarks;
+	WebElement enter2ndRemarks;
 
 	@FindBy(name = "items.2.remarks")
-	WebElement give3rdRemarks;
+	WebElement enter3rdRemarks;
 
 	@FindBy(name = "items.3.remarks")
-	WebElement give4thRemarks;
+	WebElement enter4thRemarks;
 
 	@FindBy(name = "items.4.remarks")
-	WebElement give5thRemarks;
+	WebElement enter5thRemarks;
 
 	@FindBy(name = "items.5.remarks")
-	WebElement give6thRemarks;
+	WebElement enter6thRemarks;
 
 	@FindBy(name = "items.6.remarks")
-	WebElement give7thRemarks;
-	
-	
+	WebElement enter7thRemarks;
+
 	@FindBy(id = "liveToastBtn")
 	WebElement submitBtn;
 
@@ -100,57 +99,53 @@ public class MaterialInspection extends TestBase {
 		Select select = new Select(selectLocation);
 		select.selectByIndex(2);
 	}
-	
+
 	public void enterRemarksAndSubmit() {
-	    if (isElementPresent(enter1stRemarks)) {
-	        enterRemarks(enter1stRemarks, "Ok Issues");
-	        clickSubmitButton();
-	    } else {
-	        int fieldCount = 1;
-	        boolean isFieldPresent = true;
-
-	        while (isFieldPresent) {
-	            WebElement remarksField = getRemarksFieldByIndex(fieldCount);
-
-	            if (isElementPresent(remarksField)) {
-	                enterRemarks(remarksField, "Ok");
-	                fieldCount++;
-	            } else {
-	                isFieldPresent = false;
-	            }
-	        }
-
-	        clickSubmitButton();
-	    }
+		if (isFieldPresent(enterRemarks)) {
+			enterRemarks(enterRemarks, "Ok");
+		} else {
+			return; // Break the loop if the next field is not present
+		}
+		if (isFieldPresent(enter2ndRemarks)) {
+			enterRemarks(enter2ndRemarks, "Issued");
+		} else {
+			return; // Break the loop if the next field is not present
+		}
+		if (isFieldPresent(enter3rdRemarks)) {
+			enterRemarks(enter3rdRemarks, "Remarks for field 3");
+		} else {
+			return; // Break the loop if the next field is not present
+		}
+		if (isFieldPresent(enter4thRemarks)) {
+			enterRemarks(enter4thRemarks, "Remarks for field 4");
+		} else {
+			return; // Break the loop if the next field is not present
+		}
+		if (isFieldPresent(enter5thRemarks)) {
+			enterRemarks(enter5thRemarks, "Remarks for field 5");
+		} else {
+			return; // Break the loop if the next field is not present
+		}
+		if (isFieldPresent(enter6thRemarks)) {
+			enterRemarks(enter6thRemarks, "Remarks for field 6");
+		} else {
+			return; // Break the loop if the next field is not present
+		}
+		// Add additional if conditions for other fields if needed
 	}
 
-	private void enterRemarks(WebElement remarksField, String remarks) {
-	    remarksField.click();
-	    remarksField.sendKeys(remarks);
+	private void enterRemarks(WebElement field, String remarks) {
+		field.sendKeys(remarks);
 	}
 
-	private boolean isElementPresent(WebElement remarksField) {
-	    try {
-	        return remarksField.isDisplayed();
-	    } catch (NoSuchElementException e) {
-	        return false;
-	    }
+	private boolean isFieldPresent(WebElement field) {
+		try {
+			return field.isDisplayed();
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
+		}
 	}
 
-	private WebElement getRemarksFieldByIndex(int fieldCount) {
-	    String fieldName = "items[" + (fieldCount - 1) + "].remarks";
-	    return driver.findElement(By.name(fieldName));
-	}
-
-	private void clickSubmitButton() {
-	    try {
-	        submitBtn.click();
-	    } catch (NoSuchElementException e) {
-	        System.out.println("Submit button not found.");
-	    }
-	}
-
-	
 	/*
 	 * public void giveRemarksAndSubmit() { giveRemarks.click();
 	 * giveRemarks.sendKeys("Ok Issues"); giveRemarks.sendKeys(Keys.TAB);
@@ -178,40 +173,29 @@ public class MaterialInspection extends TestBase {
 	 * private boolean isElementPresent(WebElement element) { try { return
 	 * element.isDisplayed(); } catch (NoSuchElementException e) { return false; } }
 	 */
-	//also working
-	/*public void giveRemarksAndSubmit() {
-	    giveRemarks.click();
-	    giveRemarks.sendKeys("Ok Issues");
-	    giveRemarks.sendKeys(Keys.TAB);
-
-	    TestBase base = new TestBase();
-	    base.scrollDown(driver, 0, 600);
-
-	    WebElement remarksField = null;
-	    int fieldCount = 1;
-
-	    while (isElementPresent(getRemarksFieldByIndex(fieldCount))) {
-	        remarksField = getRemarksFieldByIndex(fieldCount);
-	        remarksField.click();
-	        remarksField.sendKeys("Ok");
-
-	        fieldCount++;
-	    }
-
-	    submitBtn.click();
-	}
-
-	private WebElement getRemarksFieldByIndex(int index) {
-	    return driver.findElement(By.name("items." + (index - 1) + ".remarks"));
-	}
-
-	private boolean isElementPresent(WebElement element) {
-	    try {
-	        return element.isDisplayed();
-	    } catch (NoSuchElementException e) {
-	        return false;
-	    }
-	}*/
+	// also working
+	/*
+	 * public void giveRemarksAndSubmit() { giveRemarks.click();
+	 * giveRemarks.sendKeys("Ok Issues"); giveRemarks.sendKeys(Keys.TAB);
+	 * 
+	 * TestBase base = new TestBase(); base.scrollDown(driver, 0, 600);
+	 * 
+	 * WebElement remarksField = null; int fieldCount = 1;
+	 * 
+	 * while (isElementPresent(getRemarksFieldByIndex(fieldCount))) { remarksField =
+	 * getRemarksFieldByIndex(fieldCount); remarksField.click();
+	 * remarksField.sendKeys("Ok");
+	 * 
+	 * fieldCount++; }
+	 * 
+	 * submitBtn.click(); }
+	 * 
+	 * private WebElement getRemarksFieldByIndex(int index) { return
+	 * driver.findElement(By.name("items." + (index - 1) + ".remarks")); }
+	 * 
+	 * private boolean isElementPresent(WebElement element) { try { return
+	 * element.isDisplayed(); } catch (NoSuchElementException e) { return false; } }
+	 */
 
 	public void approveProcess() throws InterruptedException {
 		approveIconEle.click();

@@ -11,6 +11,7 @@ import com.fb.qa.pages.HomePage;
 import com.fb.qa.pages.LoginPage;
 import com.fb.qa.pages.MaterialIssuancePage;
 import com.fb.qa.pages.OutwardPage;
+
 @Listeners(MyListeners.class)
 public class OutwardPageTest extends TestBase {
 	public OutwardPageTest() {
@@ -26,10 +27,10 @@ public class OutwardPageTest extends TestBase {
 	public void setup() throws InterruptedException {
 		this.driver = initilization();
 		loginPage = new LoginPage(this.driver);
-		homepage= loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		homepage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 		Outward = homepage.clickOnOutward();
 	}
-	
+
 	@Test(priority = 1)
 	public void outwardProcess() throws InterruptedException {
 		Outward.clickOnOutward();
@@ -37,13 +38,13 @@ public class OutwardPageTest extends TestBase {
 		Thread.sleep(1000);
 		Outward.selectIssuanceNum();
 		Thread.sleep(1000);
-		Outward.enterRemarksAndSubmit();
+		Outward.enterRemarksInAllFields();
 		Thread.sleep(1000);
-		/*
-		 * Outward.clickSubmitBtn(); Thread.sleep(2000);
-		 */
+		Outward.submitBtn();
+		Thread.sleep(2000);
+
 	}
-	
+
 	@Test(priority = 2)
 	public void approveOutwardProcess() throws InterruptedException {
 		Outward.clickOnOutward();

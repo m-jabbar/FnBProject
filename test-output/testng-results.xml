@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-25T15:40:05 PKT" name="Default suite" finished-at="2023-05-25T15:40:31 PKT" duration-ms="25457">
+  <suite started-at="2023-05-25T19:55:08 PKT" name="Default suite" finished-at="2023-05-25T19:55:55 PKT" duration-ms="46513">
     <groups>
     </groups>
-    <test started-at="2023-05-25T15:40:05 PKT" name="Default test" finished-at="2023-05-25T15:40:31 PKT" duration-ms="25457">
+    <test started-at="2023-05-25T19:55:08 PKT" name="Default test" finished-at="2023-05-25T19:55:55 PKT" duration-ms="46513">
       <class name="com.fb.qa.testcases.OutwardPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.OutwardPageTest@4d74c3ba]" started-at="2023-05-25T15:40:06 PKT" name="setup" finished-at="2023-05-25T15:40:12 PKT" duration-ms="5575" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.OutwardPageTest@22d9c961]" started-at="2023-05-25T19:55:09 PKT" name="setup" finished-at="2023-05-25T19:55:15 PKT" duration-ms="5358" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="outwardProcess()[pri:1, instance:com.fb.qa.testcases.OutwardPageTest@4d74c3ba]" started-at="2023-05-25T15:40:12 PKT" name="outwardProcess" finished-at="2023-05-25T15:40:17 PKT" duration-ms="5230" status="PASS">
+        <test-method signature="outwardProcess()[pri:1, instance:com.fb.qa.testcases.OutwardPageTest@22d9c961]" started-at="2023-05-25T19:55:15 PKT" name="outwardProcess" finished-at="2023-05-25T19:55:42 PKT" duration-ms="26841" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- outwardProcess -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.OutwardPageTest@4d74c3ba]" started-at="2023-05-25T15:40:17 PKT" name="teardown" finished-at="2023-05-25T15:40:19 PKT" duration-ms="1560" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.OutwardPageTest@22d9c961]" started-at="2023-05-25T19:55:42 PKT" name="teardown" finished-at="2023-05-25T19:55:42 PKT" duration-ms="467" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.OutwardPageTest@4d74c3ba]" started-at="2023-05-25T15:40:19 PKT" name="setup" finished-at="2023-05-25T15:40:23 PKT" duration-ms="3964" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.OutwardPageTest@22d9c961]" started-at="2023-05-25T19:55:42 PKT" name="setup" finished-at="2023-05-25T19:55:48 PKT" duration-ms="5992" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="approveOutwardProcess()[pri:2, instance:com.fb.qa.testcases.OutwardPageTest@4d74c3ba]" started-at="2023-05-25T15:40:23 PKT" name="approveOutwardProcess" finished-at="2023-05-25T15:40:29 PKT" duration-ms="6396" status="PASS">
+        <test-method signature="approveOutwardProcess()[pri:2, instance:com.fb.qa.testcases.OutwardPageTest@22d9c961]" started-at="2023-05-25T19:55:48 PKT" name="approveOutwardProcess" finished-at="2023-05-25T19:55:53 PKT" duration-ms="5218" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- approveOutwardProcess -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.OutwardPageTest@4d74c3ba]" started-at="2023-05-25T15:40:29 PKT" name="teardown" finished-at="2023-05-25T15:40:31 PKT" duration-ms="1496" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.OutwardPageTest@22d9c961]" started-at="2023-05-25T19:55:53 PKT" name="teardown" finished-at="2023-05-25T19:55:55 PKT" duration-ms="1494" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
