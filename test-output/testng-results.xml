@@ -2,36 +2,36 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-25T12:56:10 PKT" name="Default suite" finished-at="2023-05-25T12:56:40 PKT" duration-ms="30653">
+  <suite started-at="2023-05-25T15:40:05 PKT" name="Default suite" finished-at="2023-05-25T15:40:31 PKT" duration-ms="25457">
     <groups>
     </groups>
-    <test started-at="2023-05-25T12:56:10 PKT" name="Default test" finished-at="2023-05-25T12:56:40 PKT" duration-ms="30653">
-      <class name="com.fb.qa.testcases.MaterialInspectionTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialInspectionTest@43effd89]" started-at="2023-05-25T12:56:10 PKT" name="setup" finished-at="2023-05-25T12:56:17 PKT" duration-ms="6727" status="PASS">
+    <test started-at="2023-05-25T15:40:05 PKT" name="Default test" finished-at="2023-05-25T15:40:31 PKT" duration-ms="25457">
+      <class name="com.fb.qa.testcases.OutwardPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.OutwardPageTest@4d74c3ba]" started-at="2023-05-25T15:40:06 PKT" name="setup" finished-at="2023-05-25T15:40:12 PKT" duration-ms="5575" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="MaterialInspectionProcess()[pri:0, instance:com.fb.qa.testcases.MaterialInspectionTest@43effd89]" started-at="2023-05-25T12:56:17 PKT" name="MaterialInspectionProcess" finished-at="2023-05-25T12:56:26 PKT" duration-ms="8745" status="PASS">
+        <test-method signature="outwardProcess()[pri:1, instance:com.fb.qa.testcases.OutwardPageTest@4d74c3ba]" started-at="2023-05-25T15:40:12 PKT" name="outwardProcess" finished-at="2023-05-25T15:40:17 PKT" duration-ms="5230" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MaterialInspectionProcess -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.MaterialInspectionTest@43effd89]" started-at="2023-05-25T12:56:26 PKT" name="teardown" finished-at="2023-05-25T12:56:27 PKT" duration-ms="1226" status="PASS">
+        </test-method> <!-- outwardProcess -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.OutwardPageTest@4d74c3ba]" started-at="2023-05-25T15:40:17 PKT" name="teardown" finished-at="2023-05-25T15:40:19 PKT" duration-ms="1560" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialInspectionTest@43effd89]" started-at="2023-05-25T12:56:27 PKT" name="setup" finished-at="2023-05-25T12:56:31 PKT" duration-ms="4204" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.OutwardPageTest@4d74c3ba]" started-at="2023-05-25T15:40:19 PKT" name="setup" finished-at="2023-05-25T15:40:23 PKT" duration-ms="3964" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="ApproveInspectionProcess()[pri:2, instance:com.fb.qa.testcases.MaterialInspectionTest@43effd89]" started-at="2023-05-25T12:56:31 PKT" name="ApproveInspectionProcess" finished-at="2023-05-25T12:56:40 PKT" duration-ms="8797" status="PASS">
+        <test-method signature="approveOutwardProcess()[pri:2, instance:com.fb.qa.testcases.OutwardPageTest@4d74c3ba]" started-at="2023-05-25T15:40:23 PKT" name="approveOutwardProcess" finished-at="2023-05-25T15:40:29 PKT" duration-ms="6396" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ApproveInspectionProcess -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.MaterialInspectionTest@43effd89]" started-at="2023-05-25T12:56:40 PKT" name="teardown" finished-at="2023-05-25T12:56:40 PKT" duration-ms="497" status="PASS">
+        </test-method> <!-- approveOutwardProcess -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.OutwardPageTest@4d74c3ba]" started-at="2023-05-25T15:40:29 PKT" name="teardown" finished-at="2023-05-25T15:40:31 PKT" duration-ms="1496" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.fb.qa.testcases.MaterialInspectionTest -->
+      </class> <!-- com.fb.qa.testcases.OutwardPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

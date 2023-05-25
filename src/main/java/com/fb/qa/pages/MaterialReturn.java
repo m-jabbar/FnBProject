@@ -37,7 +37,7 @@ public class MaterialReturn extends TestBase {
 	WebElement receivingDepartment;
 
 	@FindBy(name = "items.0.remarks")
-	WebElement enter1stRemarks;
+	WebElement enterRemarks;
 
 	@FindBy(name = "items.1.remarks")
 	WebElement enter2ndRemarks;
@@ -102,54 +102,61 @@ public class MaterialReturn extends TestBase {
 	 */
 
 	public void enterRemarksAndSubmit() {
-	    if (isElementPresent(enter1stRemarks)) {
-	        enterRemarks(enter1stRemarks, "Ok Issues");
-	        clickSubmitButton();
-	    } else {
-	        int fieldCount = 1;
-	        boolean isFieldPresent = true;
+		WebElement[] remarksFields = { enterRemarks, enter2ndRemarks };
+		boolean allFieldsFilled = true;
 
-	        while (isFieldPresent) {
-	            WebElement remarksField = getRemarksFieldByIndex(fieldCount);
+		for (int i = 0; i < remarksFields.length; i++) {
+		    WebElement remarksField = remarksFields[i];
+		    if (remarksField.isDisplayed()) {
+		        TestBase base = new TestBase();
+		        base.scrollDown(driver, 0, 1000);
+		        remarksField.click();
+		        remarksField.sendKeys("Issues");
 
-	            if (isElementPresent(remarksField)) {
-	                enterRemarks(remarksField, "Ok");
-	                fieldCount++;
-	            } else {
-	                isFieldPresent = false;
-	            }
-	        }
+		        if (remarksField.getAttribute("value").isEmpty()) {
+		            allFieldsFilled = false;
+		            break;
+		        }
+		    } else if (i == 0) {
+		        // Handle the case where only one field is present
+		        allFieldsFilled = false;
+		        break;
+		    }
+		}
 
-	        clickSubmitButton();
-	    }
-	}
+		if (allFieldsFilled) {
+		    submitBtn.click();}
+		}
 
-	private void enterRemarks(WebElement remarksField, String remarks) {
-	    remarksField.click();
-	    remarksField.sendKeys(remarks);
-	}
 
-	private boolean isElementPresent(WebElement remarksField) {
-	    try {
-	        return remarksField.isDisplayed();
-	    } catch (NoSuchElementException e) {
-	        return false;
-	    }
-	}
-
-	private WebElement getRemarksFieldByIndex(int fieldCount) {
-	    String fieldName = "items[" + (fieldCount - 1) + "].remarks";
-	    return driver.findElement(By.name(fieldName));
-	}
-
-	private void clickSubmitButton() {
-	    try {
-	        submitBtn.click();
-	    } catch (NoSuchElementException e) {
-	        System.out.println("Submit button not found.");
-	    }
-	}
-
+	/*
+	 * if (isElementPresent(enter1stRemarks)) { enterRemarks(enter1stRemarks,
+	 * "Ok Issues"); clickSubmitButton(); } else { int fieldCount = 1; boolean
+	 * isFieldPresent = true;
+	 * 
+	 * while (isFieldPresent) { WebElement remarksField =
+	 * getRemarksFieldByIndex(fieldCount);
+	 * 
+	 * if (isElementPresent(remarksField)) { enterRemarks(remarksField, "Ok");
+	 * fieldCount++; } else { isFieldPresent = false; } }
+	 * 
+	 * clickSubmitButton(); } }
+	 * 
+	 * private void enterRemarks(WebElement remarksField, String remarks) {
+	 * remarksField.click(); remarksField.sendKeys(remarks); }
+	 * 
+	 * private boolean isElementPresent(WebElement remarksField) { try { return
+	 * remarksField.isDisplayed(); } catch (NoSuchElementException e) { return
+	 * false; } }
+	 * 
+	 * private WebElement getRemarksFieldByIndex(int fieldCount) { String fieldName
+	 * = "items[" + (fieldCount - 1) + "].remarks"; return
+	 * driver.findElement(By.name(fieldName)); }
+	 * 
+	 * private void clickSubmitButton() { try { submitBtn.click(); } catch
+	 * (NoSuchElementException e) { System.out.println("Submit button not found.");
+	 * } }
+	 */
 	public void approveIcon() {
 		approveIconClick.click();
 	}

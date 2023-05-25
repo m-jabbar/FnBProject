@@ -37,10 +37,11 @@ public class OutwardPageTest extends TestBase {
 		Thread.sleep(1000);
 		Outward.selectIssuanceNum();
 		Thread.sleep(1000);
-		Outward.give1stRemarks();
+		Outward.enterRemarksAndSubmit();
 		Thread.sleep(1000);
-		Outward.clickSubmitBtn();
-		Thread.sleep(2000);
+		/*
+		 * Outward.clickSubmitBtn(); Thread.sleep(2000);
+		 */
 	}
 	
 	@Test(priority = 2)
