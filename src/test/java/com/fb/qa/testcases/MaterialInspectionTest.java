@@ -42,7 +42,7 @@ public class MaterialInspectionTest extends TestBase {
 		Thread.sleep(1000);
 		materialInspection.selectLocation();
 		Thread.sleep(1000);
-		materialInspection.giveRemarksAndSubmit();
+		materialInspection.enterRemarksAndSubmit();
 		Thread.sleep(1000);
 	}
 

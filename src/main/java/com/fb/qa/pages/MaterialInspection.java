@@ -37,7 +37,7 @@ public class MaterialInspection extends TestBase {
 	WebElement selectLocation;
 
 	@FindBy(name = "items.0.remarks")
-	WebElement giveRemarks;
+	WebElement enter1stRemarks;
 
 	@FindBy(name = "items.1.remarks")
 	WebElement give2ndRemarks;
@@ -101,34 +101,45 @@ public class MaterialInspection extends TestBase {
 		select.selectByIndex(2);
 	}
 	
-	public void giveRemarksAndSubmit() {
-	    giveRemarks.click();
-	    giveRemarks.sendKeys("Ok Issues");
-	    giveRemarks.sendKeys(Keys.TAB);
-
-	    TestBase base = new TestBase();
-	    base.scrollDown(driver, 0, 800);
-
-	    int fieldCount = 1;
-	    boolean isFieldPresent = true;
-
-	    while (isFieldPresent && fieldCount <= 6) {
-	        WebElement remarksField = getRemarksFieldByIndex(fieldCount);
-
-	        if (isElementPresent(remarksField)) {
-	            remarksField.click();
-	            remarksField.sendKeys("Ok");
-	            fieldCount++;
-	        } else {
-	            isFieldPresent = false;
-	        }
-	    }
-
-	    if (fieldCount <= 2) {
-	        submitBtn.click();
+	public void enterRemarksAndSubmit() {
+	    if (isElementPresent(enter1stRemarks)) {
+	        enterRemarks(enter1stRemarks, "Ok Issues");
+	        clickSubmitButton();
 	    } else {
+	        int fieldCount = 1;
+	        boolean isFieldPresent = true;
+
+	        while (isFieldPresent) {
+	            WebElement remarksField = getRemarksFieldByIndex(fieldCount);
+
+	            if (isElementPresent(remarksField)) {
+	                enterRemarks(remarksField, "Ok");
+	                fieldCount++;
+	            } else {
+	                isFieldPresent = false;
+	            }
+	        }
+
 	        clickSubmitButton();
 	    }
+	}
+
+	private void enterRemarks(WebElement remarksField, String remarks) {
+	    remarksField.click();
+	    remarksField.sendKeys(remarks);
+	}
+
+	private boolean isElementPresent(WebElement remarksField) {
+	    try {
+	        return remarksField.isDisplayed();
+	    } catch (NoSuchElementException e) {
+	        return false;
+	    }
+	}
+
+	private WebElement getRemarksFieldByIndex(int fieldCount) {
+	    String fieldName = "items[" + (fieldCount - 1) + "].remarks";
+	    return driver.findElement(By.name(fieldName));
 	}
 
 	private void clickSubmitButton() {
@@ -139,17 +150,34 @@ public class MaterialInspection extends TestBase {
 	    }
 	}
 
-	private WebElement getRemarksFieldByIndex(int index) {
-	    return driver.findElement(By.name("items." + (index - 1) + ".remarks"));
-	}
-
-	private boolean isElementPresent(WebElement element) {
-	    try {
-	        return element.isDisplayed();
-	    } catch (NoSuchElementException e) {
-	        return false;
-	    }
-	}
+	
+	/*
+	 * public void giveRemarksAndSubmit() { giveRemarks.click();
+	 * giveRemarks.sendKeys("Ok Issues"); giveRemarks.sendKeys(Keys.TAB);
+	 * 
+	 * TestBase base = new TestBase(); base.scrollDown(driver, 0, 800);
+	 * 
+	 * int fieldCount = 1; boolean isFieldPresent = true;
+	 * 
+	 * while (isFieldPresent && fieldCount <= 6) { WebElement remarksField =
+	 * getRemarksFieldByIndex(fieldCount);
+	 * 
+	 * if (isElementPresent(remarksField)) { remarksField.click();
+	 * remarksField.sendKeys("Ok"); fieldCount++; } else { isFieldPresent = false; }
+	 * }
+	 * 
+	 * if (fieldCount <= 2) { submitBtn.click(); } else { clickSubmitButton(); } }
+	 * 
+	 * private void clickSubmitButton() { try { submitBtn.click(); } catch
+	 * (NoSuchElementException e) { System.out.println("Submit button not found.");
+	 * } }
+	 * 
+	 * private WebElement getRemarksFieldByIndex(int index) { return
+	 * driver.findElement(By.name("items." + (index - 1) + ".remarks")); }
+	 * 
+	 * private boolean isElementPresent(WebElement element) { try { return
+	 * element.isDisplayed(); } catch (NoSuchElementException e) { return false; } }
+	 */
 	//also working
 	/*public void giveRemarksAndSubmit() {
 	    giveRemarks.click();
