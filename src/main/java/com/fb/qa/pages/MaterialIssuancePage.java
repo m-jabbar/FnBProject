@@ -25,26 +25,30 @@ public class MaterialIssuancePage extends TestBase {
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/input[1]")
 	WebElement addQRCode;
 
+	
+	@FindBy(name = "items.0.quantity")
+	WebElement enterQuantity;
+	
 	@FindBy(name = "items.0.assetNumber")
-	WebElement giveAssetsNumElement;
+	WebElement giveAssetsNum;
 
 	@FindBy(name = "items.0.remarks")
-	WebElement giveRemarksElement;
+	WebElement giveRemarks;
 
 	@FindBy(xpath= "//span[normalize-space()='Submit']")
-	WebElement submitBtnElement;
+	WebElement submitBtn;
 
 //	@FindBy(xpath ="//div[@role='alert']")
 //	WebElement toastMessageElement;
  
 	@FindBy(xpath = "//tbody/tr[1]/td[9]/div[1]/a[1]/button[1]/span[1]")
-	WebElement approveIconElement;
+	WebElement approveIcon;
 
 	@FindBy(id = "liveToastBtn")
-	WebElement approveButtonElement;
+	WebElement approveButton;
 
 	@FindBy(xpath = "/html[1]/body[1]/div[6]/div[1]/div[1]/div[1]/div[2]/div[1]/button[2]")
-	WebElement confirmButtonElement;
+	WebElement confirmButton;
 
 	public MaterialIssuancePage(WebDriver driver) {
 		this.driver = driver;
@@ -75,19 +79,19 @@ public class MaterialIssuancePage extends TestBase {
 	public void giveAssetsNum() {
 		TestBase base = new TestBase();
 		base.scrollDown(driver, 0, 600);
-		giveAssetsNumElement.click();
-		giveAssetsNumElement.sendKeys("aaaa");
+		giveAssetsNum.click();
+		giveAssetsNum.sendKeys("aaaa");
 	}
 
 	public void giveRemarks() {
 
-		giveRemarksElement.click();
-		giveRemarksElement.sendKeys("Ok");
+		giveRemarks.click();
+		giveRemarks.sendKeys("Ok");
 	}
 
 	public void clickSubmitBtn() throws InterruptedException {
 //		driver.get(driver.getCurrentUrl());
-		submitBtnElement.click();
+		submitBtn.click();
 
 	}
 
@@ -97,9 +101,9 @@ public class MaterialIssuancePage extends TestBase {
 
 
 	public void approveMaterialProcess() {
-		approveIconElement.click();
-		approveButtonElement.click();
-		confirmButtonElement.click();
+		approveIcon.click();
+		approveIcon.click();
+		approveIcon.click();
 	}
 
 }

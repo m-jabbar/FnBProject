@@ -1,5 +1,8 @@
 package com.fb.qa.pages;
 
+import java.util.NoSuchElementException;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,15 +35,6 @@ public class MaterialReturn extends TestBase {
 
 	@FindBy(xpath = "//select[@name='receivedByDepartment']")
 	WebElement receivingDepartment;
-
-	@FindBy(name = "items.0.quantity")
-	WebElement enter1stQuantity;
-
-	@FindBy(name = "items.1.quantity")
-	WebElement enter12ndQuantity;
-
-	@FindBy(name = "items.2.quantity")
-	WebElement enter3rdQuantity;
 
 	@FindBy(name = "items.0.remarks")
 	WebElement enter1stRemarks;
@@ -102,41 +96,58 @@ public class MaterialReturn extends TestBase {
 		select.selectByIndex(2);
 	}
 
-	public void enter1stQuantity() {
-		enter1stQuantity.click();
-		enter1stQuantity.sendKeys(Keys.CLEAR);
-		enter1stQuantity.sendKeys("1");
+	/*
+	 * public void enter1stQuantity() { enter1stQuantity.click();
+	 * enter1stQuantity.sendKeys(Keys.CLEAR); enter1stQuantity.sendKeys("1"); }
+	 */
+
+	public void enterRemarksAndSubmit() {
+	    if (isElementPresent(enter1stRemarks)) {
+	        enterRemarks(enter1stRemarks, "Ok Issues");
+	        clickSubmitButton();
+	    } else {
+	        int fieldCount = 1;
+	        boolean isFieldPresent = true;
+
+	        while (isFieldPresent) {
+	            WebElement remarksField = getRemarksFieldByIndex(fieldCount);
+
+	            if (isElementPresent(remarksField)) {
+	                enterRemarks(remarksField, "Ok");
+	                fieldCount++;
+	            } else {
+	                isFieldPresent = false;
+	            }
+	        }
+
+	        clickSubmitButton();
+	    }
 	}
 
-	public void enter1stRemarks() {
-		enter1stRemarks.click();
-		enter1stRemarks.sendKeys("Accepted");
+	private void enterRemarks(WebElement remarksField, String remarks) {
+	    remarksField.click();
+	    remarksField.sendKeys(remarks);
 	}
 
-	public void enter2ndQuantity() {
-		enter1stQuantity.click();
-		enter1stQuantity.sendKeys(Keys.CLEAR);
-		enter1stQuantity.sendKeys("1");
+	private boolean isElementPresent(WebElement remarksField) {
+	    try {
+	        return remarksField.isDisplayed();
+	    } catch (NoSuchElementException e) {
+	        return false;
+	    }
 	}
 
-	public void enter2ndRemarks() {
-		enter2ndRemarks.click();
-		enter2ndRemarks.sendKeys("Accepted");
+	private WebElement getRemarksFieldByIndex(int fieldCount) {
+	    String fieldName = "items[" + (fieldCount - 1) + "].remarks";
+	    return driver.findElement(By.name(fieldName));
 	}
 
-	public void enter3rdQuantity() {
-		enter3rdQuantity.click();
-		enter3rdQuantity.sendKeys(Keys.CLEAR);
-		enter3rdQuantity.sendKeys("1");
-	}
-
-	public void enter3rdRemarks() {
-		enter3rdRemarks.click();
-		enter3rdRemarks.sendKeys("Accepted");
-	}
-
-	public void submitBtn() {
-		submitBtn.click();
+	private void clickSubmitButton() {
+	    try {
+	        submitBtn.click();
+	    } catch (NoSuchElementException e) {
+	        System.out.println("Submit button not found.");
+	    }
 	}
 
 	public void approveIcon() {

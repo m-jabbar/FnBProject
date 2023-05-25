@@ -29,7 +29,7 @@ public class MaterialReturnTest extends TestBase{
 	}
 
 	@Test(priority = 1)
-	public void SuppliersProcess() throws InterruptedException {
+	public void MaterialReturnProcess() throws InterruptedException {
 		materialReturn.clickOnMaterialReturn();
 		Thread.sleep(1000);
 		materialReturn.clickOnAddMaterialReturn();
@@ -44,13 +44,7 @@ public class MaterialReturnTest extends TestBase{
 		Thread.sleep(1000);
 //		materialReturn.enterQuantity();
 //		Thread.sleep(1000);
-		materialReturn.enter1stRemarks();
-		Thread.sleep(1000);
-		materialReturn.enter2ndRemarks();
-		Thread.sleep(1000);
-		materialReturn.enter3rdRemarks();
-		Thread.sleep(1000);
-		materialReturn.submitBtn();
+		materialReturn.enterRemarksAndSubmit();
 		Thread.sleep(1000);
 		System.out.println("Congrats your test1 is passed");
 	}
