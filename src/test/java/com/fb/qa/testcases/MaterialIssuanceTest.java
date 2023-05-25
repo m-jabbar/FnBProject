@@ -44,6 +44,8 @@ public class MaterialIssuanceTest extends TestBase {
 		Thread.sleep(1000);
 		materialIssuance.addQRCode();
 		Thread.sleep(1000);
+		materialIssuance.enterQuantity();
+		Thread.sleep(1000);
 		materialIssuance.giveAssetsNum();
 		Thread.sleep(1000);
 		materialIssuance.giveRemarks();

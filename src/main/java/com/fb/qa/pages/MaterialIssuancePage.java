@@ -76,6 +76,13 @@ public class MaterialIssuancePage extends TestBase {
 		addQRCode.click();
 		addQRCode.sendKeys("123");
 	}
+	
+	public void enterQuantity() throws InterruptedException {
+		enterQuantity.click();
+		enterQuantity.sendKeys("1");
+	}
+	
+	
 	public void giveAssetsNum() {
 		TestBase base = new TestBase();
 		base.scrollDown(driver, 0, 600);
