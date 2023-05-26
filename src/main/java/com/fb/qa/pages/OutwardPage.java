@@ -66,7 +66,7 @@ public class OutwardPage extends TestBase {
 	@FindBy(xpath = "//button[@class='btn btn-lg btn-primary float-right']//span[@class='indicator-label'][normalize-space()='Approve']")
 	WebElement popupApproveBtn;
 
-	private List<By> remarksFieldLocators;
+	List<WebElement> remarksFields;
 
 	public OutwardPage(WebDriver driver) {
 		this.driver = driver;
@@ -93,50 +93,79 @@ public class OutwardPage extends TestBase {
 	}
 
 	public void enterRemarksInAllFields() {
-	    if (isFieldPresent(enterRemarks)) {
-	        enterRemarks(enterRemarks, "Ok");
-	    } else {
-	        return; // Break the loop if the next field is not present
-	    }
-	    if (isFieldPresent(enter2ndRemarks)) {
-	        enterRemarks(enter2ndRemarks, "Issued");
-	    } else {
-	        return; // Break the loop if the next field is not present
-	    }
-	    if (isFieldPresent(enter3rdRemarks)) {
-	        enterRemarks(enter3rdRemarks, "Remarks for field 3");
-	    } else {
-	        return; // Break the loop if the next field is not present
-	    }
-	    if (isFieldPresent(enter4thRemarks)) {
-	        enterRemarks(enter4thRemarks, "Remarks for field 4");
-	    } else {
-	        return; // Break the loop if the next field is not present
-	    }
-	    if (isFieldPresent(enter5thRemarks)) {
-	        enterRemarks(enter5thRemarks, "Remarks for field 5");
-	    } else {
-	        return; // Break the loop if the next field is not present
-	    }
-	    if (isFieldPresent(enter6thRemarks)) {
-	        enterRemarks(enter6thRemarks, "Remarks for field 6");
-	    } else {
-	        return; // Break the loop if the next field is not present
-	    }
-	    // Add additional if conditions for other fields if needed
-	}
+		String idPrefix = "input.";
+		String idSuffix = ".remarks";
+		int elementNumber = 0;
 
-	private void enterRemarks(WebElement field, String remarks) {
-	    field.sendKeys(remarks);
-	}
+		while (true) {
+			String id = idPrefix + elementNumber + idSuffix;
 
-	private boolean isFieldPresent(WebElement field) {
-	    try {
-	        return field.isDisplayed();
-	    } catch (org.openqa.selenium.NoSuchElementException e) {
-	        return false;
-	    }
+			  // get element and enter the input
+			enterRemarks.sendKeys("ok");
+			
+			WebElement remarksField;
+			try {
+				remarksField = driver.findElement(By.name("item.1.remarks"));
+			} catch (NoSuchElementException e) {
+				break;
+			}
+			remarksField.click();
+			remarksField.sendKeys("Ok");
+
+			// Check if the next element is present
+			elementNumber += 1;
+			id = idPrefix + elementNumber + idSuffix;
+			try {
+				driver.findElement(By.name(id));
+			} catch (NoSuchElementException e) {
+				break;
+			}
+		}
+
 	}
+	/*
+	 * remarksFields = new ArrayList<>(); remarksFields.add(enterRemarks);
+	 * remarksFields.add(enter2ndRemarks); remarksFields.add(enter3rdRemarks);
+	 * remarksFields.add(enter4thRemarks); remarksFields.add(enter5thRemarks);
+	 * remarksFields.add(enter6thRemarks); // Add additional remarks fields as
+	 * needed
+	 * 
+	 * for (WebElement remarksField : remarksFields) { if
+	 * (isFieldPresent(remarksField)) { enterRemarks(remarksField, "Ok Issues" +
+	 * remarksFields.indexOf(remarksField)); } else { break; // Break the loop if
+	 * the next field is not present } } }
+	 * 
+	 * private void enterRemarks(WebElement field, String remarks) {
+	 * field.sendKeys(remarks); }
+	 * 
+	 * private boolean isFieldPresent(WebElement field) { try { return
+	 * field.isDisplayed(); } catch (org.openqa.selenium.NoSuchElementException e) {
+	 * return false; } }
+	 */
+	/*
+	 * if (isFieldPresent(enterRemarks)) { enterRemarks(enterRemarks, "Ok"); } else
+	 * { return; // Break the loop if the next field is not present } if
+	 * (isFieldPresent(enter2ndRemarks)) { enterRemarks(enter2ndRemarks, "Issued");
+	 * } else { return; // Break the loop if the next field is not present } if
+	 * (isFieldPresent(enter3rdRemarks)) { enterRemarks(enter3rdRemarks,
+	 * "Remarks for field 3"); } else { return; // Break the loop if the next field
+	 * is not present } if (isFieldPresent(enter4thRemarks)) {
+	 * enterRemarks(enter4thRemarks, "Remarks for field 4"); } else { return; //
+	 * Break the loop if the next field is not present } if
+	 * (isFieldPresent(enter5thRemarks)) { enterRemarks(enter5thRemarks,
+	 * "Remarks for field 5"); } else { return; // Break the loop if the next field
+	 * is not present } if (isFieldPresent(enter6thRemarks)) {
+	 * enterRemarks(enter6thRemarks, "Remarks for field 6"); } else { return; //
+	 * Break the loop if the next field is not present } // Add additional if
+	 * conditions for other fields if needed }
+	 * 
+	 * private void enterRemarks(WebElement field, String remarks) {
+	 * field.sendKeys(remarks); }
+	 * 
+	 * private boolean isFieldPresent(WebElement field) { try { return
+	 * field.isDisplayed(); } catch (org.openqa.selenium.NoSuchElementException e) {
+	 * return false; } }
+	 */
 
 	public void submitBtn() throws InterruptedException {
 		submitBtn.click();

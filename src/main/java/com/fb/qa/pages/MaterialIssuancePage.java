@@ -78,7 +78,8 @@ public class MaterialIssuancePage extends TestBase {
 	}
 	
 	public void enterQuantity() throws InterruptedException {
-		enterQuantity.click();
+//		enterQuantity.click();
+		enterQuantity.sendKeys(Keys.CLEAR);
 		enterQuantity.sendKeys("1");
 	}
 	
