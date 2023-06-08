@@ -26,9 +26,10 @@ import com.fb.qa.util.TestUtil;
 
 public class  TestBase {
 
-	public static  WebDriver driver;
+	public WebDriver driver;
 	public Properties prop;
 	public WebDriverWait wait;
+	String xpath;
 	LoginPage loginPage;
 	HomePage homepage;
 //	public static Properties prop;
@@ -88,7 +89,7 @@ public class  TestBase {
 	}
 	
 	 public void selectDateFromCalendar(String calendarXPath, String formattedDate) {
-	        String xpath = String.format(calendarXPath, formattedDate);
+	        xpath = String.format(calendarXPath, formattedDate);
 	        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	    }
 
