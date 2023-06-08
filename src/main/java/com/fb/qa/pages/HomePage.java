@@ -67,6 +67,11 @@ public class HomePage extends TestBase {
 
 	@FindBy(xpath = "//a[@href='/purchase-order-returns']")
 	WebElement purchaseOrderReturn;
+	
+	@FindBy(xpath = "//a[@href='/inventory/report']")
+	WebElement inventoryReports;
+	
+	
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
@@ -153,6 +158,9 @@ public class HomePage extends TestBase {
 
 	public PurchaseOrderReturn clickOnPurchaseOrderReturn() {
 		return new PurchaseOrderReturn(driver);
+	}
+	public InventoryReports clickOnInventoryReports() {
+		return new InventoryReports(driver);
 	}
 
 

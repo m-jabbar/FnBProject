@@ -85,7 +85,7 @@ public class MaterialRequisitionPage extends TestBase {
 	public void selectLocation() {
 		locationList.click();
 		Select select = new Select(locationList);
-		select.selectByIndex(1);
+		select.selectByVisibleText("C4");
 	}
 
 	public void selectProduct() throws InterruptedException {

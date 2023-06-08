@@ -32,7 +32,7 @@ public class  TestBase {
 	LoginPage loginPage;
 	HomePage homepage;
 //	public static Properties prop;
-
+// Good work
 	public TestBase() {
 		try {
 			prop = new Properties();

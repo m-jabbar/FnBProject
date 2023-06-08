@@ -16,11 +16,12 @@ public class MaterialIssuancePage extends TestBase {
 	@FindBy(xpath ="//a[normalize-space()='Add Material Issuance']")
 	WebElement addMaterialIssuance;
 	
-	@FindBy(xpath = "//div[contains(@class,\"multi-select__input-container css-19bb58m\")]")
+	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/form[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[2]")
 	WebElement materialReqNo;
 	
 	@FindBy(id = "react-select-2-option-0")
 	WebElement selectMaterialReqNo;
+//	react-select-2-option-0
 	
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/input[1]")
 	WebElement addQRCode;
@@ -74,7 +75,7 @@ public class MaterialIssuancePage extends TestBase {
 
 	public void addQRCode() throws InterruptedException {
 		addQRCode.click();
-		addQRCode.sendKeys("123");
+		addQRCode.sendKeys("7622201726932-20230607");
 	}
 	
 	public void enterQuantity() throws InterruptedException {

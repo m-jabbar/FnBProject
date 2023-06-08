@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.fb.qa.testcases.OutwardPageTest">
+      <class name="com.fb.qa.testcases.MaterialIssuanceTest">
         <methods>
-          <include name="approveOutwardProcess"/>
+          <include name="materialIssuanceProcess"/>
           <include name="setup"/>
-          <include name="outwardProcess"/>
-          <include name="teardown"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.fb.qa.testcases.OutwardPageTest -->
+      </class> <!-- com.fb.qa.testcases.MaterialIssuanceTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
