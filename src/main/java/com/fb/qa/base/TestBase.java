@@ -24,7 +24,7 @@ import com.fb.qa.pages.HomePage;
 import com.fb.qa.pages.LoginPage;
 import com.fb.qa.util.TestUtil;
 
-public class  TestBase {
+public class TestBase {
 
 	public WebDriver driver;
 	public Properties prop;
@@ -32,6 +32,7 @@ public class  TestBase {
 	String xpath;
 	LoginPage loginPage;
 	HomePage homepage;
+
 //	public static Properties prop;
 // Good work
 	public TestBase() {
@@ -53,7 +54,7 @@ public class  TestBase {
 
 			System.setProperty("webdriver.chrome",
 					"C:\\Users\\muhammad.jabbar\\eclipse-workspace\\F_B_POM_TestNG\\chromedriver.exe");
-		System.setProperty("webdriver.http.factory", "jdk-http-client");
+			System.setProperty("webdriver.http.factory", "jdk-http-client");
 			driver = new ChromeDriver();
 		}
 		ChromeOptions options = new ChromeOptions();
@@ -65,46 +66,43 @@ public class  TestBase {
 		driver.get(prop.getProperty("url"));
 		return this.driver;
 	}
-	
-	/* public void login(String username, String password) {
-	        loginPage = new LoginPage(driver);
-	        loginPage.enterUsername(username);
-	        loginPage.enterPassword(password);
-	        loginPage.clickLoginButton();
-	    }*/
-	
-	public void failTestCases( String testMethodName) {
-		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+
+	/*
+	 * public void login(String username, String password) { loginPage = new
+	 * LoginPage(driver); loginPage.enterUsername(username);
+	 * loginPage.enterPassword(password); loginPage.clickLoginButton(); }
+	 */
+
+	public void failTestCases(String testMethodName) {
+		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(srcFile, new File("C:\\Users\\muhammad.jabbar\\eclipse-workspace\\fbProject\\screenshots\\"+ testMethodName+ "_" + ".jpg"));
+			FileUtils.copyFile(srcFile,
+					new File("C:\\Users\\muhammad.jabbar\\eclipse-workspace\\fbProject\\screenshots\\" + testMethodName
+							+ "_" + ".jpg"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
 
 	public void scrollDown(WebDriver driver, int x, int y) {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(" + x + "," + y + ")");
 	}
-	
-	 public void selectDateFromCalendar(String calendarXPath, String formattedDate) {
-	        xpath = String.format(calendarXPath, formattedDate);
-	        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    }
 
-	    public String getFormattedCurrentDate() {
-	        LocalDate currentDate = LocalDate.now();
-	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
-	        return currentDate.format(formatter);
-	    }
-	
-	
-	
+	public void selectDateFromCalendar(String calendarXPath, String formattedDate) {
+		xpath = String.format(calendarXPath, formattedDate);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	}
+
+	public String getFormattedCurrentDate() {
+		LocalDate currentDate = LocalDate.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+		return currentDate.format(formatter);
+	}
+
 	public void waitForElementToBeClickable(By locator) {
 		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
-
 
 	public void tearDown() throws InterruptedException {
 		// Thread.sleep(1000);

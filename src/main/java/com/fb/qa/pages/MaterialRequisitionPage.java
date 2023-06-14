@@ -30,7 +30,7 @@ public class MaterialRequisitionPage extends TestBase {
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/div[1]/div[1]/div[2]")
 	WebElement productList;
 	
-	@FindBy(id = "react-select-2-option-2")
+	@FindBy(id = "react-select-2-option-4")
 	WebElement selectProductList;
 
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/input[1]")

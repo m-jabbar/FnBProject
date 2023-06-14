@@ -9,39 +9,39 @@ import com.fb.qa.base.TestBase;
 
 public class MaterialIssuancePage extends TestBase {
 	public WebDriver driver;
+	private String qrCode = "815096000809-20230608";
 
 	@FindBy(xpath = "//a[contains(@href, \"/material-issuance\")]")
 	WebElement materialIssuance;;
 
-	@FindBy(xpath ="//a[normalize-space()='Add Material Issuance']")
+	@FindBy(xpath = "//a[normalize-space()='Add Material Issuance']")
 	WebElement addMaterialIssuance;
-	
+
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/form[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[2]")
 	WebElement materialReqNo;
-	
+
 	@FindBy(id = "react-select-2-option-0")
 	WebElement selectMaterialReqNo;
 //	react-select-2-option-0
-	
+
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/input[1]")
 	WebElement addQRCode;
 
-	
 	@FindBy(name = "items.0.quantity")
 	WebElement enterQuantity;
-	
+
 	@FindBy(name = "items.0.assetNumber")
 	WebElement giveAssetsNum;
 
 	@FindBy(name = "items.0.remarks")
 	WebElement giveRemarks;
 
-	@FindBy(xpath= "//span[normalize-space()='Submit']")
+	@FindBy(xpath = "//span[normalize-space()='Submit']")
 	WebElement submitBtn;
 
 //	@FindBy(xpath ="//div[@role='alert']")
 //	WebElement toastMessageElement;
- 
+
 	@FindBy(xpath = "//tbody/tr[1]/td[9]/div[1]/a[1]/button[1]/span[1]")
 	WebElement approveIcon;
 
@@ -75,16 +75,16 @@ public class MaterialIssuancePage extends TestBase {
 
 	public void addQRCode() throws InterruptedException {
 		addQRCode.click();
-		addQRCode.sendKeys("7622201726932-20230607");
+		addQRCode.clear();
+		addQRCode.sendKeys(qrCode);
 	}
-	
+
 	public void enterQuantity() throws InterruptedException {
 //		enterQuantity.click();
 		enterQuantity.sendKeys(Keys.CLEAR);
 		enterQuantity.sendKeys("1");
 	}
-	
-	
+
 	public void giveAssetsNum() {
 		TestBase base = new TestBase();
 		base.scrollDown(driver, 0, 600);
@@ -104,10 +104,9 @@ public class MaterialIssuancePage extends TestBase {
 
 	}
 
-	/*public String getToastMessage() {
-		return toastMessageElement.getText();
-	}*/
-
+	/*
+	 * public String getToastMessage() { return toastMessageElement.getText(); }
+	 */
 
 	public void approveMaterialProcess() {
 		approveIcon.click();
