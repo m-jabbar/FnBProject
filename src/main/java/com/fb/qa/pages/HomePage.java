@@ -9,76 +9,75 @@ import com.fb.qa.base.TestBase;
 
 public class HomePage extends TestBase {
 
-	public WebDriver driver;
-	// page factory
+	private WebDriver driver;
+
+	// Page Factory
 	@FindBy(xpath = "//a[contains(@href, \"material-requisition\")]")
-	WebElement materialReq;
+	private WebElement materialReq;
 
 	@FindBy(xpath = "//a[@href='/outward']//div[@class='icon']//img[@alt='icon']")
-	WebElement outward;
+	private WebElement outward;
 
 	@FindBy(xpath = "//a[@href='/inward']//div[@class='icon']//img[@alt='icon']")
-	WebElement inward;
+	private WebElement inward;
 
 	@FindBy(xpath = "//a[@href='/material-issuance']//div[@class='icon']//img[@alt='icon']")
-	WebElement materialIssuance;
+	private WebElement materialIssuance;
 
-	@FindBy(xpath = "//*[@id=\"kt_content_container\"]/section/div/div/div/div/div/div/div[5]/a")
-	WebElement purchaseOrders;
+	@FindBy(xpath = "//a[@href='/purchase-orders']")
+	private WebElement purchaseOrders;
 
-	@FindBy(xpath = "//*[@id=\"kt_content_container\"]/section/div/div/div/div/div/div/div[6]/a")
-	WebElement materialInspection;
+	@FindBy(xpath = "//a[@href='/material-inspection']")
+	private WebElement materialInspection;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[7]/a[1]")
-	WebElement goodsReceiveNote;
+	@FindBy(xpath = "//a[@href='/goods-received-note']")
+	private WebElement goodsReceiveNote;
 
 	@FindBy(xpath = "//a[@href=\"/product-categories\"]")
-	WebElement productCategory;
+	private WebElement productCategory;
 
 	@FindBy(xpath = "//a[@href='/products']")
-	WebElement products;
+	private WebElement products;
 
 	@FindBy(xpath = "//a[@href='/locations']")
-	WebElement locations;
+	private WebElement locations;
 
 	@FindBy(xpath = "//a[@href='/departments']")
-	WebElement departments;
+	private WebElement departments;
 
 	@FindBy(xpath = "//a[@href='/budgets']")
-	WebElement budgets;
+	private WebElement budgets;
 
 	@FindBy(xpath = "//a[@href='/budgets/report']")
-	WebElement budgetsReport;
+	private WebElement budgetsReport;
 
 	@FindBy(xpath = "//a[@href='/assets']")
-	WebElement assets;
+	private WebElement assets;
 
 	@FindBy(xpath = "//a[@href='/inventory']")
-	WebElement inventory;
+	private WebElement inventory;
 
 	@FindBy(xpath = "//a[@href='/suppliers']")
-	WebElement suppliers;
+	private WebElement suppliers;
 
 	@FindBy(xpath = "//a[@href='/supplier-bills']")
-	WebElement suppliersBills;
+	private WebElement suppliersBills;
 
 	@FindBy(xpath = "//a[@href='/material-return']")
-	WebElement materialReturn;
+	private WebElement materialReturn;
 
 	@FindBy(xpath = "//a[@href='/purchase-order-returns']")
-	WebElement purchaseOrderReturn;
-	
+	private WebElement purchaseOrderReturn;
+
 	@FindBy(xpath = "//a[@href='/inventory/report']")
-	WebElement inventoryReports;
-	
-	
+	private WebElement inventoryReports;
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	public String verifyPageTitle() {
+	public String getPageTitle() {
 		return driver.getTitle();
 	}
 
@@ -86,83 +85,100 @@ public class HomePage extends TestBase {
 		materialReq.click();
 		return new MaterialRequisitionPage(driver);
 	}
+
 	public MaterialIssuancePage clickOnMaterialIssuance() {
 		materialIssuance.click();
-		// this.driver = driver;
 		return new MaterialIssuancePage(driver);
 	}
-	
+
 	public OutwardPage clickOnOutward() {
+		outward.click();
 		return new OutwardPage(driver);
 	}
 
 	public InwardPage clickOnInward() {
+		inward.click();
 		return new InwardPage(driver);
 	}
 
+	public MaterialReturn clickOnMaterialReturn() {
+		materialReturn.click();
+		return new MaterialReturn(driver);
+	}
+
 	public PurchaseOrders clickOnPurchaseOrders() {
+		purchaseOrders.click();
 		return new PurchaseOrders(driver);
 	}
 
+	public PurchaseOrderReturn clickOnPurchaseOrderReturn() {
+		purchaseOrderReturn.click();
+		return new PurchaseOrderReturn(driver);
+	}
+
 	public MaterialInspection clickOnMaterialInspection() {
+		materialInspection.click();
 		return new MaterialInspection(driver);
 	}
 
-	public GoodsReceiveNotes clickOnGoodsRecieveNotes() {
+	public GoodsReceiveNotes clickOnGoodsReceiveNotes() {
+		goodsReceiveNote.click();
 		return new GoodsReceiveNotes(driver);
 	}
 
-	public ProductCategory clickOnProductCategory() {
-		return new ProductCategory(driver);
-	}
-
-	public Products clickOnProducts() {
-		return new Products(driver);
-	}
-
-	public Locations clickOnLocations() {
-		return new Locations(driver);
-	}
-
-	public Departments clickOnDepartments() {
-		return new Departments(driver);
-	}
-
-	public Budgets clickOnBudgets() {
-		return new Budgets(driver);
-	}
-
-	public BudgetsReports clickOnBudgetsReports() {
-		return new BudgetsReports(driver);
-	}
-
 	public Assets clickOnAssets() {
+		assets.click();
 		return new Assets(driver);
 	}
 
-	public Inventory clickOnInventory() {
-		return new Inventory(driver);
-	}
-
 	public Suppliers clickOnSuppliers() {
+		suppliers.click();
 		return new Suppliers(driver);
 	}
 
 	public SuppliersBills clickOnSuppliersBills() {
+		suppliersBills.click();
 		return new SuppliersBills(driver);
 	}
 
-	public MaterialReturn clickOnMaterialReturn() {
-		return new MaterialReturn(driver);
+	public Budgets clickOnBudgets() {
+		budgets.click();
+		return new Budgets(driver);
 	}
 
-	public PurchaseOrderReturn clickOnPurchaseOrderReturn() {
-		return new PurchaseOrderReturn(driver);
+	public BudgetsReports clickOnBudgetsReports() {
+		budgetsReport.click();
+		return new BudgetsReports(driver);
 	}
+
+	public Inventory clickOnInventory() {
+		inventory.click();
+		return new Inventory(driver);
+	}
+
 	public InventoryReports clickOnInventoryReports() {
+		inventoryReports.click();
 		return new InventoryReports(driver);
 	}
 
+	public Products clickOnProducts() {
+		products.click();
+		return new Products(driver);
+	}
 
+	public ProductCategory clickOnProductCategory() {
+		productCategory.click();
+		return new ProductCategory(driver);
+	}
+
+	public Locations clickOnLocations() {
+		locations.click();
+		return new Locations(driver);
+	}
+
+	public Departments clickOnDepartments() {
+		departments.click();
+		return new Departments(driver);
+	}
 
 }

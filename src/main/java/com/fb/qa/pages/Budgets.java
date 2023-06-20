@@ -1,71 +1,72 @@
 package com.fb.qa.pages;
 
+import org.apache.commons.lang3.RandomStringUtils;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.fb.qa.base.TestBase;
 
 public class Budgets extends TestBase {
-	public WebDriver driver;
 
 	@FindBy(xpath = "//a[@href='/budgets']")
-	WebElement budgets;
+	private WebElement budgets;
 
 	@FindBy(xpath = "//a[normalize-space()='Add Budget']")
-	WebElement addBudgets;
+	private WebElement addBudget;
 
 	@FindBy(xpath = "//input[@placeholder='Title']")
-	WebElement addTitle;
+	private WebElement titleInput;
 
 	@FindBy(xpath = "//input[@name='startDate']")
-	WebElement startDate;
+	private WebElement startDateInput;
 
-	@FindBy(xpath = "//div[@aria-label='Choose Tuesday, May 9th, 2023']")
-	WebElement selectStartDate;
+//	@FindBy(xpath = "//div[@aria-label='Choose Tuesday, May 9th, 2023']")
+//	private WebElement selectStartDate;
 
 	@FindBy(xpath = "//input[@name='endDate']")
-	WebElement endDate;
+	private WebElement endDateInput;
 
-	@FindBy(xpath = "//div[@aria-label='Choose Friday, May 26th, 2023']")
-	WebElement selectEndDate;
+	@FindBy(xpath = "//div[@aria-label='Choose Saturday, July 1st, 2023']")
+	private WebElement selectEndDate;
 
 	@FindBy(name = "sections.0.title")
-	WebElement addSectionTitle;
+	private WebElement sectionTitleInput;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/form[1]/div[2]/table[1]/tbody[1]/tr[3]/td[1]/div[1]/div[1]/div[1]/div[1]/div[2]")
-	WebElement clickOnProductList;
+	@FindBy(id = "react-select-2-input")
+	private WebElement productList;
 
-	@FindBy(id = "react-select-2-option-0")
-	WebElement selectValueFromProductList;
+	@FindBy(id = "react-select-2-option-1")
+	private WebElement selectionOfProduct;
 
-	@FindBy(name = "sections.0.items.0.quantity")
-	WebElement enterQuantity;
+	@FindBy(xpath = "//input[@placeholder='Quantity']")
+	private WebElement enterQuantity;
 
-	@FindBy(name = "sections.0.items.0.rate")
-	WebElement enterRate;
+	@FindBy(xpath = "//input[@placeholder='Rate']")
+	private WebElement enterRate;
 
-	@FindBy(xpath = "//button[@title='Submit']")
-	WebElement submitBtn;
+	@FindBy(xpath = "//span[normalize-space()='Submit']")
+	private WebElement submitBudget;
 
 	@FindBy(xpath = "//div[contains(@role,\"alert\")]")
-	WebElement toastMessageVeri;
+	private WebElement toastMessage;
+
+	@FindBy(xpath = "//button[@title='Submit']")
+	private WebElement submitButton;
 
 	@FindBy(xpath = "//body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[12]/div[1]/a[2]/span[1]")
-	WebElement approveIconClick;
+	private WebElement approveIcon;
 
 	@FindBy(xpath = "//span[normalize-space()='Approve']")
-	WebElement approveBtn;
+	private WebElement approveButton;
 
 	@FindBy(xpath = "//button[@class='btn btn-lg btn-primary']//span[@class='indicator-label'][normalize-space()='Approve']")
-	WebElement againApproveBtn;
-
-	@FindBy(xpath = "//div[@class='Toastify']")
-	WebElement toastMessageVeri1;
+	private WebElement againApproveButton;
 
 	public Budgets(WebDriver driver) {
-		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
@@ -73,67 +74,73 @@ public class Budgets extends TestBase {
 		budgets.click();
 	}
 
-	public void clickOnAddBudgets() {
-		addBudgets.click();
+	public void clickOnAddBudget() {
+		addBudget.click();
 	}
 
-	public void addTitle() {
-		addTitle.click();
-		addTitle.sendKeys("This is our budget1234");
+	public void enterTitle() {
+		String uniqueTitle = "BudgetTitle_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMddHHmmss"));
+		titleInput.click();
+		titleInput.sendKeys(uniqueTitle);
 	}
 
-	public void startDateProcess() {
-		startDate.click();
-		selectStartDate.click();
+	public void selectStartDate() {
+		LocalDate currentDate = LocalDate.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		String formattedDate = currentDate.format(formatter);
+		startDateInput.sendKeys(formattedDate);
 	}
 
-	public void endDateProcess() {
-		endDate.click();
+	/*
+	 * public void selectStartDate() { startDateInput.click();
+	 * selectStartDate.click(); }
+	 */
+	public void selectEndDate() {
+		endDateInput.click();
 		selectEndDate.click();
 	}
 
-	public void sectionTitleProcess() {
-		addSectionTitle.click();
-		addSectionTitle.sendKeys("This is title1");
+	public void enterSectionTitle() {
+	    String baseTitle = "Funds";
+	    String uniqueString = RandomStringUtils.randomAlphabetic(5); // Adjust the length as needed
+	    String title = baseTitle + " " + uniqueString;
+	    sectionTitleInput.click();
+	    sectionTitleInput.sendKeys(title);
+	}
+	
+	public void selectProductFromList() {
+		productList.click();
+		selectionOfProduct.click();
 	}
 
-	public void selectProductListProcess() {
-		clickOnProductList.click();
-		selectValueFromProductList.click();
-	}
-
-	public void enterQuantity() {
+	public void enterQuantity(String quantity) {
 		enterQuantity.click();
-		enterQuantity.sendKeys("1");
+		enterQuantity.sendKeys(quantity);
 	}
 
-	public void enterRate() {
+	public void enterRate(String rate) {
 		enterRate.click();
-		enterRate.sendKeys("100");
+		enterRate.sendKeys(rate);
 	}
 
-	public void submitBtn() {
-		submitBtn.click();
+	public void submitBudget() {
+		submitBudget.click();
 	}
 
 	public String getToastMessage() {
-		return toastMessageVeri.getText();
+		return toastMessage.getText();
 	}
 
-	public void approveIcon() {
-		approveIconClick.click();
+	public void clickOnApproveIcon() {
+		approveIcon.click();
 	}
 
-	public void clickOnApproveBtn() {
-		approveBtn.click();
+	public void clickOnApproveButton() {
+		
+		approveButton.click();
 	}
 
-	public void clickAgainOnApproveBtn() {
-		againApproveBtn.click();
+	public void clickAgainOnApproveButton() {
+		againApproveButton.click();
 	}
-
-	public String getToastMessage1() {
-		return toastMessageVeri1.getText();
-	}
-
 }

@@ -14,48 +14,51 @@ import com.fb.qa.pages.OutwardPage;
 
 @Listeners(MyListeners.class)
 public class OutwardPageTest extends TestBase {
+	LoginPage loginPage;
+	HomePage homepage;
+	MaterialIssuancePage addmaterialreq;
+	OutwardPage outwardPage;
+
 	public OutwardPageTest() {
 		super();
 	}
 
-	LoginPage loginPage;
-	HomePage homepage;
-	MaterialIssuancePage addmaterialreq;
-	OutwardPage Outward;
-
 	@BeforeMethod
 	public void setup() throws InterruptedException {
-		this.driver = initilization();
-		loginPage = new LoginPage(this.driver);
-		homepage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
-		Outward = homepage.clickOnOutward();
+		driver = initialization();
+		homepage = new HomePage(driver);
+		outwardPage = homepage.clickOnOutward();
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1, description = "Perform the outward process")
 	public void outwardProcess() throws InterruptedException {
-		Outward.clickOnOutward();
-		Outward.clickOnAddOutward();
+		outwardPage.clickOnAddOutward();
 		Thread.sleep(1000);
-		Outward.selectIssuanceNum();
+		outwardPage.selectIssuanceNum();
 		Thread.sleep(1000);
-		Outward.enterRemarksInAllFields();
+		scrollDown(driver, 0, 600);
+		outwardPage.enterRemarksInAllFields();
 		Thread.sleep(1000);
-		Outward.submitBtn();
+		outwardPage.submitBtn();
 		Thread.sleep(2000);
+		System.out.println("Congrats! your Outward Test is Passed");
 
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2, description = "Approve the outward process")
 	public void approveOutwardProcess() throws InterruptedException {
-		Outward.clickOnOutward();
+		outwardPage.clickOnApproveIcon();
 		Thread.sleep(1000);
-		Outward.approveProcess();
-		Thread.sleep(2000);
+		scrollDown(driver, 0, 600);
+		outwardPage.clickOnApproveButton();
+		Thread.sleep(1000);
+		outwardPage.clickOnPopupApproveButton();
+		Thread.sleep(1000);
+		System.out.println("Congrats! your Approve Outward Test is Passed");
 	}
 
 	@AfterMethod
 	public void teardown() throws InterruptedException {
 		driver.quit();
-
 	}
 }

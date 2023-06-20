@@ -23,32 +23,29 @@ public class InwardPageTest extends TestBase {
 
 	@BeforeMethod
 	public void setup() throws InterruptedException {
-		this.driver = initilization();
-		loginPage = new LoginPage(this.driver);
-		homepage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		this.driver = initialization();
+		homepage = new HomePage(driver);
 		inward = homepage.clickOnInward();
 	}
 
 	@Test
-	public void InwardProcess() throws InterruptedException {
+	public void inwardProcess() throws InterruptedException {
 		inward.clickOnInward();
 		Thread.sleep(1000);
 		inward.clickOnAddInward();
 		Thread.sleep(1000);
-		inward.outwardList();
+		inward.selectInwardNumber();
 		Thread.sleep(1000);
-		inward.giveRemarks();
+		inward.enterRemarksInAllFields();
 		Thread.sleep(1000);
-		inward.submitBtn();
+		inward.clickSubmitButton();
 		Thread.sleep(1000);
-		inward.ApproveInward();
+		inward.approveInward();
 		Thread.sleep(3000);
 	}
-	
+
 	@AfterMethod
 	public void teardown() throws InterruptedException {
-		driver.quit();
-
+		super.tearDown();
 	}
-
 }

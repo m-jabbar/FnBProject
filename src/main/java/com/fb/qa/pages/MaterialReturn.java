@@ -9,52 +9,46 @@ import org.openqa.selenium.support.ui.Select;
 import com.fb.qa.base.TestBase;
 
 public class MaterialReturn extends TestBase {
-	public WebDriver driver;
+	private WebDriver driver;
 
 	@FindBy(xpath = "//a[@href='/material-return']")
-	WebElement materialReturn;
+	private WebElement materialReturn;
 
 	@FindBy(xpath = "//a[normalize-space()='Add Material Return']")
-	WebElement addMaterialReturn;
+	private WebElement addMaterialReturn;
 
-	@FindBy(xpath = "//div[@class='multi-select__control css-13cymwt-control']")
-	WebElement materialIssuanceNo;
+	@FindBy(css = ".multi-select__control")
+	private WebElement materialIssuanceNo;
 
 	@FindBy(id = "react-select-2-option-0")
-	WebElement selectMaterialIssuanceNo;
+	private WebElement selectMaterialIssuanceNo;
 
-	@FindBy(xpath = "//select[@name='location']")
-	WebElement selectLoacation;
+	@FindBy(name = "location")
+	private WebElement selectLocation;
 
-	@FindBy(xpath = "//select[@name='providedToDepartment']")
-	WebElement providedDepartment;
+	@FindBy(name = "providedToDepartment")
+	private WebElement providedDepartment;
 
-	@FindBy(xpath = "//select[@name='receivedByDepartment']")
-	WebElement receivingDepartment;
+	@FindBy(name = "receivedByDepartment")
+	private WebElement receivingDepartment;
 
-	@FindBy(name = "items.0.remarks")
-	WebElement enterRemarks;
-
-	@FindBy(name = "items.1.remarks")
-	WebElement enter2ndRemarks;
-
-	@FindBy(name = "items.2.remarks")
-	WebElement enter3rdRemarks;
+	@FindBy(css = "input[name^='items'][name$='.remarks']")
+	private java.util.List<WebElement> remarksFields;
 
 	@FindBy(id = "liveToastBtn")
-	WebElement submitBtn;
+	private WebElement submitBtn;
 
-	@FindBy(xpath = "//body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[9]/div[1]/a[1]/button[1]/span[1]")
-	WebElement approveIconClick;
+	@FindBy(css = "div.toast-message")
+	private WebElement toastMessageVerify;
+
+	@FindBy(css = "div[data-testid='approveIcon']")
+	private WebElement approveIconClick;
 
 	@FindBy(xpath = "//span[normalize-space()='Approve']")
-	WebElement approveBtn;
+	private WebElement approveBtn;
 
 	@FindBy(xpath = "//button[@class='btn btn-lg btn-primary float-right']")
-	WebElement againApproveBtn;
-
-	@FindBy(xpath = "//div[contains(text(),'Supplier has been approved (jabbar1)')]")
-	WebElement toastMessageVeri1;
+	private WebElement againApproveBtn;
 
 	public MaterialReturn(WebDriver driver) {
 		this.driver = driver;
@@ -69,91 +63,37 @@ public class MaterialReturn extends TestBase {
 		addMaterialReturn.click();
 	}
 
-	public void materialReturnList() {
+	public void selectMaterialReturnList() {
 		materialIssuanceNo.click();
 		selectMaterialIssuanceNo.click();
 	}
 
 	public void selectLocation() {
-		selectLoacation.click();
-		Select select = new Select(selectLoacation);
-		select.selectByIndex(2);
+		new Select(selectLocation).selectByIndex(2);
 	}
 
-	public void selectProvideDepartment() {
-		providedDepartment.click();
-		Select select = new Select(providedDepartment);
-		select.selectByIndex(2);
+	public void selectProvidedDepartment() {
+		new Select(providedDepartment).selectByIndex(2);
 	}
 
 	public void selectReceivedDepartment() {
-		receivingDepartment.click();
-		Select select = new Select(receivingDepartment);
-		select.selectByIndex(2);
+		new Select(receivingDepartment).selectByIndex(2);
 	}
 
-	/*
-	 * public void enter1stQuantity() { enter1stQuantity.click();
-	 * enter1stQuantity.sendKeys(Keys.CLEAR); enter1stQuantity.sendKeys("1"); }
-	 */
+	public void enterRemarks() {
+		scrollDown(driver, 0, 600);
 
-	public void enterRemarksAndSubmit() {
-		WebElement[] remarksFields = { enterRemarks, enter2ndRemarks };
-		boolean allFieldsFilled = true;
-
-		for (int i = 0; i < remarksFields.length; i++) {
-		    WebElement remarksField = remarksFields[i];
-		    if (remarksField.isDisplayed()) {
-		        TestBase base = new TestBase();
-		        base.scrollDown(driver, 0, 1000);
-		        remarksField.click();
-		        remarksField.sendKeys("Issues");
-
-		        if (remarksField.getAttribute("value").isEmpty()) {
-		            allFieldsFilled = false;
-		            break;
-		        }
-		    } else if (i == 0) {
-		        // Handle the case where only one field is present
-		        allFieldsFilled = false;
-		        break;
-		    }
+		for (WebElement remarksField : remarksFields) {
+			remarksField.click();
+			remarksField.sendKeys("Ok");
 		}
+	}
 
-		if (allFieldsFilled) {
-		    submitBtn.click();}
-		}
+	public void clickSubmitBtn() {
+		submitBtn.click();
+	}
 
-
-	/*
-	 * if (isElementPresent(enter1stRemarks)) { enterRemarks(enter1stRemarks,
-	 * "Ok Issues"); clickSubmitButton(); } else { int fieldCount = 1; boolean
-	 * isFieldPresent = true;
-	 * 
-	 * while (isFieldPresent) { WebElement remarksField =
-	 * getRemarksFieldByIndex(fieldCount);
-	 * 
-	 * if (isElementPresent(remarksField)) { enterRemarks(remarksField, "Ok");
-	 * fieldCount++; } else { isFieldPresent = false; } }
-	 * 
-	 * clickSubmitButton(); } }
-	 * 
-	 * private void enterRemarks(WebElement remarksField, String remarks) {
-	 * remarksField.click(); remarksField.sendKeys(remarks); }
-	 * 
-	 * private boolean isElementPresent(WebElement remarksField) { try { return
-	 * remarksField.isDisplayed(); } catch (NoSuchElementException e) { return
-	 * false; } }
-	 * 
-	 * private WebElement getRemarksFieldByIndex(int fieldCount) { String fieldName
-	 * = "items[" + (fieldCount - 1) + "].remarks"; return
-	 * driver.findElement(By.name(fieldName)); }
-	 * 
-	 * private void clickSubmitButton() { try { submitBtn.click(); } catch
-	 * (NoSuchElementException e) { System.out.println("Submit button not found.");
-	 * } }
-	 */
-	public void approveIcon() {
+	public void clickApproveIcon() {
 		approveIconClick.click();
 	}
 
@@ -164,4 +104,5 @@ public class MaterialReturn extends TestBase {
 	public void clickAgainOnApproveBtn() {
 		againApproveBtn.click();
 	}
+
 }

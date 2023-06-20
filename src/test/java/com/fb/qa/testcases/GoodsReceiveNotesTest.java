@@ -20,37 +20,42 @@ public class GoodsReceiveNotesTest extends TestBase {
 
 	LoginPage loginPage;
 	HomePage homepage;
-	GoodsReceiveNotes goodsReceiveNote;
+	GoodsReceiveNotes goodsReceiveNotes;
 
 	@BeforeMethod
 	public void setup() throws InterruptedException {
-		this.driver = initilization();
-		loginPage = new LoginPage(this.driver);
-		homepage = loginPage.login("abdullah.bilal@nxb.com.pk", "Qajob@1234");
-		goodsReceiveNote = homepage.clickOnGoodsRecieveNotes();
+		driver = initialization();
+		homepage = new HomePage(driver);
+		goodsReceiveNotes = homepage.clickOnGoodsReceiveNotes();
 	}
 
 	@Test
 	public void GoodsRecieveProcess() throws InterruptedException {
-		goodsReceiveNote.clickOnGoodsRecieveNotes();
+		goodsReceiveNotes.clickOnGoodsRecieveNotes();
 		Thread.sleep(1000);
-		goodsReceiveNote.clickOnAddGoodsRecieveNotes();
+		goodsReceiveNotes.clickOnAddGoodsRecieveNotes();
 		Thread.sleep(1000);
-		goodsReceiveNote.materialInspectionList();
+		goodsReceiveNotes.materialInspectionList();
 		Thread.sleep(1000);
-		goodsReceiveNote.enterDeliveryNum();
+		goodsReceiveNotes.enterDeliveryNum();
 		Thread.sleep(2000);
-		goodsReceiveNote.uploadFileProcess();
+		goodsReceiveNotes.uploadFileProcess();
 		Thread.sleep(3000);
-		goodsReceiveNote.selectDateProcess();
+		goodsReceiveNotes.selectDateProcess();
 		Thread.sleep(2000);
-		goodsReceiveNote.clickOnSubmitBtn();
+		goodsReceiveNotes.clickOnSubmitBtn();
+		Thread.sleep(3000);
+		System.out.println("Congratulation");
+
+	}
+
+	@Test(priority = 2, description = "Approve a Goods Receive Notes")
+	public void approveBudgetTest() throws InterruptedException {
+		goodsReceiveNotes.clickOnApproveIcon();
 		Thread.sleep(1000);
-		goodsReceiveNote.clickOnApproveIcon();
+		goodsReceiveNotes.clickOnApproveBtn();
 		Thread.sleep(1000);
-		goodsReceiveNote.clickOnApproveBtn();
-		Thread.sleep(1000);
-		goodsReceiveNote.clickAgainOnApproveBtn();
+		goodsReceiveNotes.clickAgainOnApproveBtn();
 		Thread.sleep(1000);
 
 	}

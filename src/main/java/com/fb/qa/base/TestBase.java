@@ -1,6 +1,5 @@
 package com.fb.qa.base;
 
-import java.util.Properties;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,8 +7,9 @@ import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Properties;
 
-import org.codehaus.plexus.util.FileUtils;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -33,8 +33,6 @@ public class TestBase {
 	LoginPage loginPage;
 	HomePage homepage;
 
-//	public static Properties prop;
-// Good work
 	public TestBase() {
 		try {
 			prop = new Properties();
@@ -48,12 +46,11 @@ public class TestBase {
 		}
 	}
 
-	public WebDriver initilization() {
+	public WebDriver initialization() {
 		String browserName = prop.getProperty("browser");
 		if (browserName.equals("chrome")) {
-
-			System.setProperty("webdriver.chrome",
-					"C:\\Users\\muhammad.jabbar\\eclipse-workspace\\F_B_POM_TestNG\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver",
+					"C:\\Users\\muhammad.jabbar\\eclipse-workspace\\FBProject\\chromedriver.exe");
 			System.setProperty("webdriver.http.factory", "jdk-http-client");
 			driver = new ChromeDriver();
 		}
@@ -64,23 +61,28 @@ public class TestBase {
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
 		wait = new WebDriverWait(driver, Duration.ofSeconds(TestUtil.EXPLICIT_WAIT));
 		driver.get(prop.getProperty("url"));
-		return this.driver;
+		// Perform login
+		login(prop.getProperty("username"), prop.getProperty("password"));
+		return driver;
 	}
 
-	/*
-	 * public void login(String username, String password) { loginPage = new
-	 * LoginPage(driver); loginPage.enterUsername(username);
-	 * loginPage.enterPassword(password); loginPage.clickLoginButton(); }
-	 */
+	private void login(String username, String password) {
+		loginPage = new LoginPage(driver);
+		loginPage.enterUsername(username);
+		loginPage.enterPassword(password);
+		loginPage.clickLoginButton();
+	}
 
 	public void failTestCases(String testMethodName) {
-		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		try {
-			FileUtils.copyFile(srcFile,
-					new File("C:\\Users\\muhammad.jabbar\\eclipse-workspace\\fbProject\\screenshots\\" + testMethodName
-							+ "_" + ".jpg"));
-		} catch (IOException e) {
-			e.printStackTrace();
+		if (driver != null) {
+			File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			try {
+				FileUtils.copyFile(srcFile,
+						new File("C:\\Users\\muhammad.jabbar\\eclipse-workspace\\fbProject\\screenshots\\"
+								+ testMethodName + ".jpg"));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
@@ -104,8 +106,7 @@ public class TestBase {
 		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 
-	public void tearDown() throws InterruptedException {
-		// Thread.sleep(1000);
+	public void tearDown() {
 		driver.quit();
 	}
 }

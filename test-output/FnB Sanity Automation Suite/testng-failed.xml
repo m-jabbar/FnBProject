@@ -6,14 +6,13 @@
   </listeners>
   <test thread-count="5" name="F and B Testcases(failed)">
     <classes>
-      <class name="com.fb.qa.testcases.MaterialInspectionTest">
+      <class name="com.fb.qa.testcases.MaterialIssuanceTest">
         <methods>
-          <include name="ApproveInspectionProcess"/>
-          <include name="MaterialInspectionProcess"/>
-          <include name="teardown"/>
+          <include name="materialIssuanceProcess"/>
           <include name="setup"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.fb.qa.testcases.MaterialInspectionTest -->
+      </class> <!-- com.fb.qa.testcases.MaterialIssuanceTest -->
     </classes>
   </test> <!-- F and B Testcases(failed) -->
 </suite> <!-- Failed suite [FnB Sanity Automation Suite] -->

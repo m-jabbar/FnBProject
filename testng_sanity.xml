@@ -7,8 +7,10 @@
   <test name="F and B Testcases">
     <classes>
 			
-			<class name="com.fb.qa.testcases.HomePageTest"/>
-			<class name="com.fb.qa.testcases.MaterialInspectionTest"/>
+			<class name="com.fb.qa.testcases.MaterialRequisitionTest"/>
+			<class name="com.fb.qa.testcases.MaterialIssuanceTest"/>
+			<class name="com.fb.qa.testcases.OutwardPageTest"/>
+			<class name="com.fb.qa.testcases.InwardPageTest"/>
 		</classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

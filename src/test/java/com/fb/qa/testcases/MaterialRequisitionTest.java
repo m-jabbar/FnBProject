@@ -6,12 +6,12 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import com.fb.qa.base.TestBase;
 import com.fb.qa.listeners.MyListeners;
 import com.fb.qa.pages.MaterialRequisitionPage;
 import com.fb.qa.pages.HomePage;
 import com.fb.qa.pages.LoginPage;
+
 @Listeners(MyListeners.class)
 public class MaterialRequisitionTest extends TestBase {
 	WebDriverWait wait;
@@ -26,19 +26,18 @@ public class MaterialRequisitionTest extends TestBase {
 
 	@BeforeMethod
 	public void setup() throws InterruptedException {
-		this.driver = initilization();
-		loginPage = new LoginPage(this.driver);
-		homepage= loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		driver = initialization();
+		homepage = new HomePage(driver);
 		materialRequisition = homepage.clickOnMaterialRequisition();
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1, description = "Verify Material Requisition page title")
 	public void verifyPageTitle() {
-		String PageTitle = materialRequisition.verifyPageTitle();
-		Assert.assertEquals(PageTitle, "F&B System");
+		String pageTitle = materialRequisition.verifyPageTitle();
+		Assert.assertEquals(pageTitle, "F&B System");
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2, description = "Perform Material Requisition process")
 	public void materialReqProcess() throws InterruptedException {
 		materialRequisition.clickOnMaterialRequisition();
 		Thread.sleep(1000);
@@ -55,28 +54,25 @@ public class MaterialRequisitionTest extends TestBase {
 		materialRequisition.submitBtn();
 		Thread.sleep(1000);
 		String toastMessage = materialRequisition.getToastMessage();
-	    Assert.assertEquals(toastMessage, "Material Requisition has been created", "Title is matched");
-	    System.out.println("Congrats your test is passed");
+		Assert.assertEquals(toastMessage, "Material Requisition has been created", "Title is matched");
+		System.out.println("Congratulations! Your test Material Requisition has passed.");
 	}
 
-	
-	@Test(priority=3)
+	@Test(priority = 3, description = "Perform Material Requisition approval process")
 	public void approveMaterialProcess() throws InterruptedException {
-		materialRequisition.approveMateriaIcon();
+		materialRequisition.approveMaterialIcon();
 		Thread.sleep(1000);
-		materialRequisition.approveSumbitBtn();
+		materialRequisition.submitApproveBtn();
 		Thread.sleep(1000);
-		materialRequisition.againApproveSumbitBtn();
+		materialRequisition.popupApproveBtn();
 		Thread.sleep(1000);
-//		String toastMessage = materialRequisition.getToastMessage();
-//	    Assert.assertEquals(toastMessage, "Material Requisition has been approved (	MR-1681388931957)", "Title is matched");
-	    System.out.println("Congrats your test is passed");
+//        String toastMessage = materialRequisition.getToastMessage();
+//        Assert.assertEquals(toastMessage, "Material Requisition has been approved (MR-1681388931957)", "Title is matched");
+		System.out.println("Congratulations! Your test Material Requisition approval process has passed.");
 	}
 
 	@AfterMethod
-	public void tearDown() throws InterruptedException {
+	public void tearDown() {
 		super.tearDown();
-
 	}
-
 }

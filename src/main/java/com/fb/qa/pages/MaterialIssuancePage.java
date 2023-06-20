@@ -1,55 +1,57 @@
 package com.fb.qa.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import com.fb.qa.base.TestBase;
 
 public class MaterialIssuancePage extends TestBase {
-	public WebDriver driver;
-	private String qrCode = "815096000809-20230608";
+	private WebDriver driver;
+	private String qrCode = "987654321122-20230616";
 
 	@FindBy(xpath = "//a[contains(@href, \"/material-issuance\")]")
-	WebElement materialIssuance;;
+	private WebElement materialIssuanceLink;
 
 	@FindBy(xpath = "//a[normalize-space()='Add Material Issuance']")
-	WebElement addMaterialIssuance;
+	private WebElement addMaterialIssuanceLink;
 
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/form[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[2]")
-	WebElement materialReqNo;
+	private WebElement materialReqNoField;
 
 	@FindBy(id = "react-select-2-option-0")
-	WebElement selectMaterialReqNo;
-//	react-select-2-option-0
+	private WebElement selectMaterialReqNoOption;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/input[1]")
-	WebElement addQRCode;
+	@FindBy(xpath = "//input[@placeholder='QR Code']")
+	private WebElement firstQRCodeField;
+
+	@FindBy(xpath = "//tbody/tr[2]/td[7]/div[1]/button[1]/span[1]")
+	private List<WebElement> deleteButtons;
 
 	@FindBy(name = "items.0.quantity")
-	WebElement enterQuantity;
+	private WebElement quantityField;
 
 	@FindBy(name = "items.0.assetNumber")
-	WebElement giveAssetsNum;
+	private WebElement assetNumberField;
 
 	@FindBy(name = "items.0.remarks")
-	WebElement giveRemarks;
+	private WebElement remarksField;
 
 	@FindBy(xpath = "//span[normalize-space()='Submit']")
-	WebElement submitBtn;
-
-//	@FindBy(xpath ="//div[@role='alert']")
-//	WebElement toastMessageElement;
+	private WebElement submitButton;
 
 	@FindBy(xpath = "//tbody/tr[1]/td[9]/div[1]/a[1]/button[1]/span[1]")
-	WebElement approveIcon;
+	private WebElement approveIcon;
 
 	@FindBy(id = "liveToastBtn")
-	WebElement approveButton;
+	private WebElement approveButton;
 
 	@FindBy(xpath = "/html[1]/body[1]/div[6]/div[1]/div[1]/div[1]/div[2]/div[1]/button[2]")
-	WebElement confirmButton;
+	private WebElement confirmButton;
 
 	public MaterialIssuancePage(WebDriver driver) {
 		this.driver = driver;
@@ -61,57 +63,62 @@ public class MaterialIssuancePage extends TestBase {
 	}
 
 	public void clickOnMaterialIssuance() {
-		materialIssuance.click();
+		materialIssuanceLink.click();
 	}
 
 	public void clickOnAddMaterialIssuance() {
-		addMaterialIssuance.click();
+		addMaterialIssuanceLink.click();
 	}
 
-	public void selectMaterialNum() throws InterruptedException {
-		materialReqNo.click();
-		selectMaterialReqNo.click();
+	public void selectMaterialReqNo() throws InterruptedException {
+		materialReqNoField.click();
+		selectMaterialReqNoOption.click();
 	}
 
 	public void addQRCode() throws InterruptedException {
-		addQRCode.click();
-		addQRCode.clear();
-		addQRCode.sendKeys(qrCode);
+		// Enter the QR code in the first field
+		firstQRCodeField.clear();
+		firstQRCodeField.sendKeys(qrCode);
+		firstQRCodeField.sendKeys(Keys.ENTER);
+
+		// Click on delete button for any additional QR code fields that appear
+		for (WebElement deleteButton : deleteButtons) {
+			deleteButton.click();
+			Thread.sleep(500); // Add a small delay for stability
+		}
 	}
 
 	public void enterQuantity() throws InterruptedException {
-//		enterQuantity.click();
-		enterQuantity.sendKeys(Keys.CLEAR);
-		enterQuantity.sendKeys("1");
+		quantityField.sendKeys(Keys.CLEAR);
+		quantityField.sendKeys("1");
 	}
 
-	public void giveAssetsNum() {
-		TestBase base = new TestBase();
-		base.scrollDown(driver, 0, 600);
-		giveAssetsNum.click();
-		giveAssetsNum.sendKeys("aaaa");
+	public void enterAssetNumber() {
+		scrollDown(driver, 0, 600);
+		assetNumberField.click();
+		assetNumberField.sendKeys("aaaa");
 	}
 
-	public void giveRemarks() {
-
-		giveRemarks.click();
-		giveRemarks.sendKeys("Ok");
+	public void enterRemarks() {
+		remarksField.click();
+		remarksField.sendKeys("Ok");
 	}
 
-	public void clickSubmitBtn() throws InterruptedException {
-//		driver.get(driver.getCurrentUrl());
-		submitBtn.click();
-
+	public void clickSubmitButton() {
+		submitButton.click();
 	}
 
-	/*
-	 * public String getToastMessage() { return toastMessageElement.getText(); }
-	 */
-
-	public void approveMaterialProcess() {
+	public void clickOnApproveIcon() {
 		approveIcon.click();
 		approveIcon.click();
 		approveIcon.click();
 	}
 
+	public void clickApproveButton() {
+		approveButton.click();
+	}
+
+	public void clickConfirmButton() {
+		confirmButton.click();
+	}
 }

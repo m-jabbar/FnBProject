@@ -9,8 +9,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import com.fb.qa.base.TestBase;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.fb.qa.base.TestBase;
 
 public class MaterialRequisitionPage extends TestBase {
 	public WebDriver driver;
@@ -18,26 +19,26 @@ public class MaterialRequisitionPage extends TestBase {
 	@FindBy(xpath = "//a[contains(@href, 'material-requisition')]")
 	WebElement materialReq;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]")
+	@FindBy(xpath = "//div[@class='add-button text-end']/button")
 	WebElement addMaterialReq;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/form[1]/div[1]/div[2]/select[1]")
+	@FindBy(xpath = "//select[@name='department']")
 	WebElement departmentList;
 
 	@FindBy(xpath = "//select[@name='location']")
 	WebElement locationList;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/div[1]/div[1]/div[2]")
+	@FindBy(xpath = "//div[@class='react-select__value-container']")
 	WebElement productList;
-	
-	@FindBy(id = "react-select-2-option-4")
+
+	@FindBy(id = "react-select-2-option-1")
 	WebElement selectProductList;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/form[1]/div[2]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/input[1]")
+	@FindBy(xpath = "//input[@name='quantity']")
 	WebElement quantity;
 
-	@FindBy(xpath = "//button[contains(@class,\"btn btn-lg btn-primary me-3\")]")
-	WebElement submitbtn;
+	@FindBy(xpath = "//button[contains(@class,'btn btn-lg btn-primary me-3')]")
+	WebElement submitBtn;
 
 	@FindBy(xpath = "//div[@role='alert']")
 	WebElement toastMessage;
@@ -64,7 +65,6 @@ public class MaterialRequisitionPage extends TestBase {
 	}
 
 	public void clickOnMaterialRequisition() {
-
 		materialReq.click();
 	}
 
@@ -75,22 +75,17 @@ public class MaterialRequisitionPage extends TestBase {
 	}
 
 	public void selectDepartment() {
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//		wait.until(ExpectedConditions.visibilityOf(departmentList));
 		departmentList.click();
-		Select select = new Select(departmentList);
-		select.selectByIndex(1);
+		new Select(departmentList).selectByIndex(4);
 	}
 
 	public void selectLocation() {
 		locationList.click();
-		Select select = new Select(locationList);
-		select.selectByVisibleText("C4");
+		new Select(locationList).selectByVisibleText("C4");
 	}
 
 	public void selectProduct() throws InterruptedException {
-		TestBase scroll = new TestBase();
-		scroll.scrollDown(driver, 0, 1500);
+		scrollDown(driver, 0, 1500);
 		productList.click();
 		selectProductList.click();
 	}
@@ -99,30 +94,27 @@ public class MaterialRequisitionPage extends TestBase {
 		quantity.click();
 		quantity.sendKeys("1");
 		quantity.sendKeys(Keys.TAB);
-
 	}
 
 	public void submitBtn() throws InterruptedException {
-		submitbtn.click();
+		submitBtn.click();
 	}
 
 	public String getToastMessage() {
 		return toastMessage.getText();
 	}
 
-	public void approveMateriaIcon() throws InterruptedException {
+	public void approveMaterialIcon() throws InterruptedException {
 		clickOnApproveMaterial.click();
 	}
 
-	public void approveSumbitBtn() throws InterruptedException {
-		TestBase base = new TestBase();
-		base.scrollDown(driver, 0, 500);
+	public void submitApproveBtn() throws InterruptedException {
+		scrollDown(driver, 0, 500);
 		submitApproveBtn.click();
 	}
 
-	public void againApproveSumbitBtn() throws InterruptedException {
+	public void popupApproveBtn() throws InterruptedException {
 		popupApproveBtn.click();
 		Thread.sleep(1000);
 	}
-
 }

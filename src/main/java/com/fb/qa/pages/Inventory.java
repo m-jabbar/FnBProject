@@ -26,7 +26,7 @@ public class Inventory extends TestBase {
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/form[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]")
 	WebElement selectProduct;
 
-	@FindBy(id = "react-select-2-option-7")
+	@FindBy(id = "react-select-2-option-1")
 	WebElement selectProductValue;
 
 	@FindBy(xpath = "//select[@name='location']")
@@ -71,7 +71,7 @@ public class Inventory extends TestBase {
 
 	public void enterReferenceNo() {
 		enterReference.click();
-		enterReference.sendKeys("MR-1234");
+		enterReference.sendKeys("MR-123456278");
 	}
 
 	public void selectProduct() {
@@ -87,7 +87,7 @@ public class Inventory extends TestBase {
 
 	public void enterQuantity() {
 		enterQuantity.click();
-		enterQuantity.sendKeys("10");
+		enterQuantity.sendKeys("5");
 	}
 	public void dateSelection() {
 		clickOnDate.click();
