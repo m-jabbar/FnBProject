@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 
 import com.fb.qa.base.TestBase;
 import com.fb.qa.pages.HomePage;
-import com.fb.qa.pages.LoginPage;
 import com.fb.qa.pages.MaterialInspection;
 
 public class MaterialInspectionTest extends TestBase {
@@ -15,46 +14,46 @@ public class MaterialInspectionTest extends TestBase {
 		super();
 	}
 
-	LoginPage loginPage;
 	HomePage homepage;
 	MaterialInspection materialInspection;
 
 	@BeforeMethod
 	public void setup() throws InterruptedException {
 		this.driver = initialization();
-		loginPage = new LoginPage(this.driver);
-		homepage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		homepage = new HomePage(driver);
 		materialInspection = homepage.clickOnMaterialInspection();
 	}
 
-	@Test
-	public void MaterialInspectionProcess() throws InterruptedException {
-
-		materialInspection.clickOnMaterialInspection();
-		Thread.sleep(1000);
+	@Test(priority = 1, description = "Perform Material Inspection Process")
+	public void testMaterialInspectionProcess() throws InterruptedException {
 		materialInspection.clickOnAddMaterialInspection();
 		Thread.sleep(1000);
-		materialInspection.selectPurcahsenumvalue();
+		materialInspection.selectPurchaseOrderNumber();
 		Thread.sleep(1000);
-		materialInspection.enterInvoiceNum();
+		materialInspection.enterInvoiceNumber();
 		Thread.sleep(1000);
 		materialInspection.selectLocation();
 		Thread.sleep(1000);
-		materialInspection.enterRemarksAndSubmit();
+		materialInspection.enterRemarksInAllFields();
 		Thread.sleep(1000);
+		materialInspection.submitBtn();
+		Thread.sleep(1000);
+		System.out.println("Congrats! Your Inspection Test is Passed");
 	}
 
-	@Test(priority = 2)
-	public void ApproveInspectionProcess() throws InterruptedException {
-		materialInspection.clickOnMaterialInspection();
-		Thread.sleep(3000);
-		materialInspection.approveProcess();
+	@Test(priority = 2, description = "Perform Approval for Material Inspection")
+	public void testApproveInspectionProcess() throws InterruptedException {
+		materialInspection.approveIcon();
 		Thread.sleep(1000);
+		materialInspection.approveBtn();
+		Thread.sleep(1000);
+		materialInspection.popupApproveBtn();
+		Thread.sleep(1000);
+		System.out.println("Congrats! Your Approve Inspection Test is Passed");
 	}
 
 	@AfterMethod
 	public void teardown() throws InterruptedException {
 		driver.quit();
-
 	}
 }

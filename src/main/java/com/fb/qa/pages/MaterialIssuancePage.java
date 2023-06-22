@@ -42,16 +42,16 @@ public class MaterialIssuancePage extends TestBase {
 	private WebElement remarksField;
 
 	@FindBy(xpath = "//span[normalize-space()='Submit']")
-	private WebElement submitButton;
+	private WebElement submitBtn;
 
 	@FindBy(xpath = "//tbody/tr[1]/td[9]/div[1]/a[1]/button[1]/span[1]")
 	private WebElement approveIcon;
 
 	@FindBy(id = "liveToastBtn")
-	private WebElement approveButton;
+	private WebElement approveBtn;
 
 	@FindBy(xpath = "/html[1]/body[1]/div[6]/div[1]/div[1]/div[1]/div[2]/div[1]/button[2]")
-	private WebElement confirmButton;
+	private WebElement popupApproveBtn;
 
 	public MaterialIssuancePage(WebDriver driver) {
 		this.driver = driver;
@@ -104,21 +104,19 @@ public class MaterialIssuancePage extends TestBase {
 		remarksField.sendKeys("Ok");
 	}
 
-	public void clickSubmitButton() {
-		submitButton.click();
+	public void submitBtn() {
+		submitBtn.click();
 	}
 
-	public void clickOnApproveIcon() {
-		approveIcon.click();
-		approveIcon.click();
+	public void approveIcon() {
 		approveIcon.click();
 	}
 
-	public void clickApproveButton() {
-		approveButton.click();
+	public void approveBtn() {
+		approveBtn.click();
 	}
 
-	public void clickConfirmButton() {
-		confirmButton.click();
+	public void popupApproveBtn() {
+		popupApproveBtn.click();
 	}
 }

@@ -151,9 +151,9 @@ public class HomePage extends TestBase {
 		return new BudgetsReports(driver);
 	}
 
-	public Inventory clickOnInventory() {
+	public InventoryPage clickOnInventory() {
 		inventory.click();
-		return new Inventory(driver);
+		return new InventoryPage(driver);
 	}
 
 	public InventoryReports clickOnInventoryReports() {

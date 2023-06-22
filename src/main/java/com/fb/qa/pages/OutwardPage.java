@@ -30,7 +30,7 @@ public class OutwardPage extends TestBase {
 	private WebElement submitBtn;
 
 	@FindBy(xpath = "//body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[10]/div[1]/a[1]/button[1]/span[1]")
-	private WebElement approveIconElement;
+	private WebElement approveIcon;
 
 	@FindBy(xpath = "//button[@id='liveToastBtn']")
 	private WebElement approveBtn;
@@ -71,15 +71,15 @@ public class OutwardPage extends TestBase {
 		submitBtn.click();
 	}
 
-	public void clickOnApproveIcon() {
-		approveIconElement.click();
+	public void approveIcon() {
+		approveIcon.click();
 	}
 
-	public void clickOnApproveButton() {
+	public void approveBtn() {
 		approveBtn.click();
 	}
 
-	public void clickOnPopupApproveButton() {
+	public void popupApproveBtn() {
 		popupApproveBtn.click();
 	}
 

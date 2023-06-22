@@ -62,7 +62,7 @@ public class MaterialRequisitionTest extends TestBase {
 	public void approveMaterialProcess() throws InterruptedException {
 		materialRequisition.approveMaterialIcon();
 		Thread.sleep(1000);
-		materialRequisition.submitApproveBtn();
+		materialRequisition.approveBtn();
 		Thread.sleep(1000);
 		materialRequisition.popupApproveBtn();
 		Thread.sleep(1000);

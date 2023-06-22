@@ -39,20 +39,20 @@ public class MaterialReturnTest extends TestBase {
 		Thread.sleep(1000);
 		materialReturn.enterRemarks();
 		Thread.sleep(1000);
-		materialReturn.clickSubmitBtn();
+		materialReturn.submitBtn();
 		Thread.sleep(3000);
-		System.out.println("Congratulations! Test 1 passed.");
+		System.out.println("Congratulations! Your Material Return Test passed.");
 	}
 
 	@Test(priority = 2, description = "Approve Material Return")
 	public void approveMaterialReturn() throws InterruptedException {
-		materialReturn.clickApproveIcon();
+		materialReturn.approveIcon();
 		Thread.sleep(1000);
-		materialReturn.clickOnApproveBtn();
+		materialReturn.approveBtn();
 		Thread.sleep(1000);
-		materialReturn.clickAgainOnApproveBtn();
+		materialReturn.popupApproveBtn();
 		Thread.sleep(1000);
-		System.out.println("Congratulations! Test 2 passed.");
+		System.out.println("Congratulations! Your Approve Material Return Test passed.");
 	}
 
 	@AfterMethod

@@ -47,12 +47,12 @@ public class OutwardPageTest extends TestBase {
 
 	@Test(priority = 2, description = "Approve the outward process")
 	public void approveOutwardProcess() throws InterruptedException {
-		outwardPage.clickOnApproveIcon();
+		outwardPage.approveIcon();
 		Thread.sleep(1000);
 		scrollDown(driver, 0, 600);
-		outwardPage.clickOnApproveButton();
+		outwardPage.approveBtn();
 		Thread.sleep(1000);
-		outwardPage.clickOnPopupApproveButton();
+		outwardPage.popupApproveBtn();
 		Thread.sleep(1000);
 		System.out.println("Congrats! your Approve Outward Test is Passed");
 	}

@@ -8,70 +8,69 @@ import org.openqa.selenium.support.ui.Select;
 
 import com.fb.qa.base.TestBase;
 
-public class Inventory extends TestBase {
+public class InventoryPage extends TestBase {
 	public WebDriver driver;
 
 	@FindBy(xpath = "//a[@href='/inventory']")
-	WebElement inventory;
+	private WebElement inventory;
 
 	@FindBy(xpath = "//a[normalize-space()='Add Inventory']")
-	WebElement addInventory;
+	private WebElement addInventory;
 
 	@FindBy(xpath = "//select[@name='type']")
-	WebElement selectInventoryType;
+	private WebElement selectInventoryType;
 
 	@FindBy(xpath = "//input[@placeholder='Reference']")
-	WebElement enterReference;
+	private WebElement enterReferenceNo;
 
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/form[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]")
-	WebElement selectProduct;
+	private WebElement selectProduct;
 
 	@FindBy(id = "react-select-2-option-1")
-	WebElement selectProductValue;
+	private WebElement selectProductValue;
 
 	@FindBy(xpath = "//select[@name='location']")
-	WebElement selectLocation;
+	private WebElement selectLocation;
 
 	@FindBy(xpath = "//input[@placeholder='Quantity']")
-	WebElement enterQuantity;
+	private WebElement enterQuantity;
 
 	@FindBy(xpath = "//input[@placeholder='Select Date']")
-	WebElement clickOnDate;
+	private WebElement selectDate;
 
-	@FindBy(xpath = "//input[@placeholder='Select Date']")
-	WebElement selectExpiryDate;
+	@FindBy(xpath = "//div[@title='01 Jul 2023']")
+	private WebElement selectExpiryDate;
 
 	@FindBy(xpath = "//button[normalize-space()='OK']")
-	WebElement clickOnOK;
+	private WebElement okButton;
 
 	@FindBy(xpath = "//button[@id='liveToastBtn']")
-	WebElement submitBtn;
+	private WebElement submitBtn;
 
 	@FindBy(xpath = "//div[contains(text(),'Inventory has been created')]")
-	WebElement toastMessageVeri;
+	private WebElement toastMessage;
 
-	public Inventory(WebDriver driver) {
+	public InventoryPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickOnInventory() {
+	public void clickInventoryLink() {
 		inventory.click();
 	}
 
-	public void clickOnAddInventory() {
+	public void addInventory() {
 		addInventory.click();
 	}
 
 	public void selectInventoryType() {
 		selectInventoryType.click();
-		Select selctinvType = new Select(selectInventoryType);
-		selctinvType.selectByIndex(1);
+		new Select(selectInventoryType).selectByIndex(1);
 	}
 
-	public void enterReferenceNo() {
-		enterReference.click();
-		enterReference.sendKeys("MR-123456278");
+	public void enterReference(String reference) {
+		enterReferenceNo.click();
+		enterReferenceNo.sendKeys(reference);
 	}
 
 	public void selectProduct() {
@@ -81,20 +80,18 @@ public class Inventory extends TestBase {
 
 	public void selectLocation() {
 		selectLocation.click();
-		Select selctlocation = new Select(selectLocation);
-		selctlocation.selectByVisibleText("C4");
+		new Select(selectLocation).selectByIndex(7);
+		;
 	}
 
-	public void enterQuantity() {
+	public void enterQuantity(String quantity) {
 		enterQuantity.click();
-		enterQuantity.sendKeys("5");
+		enterQuantity.sendKeys(quantity);
 	}
-	public void dateSelection() {
-		clickOnDate.click();
+
+	public void selectExpiryDate() {
 		selectExpiryDate.click();
-		TestBase scroll = new TestBase();
-		scroll.scrollDown(driver, 0, 200);
-		clickOnOK.click();
+		okButton.click();
 	}
 
 	public void submitBtn() {
@@ -102,6 +99,6 @@ public class Inventory extends TestBase {
 	}
 
 	public String getToastMessage() {
-		return toastMessageVeri.getText();
+		return toastMessage.getText();
 	}
 }

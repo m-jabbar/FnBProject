@@ -12,60 +12,59 @@ import com.fb.qa.pages.PurchaseOrders;
 
 @Listeners(MyListeners.class)
 public class PurchaseOrdersTest extends TestBase {
-    private HomePage homepage;
-    private PurchaseOrders purchaseOrders;
+	private HomePage homepage;
+	private PurchaseOrders purchaseOrders;
 
-    public PurchaseOrdersTest() {
-        super();
-    }
+	public PurchaseOrdersTest() {
+		super();
+	}
 
-    @BeforeMethod
-    public void setup() throws InterruptedException {
-        driver = initialization();
-        homepage = new HomePage(driver);
-        purchaseOrders = homepage.clickOnPurchaseOrders();
-    }
+	@BeforeMethod
+	public void setup() throws InterruptedException {
+		driver = initialization();
+		homepage = new HomePage(driver);
+		purchaseOrders = homepage.clickOnPurchaseOrders();
+	}
 
-    @Test(priority = 1, description = "Create a new Purchase Order")
-    public void purchaseOrderProcess() throws InterruptedException {
-        purchaseOrders.clickOnAddPurchaseOrders();
-        Thread.sleep(2000);
-        purchaseOrders.selectPurchaseFor();
-        Thread.sleep(1000);
-        purchaseOrders.selectSupplier();
-        Thread.sleep(2000);
-        scrollDown(driver, 0, 800);
-        purchaseOrders.selectProduct();
-        Thread.sleep(1000);
-        purchaseOrders.enterQuantityValue();
-        Thread.sleep(1000);
-        purchaseOrders.enterRateValue();
-        Thread.sleep(1000);
-        purchaseOrders.enterTaxValue();
-        Thread.sleep(1000);
-        purchaseOrders.enterDiscountValue();
-        Thread.sleep(1000);
-        purchaseOrders.clickOnSubmitBtn();
-        Thread.sleep(2000);
-    }
+	@Test(priority = 1, description = "Create a new Purchase Order")
+	public void purchaseOrderProcess() throws InterruptedException {
+		purchaseOrders.addPurchaseOrders();
+		Thread.sleep(2000);
+		purchaseOrders.selectPurchaseFor();
+		Thread.sleep(1000);
+		purchaseOrders.selectSupplier();
+		Thread.sleep(2000);
+		scrollDown(driver, 0, 800);
+		purchaseOrders.selectProduct();
+		Thread.sleep(1000);
+		purchaseOrders.enterQuantityValue();
+		Thread.sleep(1000);
+		purchaseOrders.enterRateValue();
+		Thread.sleep(1000);
+		purchaseOrders.enterTaxValue();
+		Thread.sleep(1000);
+		purchaseOrders.enterDiscountValue();
+		Thread.sleep(1000);
+		purchaseOrders.submitBtn();
+		Thread.sleep(2000);
+		System.out.println("Congrats! your Purchase Orders Test is Passed");
+	}
 
-    @Test(priority = 2, description = "Approve Purchase Order")
-    public void approvePurchaseOrderProcess() throws InterruptedException {
-		/*
-		 * purchaseOrders.clickOnPurchaseOrders(); Thread.sleep(1000);
-		 */
-        purchaseOrders.clickOnApproveIcon();
-        Thread.sleep(2000);
-        scrollDown(driver, 0 , 1000);
-        scrollDown(driver, 0 , 1000);
-        purchaseOrders.clickOnApproveBtn();
-        Thread.sleep(2000);
-        purchaseOrders.clickOnAgainApproveBtn();
-        Thread.sleep(2000);
-    }
+	@Test(priority = 2, description = "Approve Purchase Order")
+	public void approvePurchaseOrderProcess() throws InterruptedException {
+		purchaseOrders.approveIcon();
+		Thread.sleep(1000);
+		scrollDown(driver, 0, 1000);
+		purchaseOrders.approveBtn();
+		Thread.sleep(1000);
+		purchaseOrders.popupApproveBtn();
+		Thread.sleep(2000);
+		System.out.println("Congrats! your Approve Purchase Orders Test is Passed");
 
-    @AfterMethod
-    public void teardown() {
-        driver.quit();
-    }
+	}
+
+	@AfterMethod
+	public void teardown() {
+		driver.quit();
+	}
 }

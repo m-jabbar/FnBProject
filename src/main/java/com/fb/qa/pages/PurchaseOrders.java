@@ -47,29 +47,30 @@ public class PurchaseOrders extends TestBase {
 	private WebElement submitBtn;
 
 	@FindBy(xpath = "//body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[11]/div[1]/a[2]/button[1]/span[1]")
-	private WebElement approveIconElement;
+	private WebElement approveIcon;
 
 	@FindBy(id = "liveToastBtn")
 	private WebElement approveBtn;
 
 	@FindBy(xpath = "//button[@class='btn btn-lg btn-primary float-right']")
-	private WebElement againApproveBtn;
+	private WebElement popupApproveBtn;
 
 	public PurchaseOrders(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickOnPurchaseOrders() {
+	public void purchaseOrders() {
 		purchaseOrders.click();
 	}
 
-	public void clickOnAddPurchaseOrders() {
+	public void addPurchaseOrders() {
 		addPurchaseOrders.click();
 	}
 
 	public void selectPurchaseFor() {
-		new Select(selectPurchaseFor).selectByIndex(2);;
+		selectPurchaseFor.click();
+		new Select(selectPurchaseFor).selectByIndex(2);
 	}
 
 	public void selectSupplier() {
@@ -106,19 +107,21 @@ public class PurchaseOrders extends TestBase {
 		enterDiscountValue.sendKeys(Keys.TAB);
 	}
 
-	public void clickOnSubmitBtn() {
+	public void submitBtn() {
 		submitBtn.click();
 	}
 
-	public void clickOnApproveIcon() {
-		approveIconElement.click();
+	public void approveIcon() {
+		approveIcon.click();
 	}
 
-	public void clickOnApproveBtn() {
+	public void approveBtn() {
 		approveBtn.click();
 	}
 
-	public void clickOnAgainApproveBtn() {
-		againApproveBtn.click();
+	public void popupApproveBtn() {
+		popupApproveBtn.click();
 	}
+
+	
 }

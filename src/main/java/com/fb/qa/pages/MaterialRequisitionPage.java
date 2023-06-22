@@ -44,10 +44,10 @@ public class MaterialRequisitionPage extends TestBase {
 	WebElement toastMessage;
 
 	@FindBy(xpath = "//tbody/tr[1]/td[11]/div[1]/a[1]/button[1]/span[1]")
-	WebElement clickOnApproveMaterial;
+	WebElement approveMaterialIcon;
 
 	@FindBy(xpath = "//button[@id='liveToastBtn']")
-	WebElement submitApproveBtn;
+	WebElement approveBtn;
 
 	@FindBy(xpath = "//button[@class='btn btn-lg btn-primary float-right']")
 	WebElement popupApproveBtn;
@@ -105,12 +105,12 @@ public class MaterialRequisitionPage extends TestBase {
 	}
 
 	public void approveMaterialIcon() throws InterruptedException {
-		clickOnApproveMaterial.click();
+		approveMaterialIcon.click();
 	}
 
-	public void submitApproveBtn() throws InterruptedException {
+	public void approveBtn() throws InterruptedException {
 		scrollDown(driver, 0, 500);
-		submitApproveBtn.click();
+		approveBtn.click();
 	}
 
 	public void popupApproveBtn() throws InterruptedException {

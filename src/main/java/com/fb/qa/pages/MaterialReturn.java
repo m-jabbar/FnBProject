@@ -42,13 +42,13 @@ public class MaterialReturn extends TestBase {
 	private WebElement toastMessageVerify;
 
 	@FindBy(css = "div[data-testid='approveIcon']")
-	private WebElement approveIconClick;
+	private WebElement approveIcon;
 
 	@FindBy(xpath = "//span[normalize-space()='Approve']")
 	private WebElement approveBtn;
 
 	@FindBy(xpath = "//button[@class='btn btn-lg btn-primary float-right']")
-	private WebElement againApproveBtn;
+	private WebElement popupApproveBtn;
 
 	public MaterialReturn(WebDriver driver) {
 		this.driver = driver;
@@ -89,20 +89,20 @@ public class MaterialReturn extends TestBase {
 		}
 	}
 
-	public void clickSubmitBtn() {
+	public void submitBtn() {
 		submitBtn.click();
 	}
 
-	public void clickApproveIcon() {
-		approveIconClick.click();
+	public void approveIcon() {
+		approveIcon.click();
 	}
 
-	public void clickOnApproveBtn() {
+	public void approveBtn() {
 		approveBtn.click();
 	}
 
-	public void clickAgainOnApproveBtn() {
-		againApproveBtn.click();
+	public void popupApproveBtn() {
+		popupApproveBtn.click();
 	}
 
 }

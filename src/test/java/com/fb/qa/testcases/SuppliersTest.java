@@ -9,35 +9,32 @@ import org.testng.annotations.Test;
 import com.fb.qa.base.TestBase;
 import com.fb.qa.listeners.MyListeners;
 import com.fb.qa.pages.HomePage;
-import com.fb.qa.pages.LoginPage;
 import com.fb.qa.pages.Suppliers;
+
 @Listeners(MyListeners.class)
 public class SuppliersTest extends TestBase {
 
 	public SuppliersTest() {
 		super();
 	}
-	LoginPage loginPage;
+
 	HomePage homepage;
 	Suppliers suppliers;
 
 	@BeforeMethod
 	public void setup() throws InterruptedException {
 		this.driver = initialization();
-		loginPage = new LoginPage(this.driver);
-		homepage= loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		homepage = new HomePage(driver);
 		suppliers = homepage.clickOnSuppliers();
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1, description = "Test to add a supplier")
 	public void SuppliersProcess() throws InterruptedException {
-		suppliers.clickOnSuppliers();
-		Thread.sleep(1000);
-		suppliers.clickOnAddSuupliers();
+		suppliers.addSuppliers();
 		Thread.sleep(1000);
 		suppliers.enterName();
 		Thread.sleep(1000);
-		suppliers.addAddres();
+		suppliers.addAddress();
 		Thread.sleep(1000);
 		suppliers.addCity();
 		Thread.sleep(1000);
@@ -53,15 +50,16 @@ public class SuppliersTest extends TestBase {
 		Thread.sleep(1000);
 		suppliers.addIBANNo();
 		Thread.sleep(1000);
+		scrollDown(driver, 0, 600);
 		suppliers.proCapacity();
 		Thread.sleep(1000);
-		suppliers.fbrRegisterNo();
+		suppliers.fbrRegisterStatus();
 		Thread.sleep(1000);
 		suppliers.orderCapacity();
 		Thread.sleep(1000);
 		suppliers.selectMarketPR();
 		Thread.sleep(1000);
-		suppliers.selectcutomerRelation();
+		suppliers.selectCustomerRelation();
 		Thread.sleep(1000);
 		suppliers.paymentTerms();
 		Thread.sleep(1000);
@@ -73,24 +71,24 @@ public class SuppliersTest extends TestBase {
 		Thread.sleep(1000);
 		String toastMessage = suppliers.getToastMessage();
 		Assert.assertEquals(toastMessage, "Supplier has been created", "Title is matched");
-		System.out.println("Congrats your test1 is passed");
+		System.out.println("Congratulations! Your Add Supplier test is Passed");
 	}
 
-	@Test(priority = 2)
-	public void ApproveSuupliers() throws InterruptedException {
-		suppliers.clickOnSuppliers();
+	@Test(priority = 2, description = "Test to approve a supplier")
+	public void ApproveSuppliers() throws InterruptedException {
 		suppliers.approveIcon();
+		scrollDown(driver, 0, 900);
 		Thread.sleep(1000);
-		suppliers.clickOnApproveBtn();
+		suppliers.approveBtn();
 		Thread.sleep(1000);
-		suppliers.clickAgainOnApproveBtn();
+		suppliers.popupApproveBtn();
 		Thread.sleep(1000);
 		/*
 		 * String toastMessage1 = suppliers.getToastMessage();
 		 * Assert.assertEquals(toastMessage1, "Supplier has been approved (jabbar123)",
 		 * "Title is matched");
 		 */
-		System.out.println("Congrats your test is passed");
+		System.out.println("Congratulations! Your Approve Supplier test is Passed");
 	}
 
 	@AfterMethod

@@ -9,7 +9,6 @@ import com.fb.qa.base.TestBase;
 import com.fb.qa.listeners.MyListeners;
 import com.fb.qa.pages.GoodsReceiveNotes;
 import com.fb.qa.pages.HomePage;
-import com.fb.qa.pages.LoginPage;
 
 @Listeners(MyListeners.class)
 public class GoodsReceiveNotesTest extends TestBase {
@@ -18,24 +17,21 @@ public class GoodsReceiveNotesTest extends TestBase {
 		super();
 	}
 
-	LoginPage loginPage;
 	HomePage homepage;
 	GoodsReceiveNotes goodsReceiveNotes;
 
 	@BeforeMethod
 	public void setup() throws InterruptedException {
-		driver = initialization();
+		this.driver = initialization();
 		homepage = new HomePage(driver);
 		goodsReceiveNotes = homepage.clickOnGoodsReceiveNotes();
 	}
 
 	@Test
-	public void GoodsRecieveProcess() throws InterruptedException {
-		goodsReceiveNotes.clickOnGoodsRecieveNotes();
+	public void goodsReceiveProcess() throws InterruptedException {
+		goodsReceiveNotes.addGoodsReceiveNote();
 		Thread.sleep(1000);
-		goodsReceiveNotes.clickOnAddGoodsRecieveNotes();
-		Thread.sleep(1000);
-		goodsReceiveNotes.materialInspectionList();
+		goodsReceiveNotes.selectMaterialInspectionNum();
 		Thread.sleep(1000);
 		goodsReceiveNotes.enterDeliveryNum();
 		Thread.sleep(2000);
@@ -43,26 +39,24 @@ public class GoodsReceiveNotesTest extends TestBase {
 		Thread.sleep(3000);
 		goodsReceiveNotes.selectDateProcess();
 		Thread.sleep(2000);
-		goodsReceiveNotes.clickOnSubmitBtn();
+		goodsReceiveNotes.submitBtn();
 		Thread.sleep(3000);
-		System.out.println("Congratulation");
-
+		System.out.println("Congrats! Your Goods Receive Notes Test Passed");
 	}
 
 	@Test(priority = 2, description = "Approve a Goods Receive Notes")
-	public void approveBudgetTest() throws InterruptedException {
-		goodsReceiveNotes.clickOnApproveIcon();
+	public void approveGoodsReceiveTest() throws InterruptedException {
+		goodsReceiveNotes.approveIcon();
 		Thread.sleep(1000);
-		goodsReceiveNotes.clickOnApproveBtn();
+		goodsReceiveNotes.approveBtn();
 		Thread.sleep(1000);
-		goodsReceiveNotes.clickAgainOnApproveBtn();
+		goodsReceiveNotes.popupApproveBtn();
 		Thread.sleep(1000);
-
+		System.out.println("Congrats! Your Approve Goods Receive Notes Test Passed");
 	}
 
 	@AfterMethod
 	public void teardown() throws InterruptedException {
 		driver.quit();
-
 	}
 }

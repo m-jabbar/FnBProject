@@ -46,7 +46,7 @@ public class BudgetsTest extends TestBase {
 		Thread.sleep(1000);
 		budgets.enterRate("100");
 		Thread.sleep(1000);
-		budgets.submitBudget();
+		budgets.submitBtn();
 		Thread.sleep(1000);
 		String toastMessage = budgets.getToastMessage();
 		Assert.assertEquals(toastMessage, "Budget has been created", "Title is matched");
@@ -56,12 +56,12 @@ public class BudgetsTest extends TestBase {
 
 	@Test(priority = 2, description = "Approve a budget")
 	public void approveBudgetTest() throws InterruptedException {
-		budgets.clickOnApproveIcon();
+		budgets.approveIcon();
 		Thread.sleep(1000);
 		scrollDown(driver, 0, 500);
-		budgets.clickOnApproveButton();
+		budgets.approveBtn();
 		Thread.sleep(1000);
-		budgets.clickAgainOnApproveButton();
+		budgets.popupApproveBtn();
 		Thread.sleep(1000);
 		String toastMessage1 = budgets.getToastMessage();
 		Assert.assertEquals(toastMessage1, "Budget has been approved", "Title is matched");

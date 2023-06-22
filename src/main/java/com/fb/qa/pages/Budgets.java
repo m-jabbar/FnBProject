@@ -1,7 +1,6 @@
 package com.fb.qa.pages;
 
 import org.apache.commons.lang3.RandomStringUtils;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import org.openqa.selenium.WebDriver;
@@ -55,16 +54,16 @@ public class Budgets extends TestBase {
 	private WebElement toastMessage;
 
 	@FindBy(xpath = "//button[@title='Submit']")
-	private WebElement submitButton;
+	private WebElement submitBtn;
 
 	@FindBy(xpath = "//body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[12]/div[1]/a[2]/span[1]")
 	private WebElement approveIcon;
 
 	@FindBy(xpath = "//span[normalize-space()='Approve']")
-	private WebElement approveButton;
+	private WebElement approveBtn;
 
 	@FindBy(xpath = "//button[@class='btn btn-lg btn-primary']//span[@class='indicator-label'][normalize-space()='Approve']")
-	private WebElement againApproveButton;
+	private WebElement popupApproveBtn;
 
 	public Budgets(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -85,10 +84,7 @@ public class Budgets extends TestBase {
 	}
 
 	public void selectStartDate() {
-		LocalDate currentDate = LocalDate.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		String formattedDate = currentDate.format(formatter);
-		startDateInput.sendKeys(formattedDate);
+		getFormattedCurrentDate();
 	}
 
 	/*
@@ -101,13 +97,13 @@ public class Budgets extends TestBase {
 	}
 
 	public void enterSectionTitle() {
-	    String baseTitle = "Funds";
-	    String uniqueString = RandomStringUtils.randomAlphabetic(5); // Adjust the length as needed
-	    String title = baseTitle + " " + uniqueString;
-	    sectionTitleInput.click();
-	    sectionTitleInput.sendKeys(title);
+		String baseTitle = "Funds";
+		String uniqueString = RandomStringUtils.randomAlphabetic(5); // Adjust the length as needed
+		String title = baseTitle + " " + uniqueString;
+		sectionTitleInput.click();
+		sectionTitleInput.sendKeys(title);
 	}
-	
+
 	public void selectProductFromList() {
 		productList.click();
 		selectionOfProduct.click();
@@ -123,24 +119,23 @@ public class Budgets extends TestBase {
 		enterRate.sendKeys(rate);
 	}
 
-	public void submitBudget() {
-		submitBudget.click();
+	public void submitBtn() {
+		submitBtn.click();
 	}
 
 	public String getToastMessage() {
 		return toastMessage.getText();
 	}
 
-	public void clickOnApproveIcon() {
+	public void approveIcon() {
 		approveIcon.click();
 	}
 
-	public void clickOnApproveButton() {
-		
-		approveButton.click();
+	public void approveBtn() {
+		approveBtn.click();
 	}
 
-	public void clickAgainOnApproveButton() {
-		againApproveButton.click();
+	public void popupApproveBtn() {
+		popupApproveBtn.click();
 	}
 }

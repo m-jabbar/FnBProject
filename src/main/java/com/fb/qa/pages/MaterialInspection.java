@@ -1,75 +1,55 @@
 package com.fb.qa.pages;
 
+import java.util.List;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-
 import com.fb.qa.base.TestBase;
 
 public class MaterialInspection extends TestBase {
+	private WebDriver driver;
 
-	public WebDriver driver;
-
-	@FindBy(xpath = "//a[contains(@href,\"/material-inspection\")]")
-	WebElement materialInspection;
+	@FindBy(xpath = "//a[contains(@href,'/material-inspection')]")
+	private WebElement materialInspection;
 
 	@FindBy(id = "kt_toolbar_primary_button")
-	WebElement addMaterialInspection;
+	private WebElement addMaterialInspection;
 
 	@FindBy(xpath = "//div[@class='multi-select__input-container css-19bb58m']")
-	WebElement purchaseOrderNum;
+	private WebElement purchaseOrderNum;
 
 	@FindBy(id = "react-select-2-option-0")
-	WebElement purchaseOrderNumList;
+	private WebElement purchaseOrderNumList;
 
 	@FindBy(name = "invoiceNo")
-	WebElement enterInvoiceNo;
+	private WebElement invoiceNumberInput;
 
 	@FindBy(name = "location")
-	WebElement selectLocation;
+	private WebElement locationSelect;
 
-	@FindBy(name = "items.0.remarks")
-	WebElement enterRemarks;
-
-	@FindBy(name = "items.1.remarks")
-	WebElement enter2ndRemarks;
-
-	@FindBy(name = "items.2.remarks")
-	WebElement enter3rdRemarks;
-
-	@FindBy(name = "items.3.remarks")
-	WebElement enter4thRemarks;
-
-	@FindBy(name = "items.4.remarks")
-	WebElement enter5thRemarks;
-
-	@FindBy(name = "items.5.remarks")
-	WebElement enter6thRemarks;
-
-	@FindBy(name = "items.6.remarks")
-	WebElement enter7thRemarks;
+	@FindBy(css = "input[name^='items'][name$='remarks']")
+	private List<WebElement> remarksFields;
 
 	@FindBy(id = "liveToastBtn")
-	WebElement submitBtn;
+	private WebElement submitBtn;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[10]/div[1]/a[1]/button[1]/span[1]")
-	WebElement approveIconEle;
+	@FindBy(xpath = "//tbody/tr[1]/td[10]/div[1]/a[1]/button[1]/span[1]")
+	private WebElement approveIcon;
 
 	@FindBy(xpath = "//span[normalize-space()='Approve']")
-	WebElement approveBtn;
+	private WebElement approveBtn;
 
-	@FindBy(xpath = "//button[@class='btn btn-lg btn-primary float-right']//span[@class='indicator-label'][normalize-space()='Approve']")
-	WebElement againApproveBtn;
+	@FindBy(xpath = "//button[@class='btn btn-lg btn-primary float-right']//span[normalize-space()='Approve']")
+	private WebElement popupApproveBtn;
 
 	public MaterialInspection(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	// actions
 	public void clickOnMaterialInspection() {
 		materialInspection.click();
 	}
@@ -78,128 +58,47 @@ public class MaterialInspection extends TestBase {
 		addMaterialInspection.click();
 	}
 
-	public void selectPurcahsenumvalue() {
+	public void selectPurchaseOrderNumber() {
 		purchaseOrderNum.click();
 		purchaseOrderNumList.click();
 	}
 
-	public void enterInvoiceNum() {
-		enterInvoiceNo.click();
-		enterInvoiceNo.sendKeys("1");
-		enterInvoiceNo.sendKeys(Keys.RETURN);
+	public void enterInvoiceNumber() {
+		invoiceNumberInput.click();
+		invoiceNumberInput.sendKeys("1");
+		invoiceNumberInput.sendKeys(Keys.RETURN);
 	}
 
 	public void selectLocation() {
-		selectLocation.click();
-		Select select = new Select(selectLocation);
+		locationSelect.click();
+		Select select = new Select(locationSelect);
 		select.selectByIndex(2);
 	}
 
-	public void enterRemarksAndSubmit() {
-		if (isFieldPresent(enterRemarks)) {
-			enterRemarks(enterRemarks, "Ok");
-		} else {
-			return; // Break the loop if the next field is not present
-		}
-		if (isFieldPresent(enter2ndRemarks)) {
-			enterRemarks(enter2ndRemarks, "Issued");
-		} else {
-			return; // Break the loop if the next field is not present
-		}
-		if (isFieldPresent(enter3rdRemarks)) {
-			enterRemarks(enter3rdRemarks, "Remarks for field 3");
-		} else {
-			return; // Break the loop if the next field is not present
-		}
-		if (isFieldPresent(enter4thRemarks)) {
-			enterRemarks(enter4thRemarks, "Remarks for field 4");
-		} else {
-			return; // Break the loop if the next field is not present
-		}
-		if (isFieldPresent(enter5thRemarks)) {
-			enterRemarks(enter5thRemarks, "Remarks for field 5");
-		} else {
-			return; // Break the loop if the next field is not present
-		}
-		if (isFieldPresent(enter6thRemarks)) {
-			enterRemarks(enter6thRemarks, "Remarks for field 6");
-		} else {
-			return; // Break the loop if the next field is not present
-		}
-		// Add additional if conditions for other fields if needed
-	}
+	public void enterRemarksInAllFields() {
+		String remarksText = "Ok";
 
-	private void enterRemarks(WebElement field, String remarks) {
-		field.sendKeys(remarks);
-	}
-
-	private boolean isFieldPresent(WebElement field) {
-		try {
-			return field.isDisplayed();
-		} catch (org.openqa.selenium.NoSuchElementException e) {
-			return false;
+		for (WebElement remarksField : remarksFields) {
+			remarksField.click();
+			remarksField.clear();
+			remarksField.sendKeys(remarksText);
 		}
 	}
 
-	/*
-	 * public void giveRemarksAndSubmit() { giveRemarks.click();
-	 * giveRemarks.sendKeys("Ok Issues"); giveRemarks.sendKeys(Keys.TAB);
-	 * 
-	 * TestBase base = new TestBase(); base.scrollDown(driver, 0, 800);
-	 * 
-	 * int fieldCount = 1; boolean isFieldPresent = true;
-	 * 
-	 * while (isFieldPresent && fieldCount <= 6) { WebElement remarksField =
-	 * getRemarksFieldByIndex(fieldCount);
-	 * 
-	 * if (isElementPresent(remarksField)) { remarksField.click();
-	 * remarksField.sendKeys("Ok"); fieldCount++; } else { isFieldPresent = false; }
-	 * }
-	 * 
-	 * if (fieldCount <= 2) { submitBtn.click(); } else { clickSubmitButton(); } }
-	 * 
-	 * private void clickSubmitButton() { try { submitBtn.click(); } catch
-	 * (NoSuchElementException e) { System.out.println("Submit button not found.");
-	 * } }
-	 * 
-	 * private WebElement getRemarksFieldByIndex(int index) { return
-	 * driver.findElement(By.name("items." + (index - 1) + ".remarks")); }
-	 * 
-	 * private boolean isElementPresent(WebElement element) { try { return
-	 * element.isDisplayed(); } catch (NoSuchElementException e) { return false; } }
-	 */
-	// also working
-	/*
-	 * public void giveRemarksAndSubmit() { giveRemarks.click();
-	 * giveRemarks.sendKeys("Ok Issues"); giveRemarks.sendKeys(Keys.TAB);
-	 * 
-	 * TestBase base = new TestBase(); base.scrollDown(driver, 0, 600);
-	 * 
-	 * WebElement remarksField = null; int fieldCount = 1;
-	 * 
-	 * while (isElementPresent(getRemarksFieldByIndex(fieldCount))) { remarksField =
-	 * getRemarksFieldByIndex(fieldCount); remarksField.click();
-	 * remarksField.sendKeys("Ok");
-	 * 
-	 * fieldCount++; }
-	 * 
-	 * submitBtn.click(); }
-	 * 
-	 * private WebElement getRemarksFieldByIndex(int index) { return
-	 * driver.findElement(By.name("items." + (index - 1) + ".remarks")); }
-	 * 
-	 * private boolean isElementPresent(WebElement element) { try { return
-	 * element.isDisplayed(); } catch (NoSuchElementException e) { return false; } }
-	 */
+	public void submitBtn() {
+		scrollDown(driver, 600, 0);
+		submitBtn.click();
+	}
 
-	public void approveProcess() throws InterruptedException {
-		approveIconEle.click();
-		Thread.sleep(3000);
-		TestBase base = new TestBase();
-		base.scrollDown(driver, 0, 800);
+	public void approveIcon() {
+		approveIcon.click();
+	}
+
+	public void approveBtn() {
 		approveBtn.click();
-		againApproveBtn.click();
-
 	}
 
+	public void popupApproveBtn() {
+		popupApproveBtn.click();
+	}
 }
