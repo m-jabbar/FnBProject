@@ -12,7 +12,7 @@ import com.fb.qa.base.TestBase;
 
 public class MaterialIssuancePage extends TestBase {
 	private WebDriver driver;
-	private String qrCode = "987654321122-20230616";
+	private String qrCode = "987654321122-20230701";
 
 	@FindBy(xpath = "//a[contains(@href, \"/material-issuance\")]")
 	private WebElement materialIssuanceLink;

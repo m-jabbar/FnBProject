@@ -10,7 +10,6 @@ import com.fb.qa.base.TestBase;
 import com.fb.qa.listeners.MyListeners;
 import com.fb.qa.pages.MaterialRequisitionPage;
 import com.fb.qa.pages.HomePage;
-import com.fb.qa.pages.LoginPage;
 
 @Listeners(MyListeners.class)
 public class MaterialRequisitionTest extends TestBase {
@@ -20,7 +19,6 @@ public class MaterialRequisitionTest extends TestBase {
 		super();
 	}
 
-	LoginPage loginPage;
 	HomePage homepage;
 	MaterialRequisitionPage materialRequisition;
 

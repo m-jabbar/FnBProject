@@ -85,11 +85,12 @@ public class InventoryPage extends TestBase {
 	}
 
 	public void enterQuantity(String quantity) {
-		enterQuantity.click();
+		enterQuantity.clear();
 		enterQuantity.sendKeys(quantity);
 	}
 
 	public void selectExpiryDate() {
+		selectDate.click();
 		selectExpiryDate.click();
 		okButton.click();
 	}
