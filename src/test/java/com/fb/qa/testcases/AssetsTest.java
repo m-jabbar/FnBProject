@@ -18,7 +18,7 @@ public class AssetsTest extends TestBase {
 	public AssetsTest() {
 		super();
 	}
-
+// before method
 	@BeforeMethod
 	public void setup() throws InterruptedException {
 		this.driver = initialization();

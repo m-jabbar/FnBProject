@@ -33,31 +33,7 @@ public class MyListeners extends TestBase implements ITestListener {
 		
 		System.out.println("Failed test");
 		failTestCases(result.getMethod().getMethodName());
-		
-		/*String testName = result.getName();
-		WebDriver driver = null;
-		try {
-			driver = (WebDriver) result.getTestClass().getRealClass().getDeclaredField("driver")
-					.get(result.getInstance());
-		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
-			e.printStackTrace();
-		}
 
-		if (driver != null) {
-			try {
-				File srcScreenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-				String screenshotPath = System
-						.getProperty("C:\\Users\\muhammad.jabbar\\eclipse-workspace\\fbProject\\Screenshots\\scr.png");
-				FileUtils.copyFile(srcScreenshot, new File(screenshotPath));
-				FileHandler.copy(srcScreenshot, new File(screenshotPath));
-				extentTest.addScreenCaptureFromPath(screenshotPath);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-
-		extentTest.log(Status.INFO, result.getThrowable());
-		extentTest.log(Status.FAIL, testName + "Execution failed");*/
 	}
 
 	public void onTestSkipped(ITestResult result) {
