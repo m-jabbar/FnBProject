@@ -57,6 +57,6 @@ public class GoodsReceiveNotesTest extends TestBase {
 
 	@AfterMethod
 	public void teardown() throws InterruptedException {
-		driver.quit();
+		super.tearDown();
 	}
 }

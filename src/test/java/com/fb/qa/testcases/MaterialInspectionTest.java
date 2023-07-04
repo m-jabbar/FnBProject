@@ -54,6 +54,6 @@ public class MaterialInspectionTest extends TestBase {
 
 	@AfterMethod
 	public void teardown() throws InterruptedException {
-		driver.quit();
+		super.tearDown();
 	}
 }

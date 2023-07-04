@@ -1,6 +1,5 @@
 package com.fb.qa.testcases;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -14,7 +13,6 @@ public class HomePageTest extends TestBase {
 
 	private LoginPage loginPage;
 	private HomePage homepage;
-	private WebDriver driver;
 
 	public HomePageTest() {
 		super();
@@ -22,9 +20,8 @@ public class HomePageTest extends TestBase {
 
 	@BeforeMethod
 	public void setup() throws InterruptedException {
-		driver = initialization();
-		loginPage = new LoginPage(driver);
-		homepage = loginPage.login("abdullah.bilal@nxb.com.pk", "Qajob@1234");
+		initialization();
+		homepage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 	}
 
 	@Test(priority = 1)
@@ -37,6 +34,6 @@ public class HomePageTest extends TestBase {
 	@AfterMethod
 	public void teardown() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.close();
+		super.tearDown();
 	}
 }

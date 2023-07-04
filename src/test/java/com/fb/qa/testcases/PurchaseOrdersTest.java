@@ -65,6 +65,6 @@ public class PurchaseOrdersTest extends TestBase {
 
 	@AfterMethod
 	public void teardown() {
-		driver.quit();
+		super.tearDown();
 	}
 }
