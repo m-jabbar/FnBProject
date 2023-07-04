@@ -7,8 +7,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
 		<aspectj.version>1.8.10</aspectj.version>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<!--	<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>-->
 	</properties>
 	<dependencies>
 		<!--
@@ -31,9 +31,6 @@
 			<version>7.8.0</version>
 			<!--	<scope>test</scope>-->
 		</dependency>
-
-		<!--
-		https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
 		<dependency>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-compiler-plugin</artifactId>
@@ -90,9 +87,6 @@
 			<artifactId>allure-testng</artifactId>
 			<version>2.22.0</version>
 		</dependency>
-		<!--
-		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
-		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-reload4j -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-reload4j</artifactId>
@@ -112,6 +106,11 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.1.0</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
 				<dependencies>
 					<dependency>
 						<groupId>org.aspectj</groupId>
