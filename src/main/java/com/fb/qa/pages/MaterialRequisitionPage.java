@@ -19,7 +19,7 @@ public class MaterialRequisitionPage extends TestBase {
 	@FindBy(xpath = "//a[contains(@href, 'material-requisition')]")
 	WebElement materialReq;
 
-	@FindBy(xpath = "//div[@class='add-button text-end']/button")
+	@FindBy(xpath = "//a[normalize-space()='Add Material Requisition']")
 	WebElement addMaterialReq;
 
 	@FindBy(xpath = "//select[@name='department']")

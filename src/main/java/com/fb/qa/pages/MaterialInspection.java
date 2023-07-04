@@ -1,7 +1,6 @@
 package com.fb.qa.pages;
 
 import java.util.List;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -66,7 +65,7 @@ public class MaterialInspection extends TestBase {
 	public void enterInvoiceNumber() {
 		invoiceNumberInput.click();
 		invoiceNumberInput.sendKeys("1");
-		invoiceNumberInput.sendKeys(Keys.RETURN);
+//		invoiceNumberInput.sendKeys(Keys.RETURN);
 	}
 
 	public void selectLocation() {
@@ -76,6 +75,7 @@ public class MaterialInspection extends TestBase {
 	}
 
 	public void enterRemarksInAllFields() {
+		scrollDown(driver, 500, 0);
 		String remarksText = "Ok";
 
 		for (WebElement remarksField : remarksFields) {
@@ -86,7 +86,7 @@ public class MaterialInspection extends TestBase {
 	}
 
 	public void submitBtn() {
-		scrollDown(driver, 600, 0);
+		scrollDown(driver, 700, 0);
 		submitBtn.click();
 	}
 

@@ -59,8 +59,6 @@ public class ProductCategory extends TestBase {
 	
 	public void selectParentCategoryListValue() {
 		parentCategory.click();
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("\"react-select-2-option-0")));
 		parentCategoryListValue.click();
 	}
 	

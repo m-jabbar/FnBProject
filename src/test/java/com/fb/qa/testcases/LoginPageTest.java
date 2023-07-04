@@ -14,6 +14,7 @@ import com.fb.qa.pages.LoginPage;
 public class LoginPageTest extends TestBase {
 
 	public HomePage homepage;
+	LoginPage loginPage;
 
 	public LoginPageTest() {
 		super();

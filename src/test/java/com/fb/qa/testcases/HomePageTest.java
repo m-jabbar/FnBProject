@@ -11,7 +11,6 @@ import com.fb.qa.pages.LoginPage;
 
 public class HomePageTest extends TestBase {
 
-	private LoginPage loginPage;
 	private HomePage homepage;
 
 	public HomePageTest() {
@@ -20,8 +19,17 @@ public class HomePageTest extends TestBase {
 
 	@BeforeMethod
 	public void setup() throws InterruptedException {
-		initialization();
-		homepage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		/*
+		 * this.driver=initialization(); homepage =
+		 * loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		 */
+		try {
+			this.driver = initialization();
+			new LoginPage(driver);
+			homepage = new HomePage(driver);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test(priority = 1)
@@ -33,7 +41,6 @@ public class HomePageTest extends TestBase {
 
 	@AfterMethod
 	public void teardown() throws InterruptedException {
-		Thread.sleep(3000);
 		super.tearDown();
 	}
 }

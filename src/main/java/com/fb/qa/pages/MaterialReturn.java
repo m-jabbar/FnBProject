@@ -41,7 +41,7 @@ public class MaterialReturn extends TestBase {
 	@FindBy(css = "div.toast-message")
 	private WebElement toastMessageVerify;
 
-	@FindBy(css = "div[data-testid='approveIcon']")
+	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[9]/div[1]/a[1]/button[1]/span[1]")
 	private WebElement approveIcon;
 
 	@FindBy(xpath = "//span[normalize-space()='Approve']")

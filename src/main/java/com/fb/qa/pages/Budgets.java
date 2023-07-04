@@ -29,7 +29,7 @@ public class Budgets extends TestBase {
 	@FindBy(xpath = "//input[@name='endDate']")
 	private WebElement endDateInput;
 
-	@FindBy(xpath = "div[aria-label='Choose Friday, August 4th, 2023']")
+	@FindBy(xpath ="//div[@aria-label='Choose Friday, July 28th, 2023']")
 	private WebElement selectEndDate;
 
 	@FindBy(name = "sections.0.title")

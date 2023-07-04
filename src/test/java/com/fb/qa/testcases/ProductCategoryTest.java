@@ -8,30 +8,27 @@ import org.testng.annotations.Test;
 import com.fb.qa.base.TestBase;
 import com.fb.qa.listeners.MyListeners;
 import com.fb.qa.pages.HomePage;
-import com.fb.qa.pages.LoginPage;
 import com.fb.qa.pages.ProductCategory;
+
 @Listeners(MyListeners.class)
-public class ProductCategoryTest extends TestBase{
+public class ProductCategoryTest extends TestBase {
+	HomePage homePage;
+	private ProductCategory productCategory;
+
 	public ProductCategoryTest() {
 		super();
 	}
-	
-	LoginPage loginPage;
-	HomePage homepage;
-	ProductCategory productCategory;
-	
+
 	@BeforeMethod
 	public void setup() throws InterruptedException {
 		this.driver = initialization();
-		loginPage = new LoginPage(this.driver);
-		homepage= loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
-		productCategory = homepage.clickOnProductCategory();
+		homePage = new HomePage(driver);
+		productCategory = homePage.clickOnProductCategory();
 	}
+
 	@Test
 	public void ProductCategoryProcess() throws InterruptedException {
-		
-		productCategory.clickOnProductCategory();
-		Thread.sleep(1000);
+
 		productCategory.clickOnAddProductCategory();
 		Thread.sleep(1000);
 		productCategory.selectProductName();
@@ -42,16 +39,13 @@ public class ProductCategoryTest extends TestBase{
 		Thread.sleep(1000);
 		productCategory.submitBtn();
 		Thread.sleep(1000);
-		
-		
+
 	}
-	
-	
+
 	@AfterMethod
 	public void teardown() throws InterruptedException {
 		super.tearDown();
 
 	}
-	
 
 }
