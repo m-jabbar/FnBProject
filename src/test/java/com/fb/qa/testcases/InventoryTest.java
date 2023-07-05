@@ -41,7 +41,7 @@ public class InventoryTest extends TestBase {
 		Thread.sleep(1000);
 		inventory.selectLocation();
 		Thread.sleep(1000);
-		inventory.enterQuantity("10");
+		inventory.enterQuantity("5");
 		Thread.sleep(1000);
 		inventory.selectExpiryDate();
 		Thread.sleep(1000);
