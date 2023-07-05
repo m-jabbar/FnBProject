@@ -29,7 +29,7 @@ public class InventoryTest extends TestBase {
 		inventory = homepage.clickOnInventory();
 	}
 
-	@Test
+	@Test(description = "Inventory test")
 	public void inventoryProcess() throws InterruptedException {
 		inventory.addInventory();
 		Thread.sleep(1000);
