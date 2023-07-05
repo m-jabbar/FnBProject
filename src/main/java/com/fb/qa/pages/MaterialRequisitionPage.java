@@ -2,7 +2,6 @@ package com.fb.qa.pages;
 
 import java.time.Duration;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,13 +27,13 @@ public class MaterialRequisitionPage extends TestBase {
 	@FindBy(xpath = "//select[@name='location']")
 	WebElement locationList;
 
-	@FindBy(xpath = "//div[@class='react-select__value-container']")
+	@FindBy(xpath = "//div[@class='multi-select__value-container css-hlgwow']")
 	WebElement productList;
 
 	@FindBy(id = "react-select-2-option-1")
 	WebElement selectProductList;
 
-	@FindBy(xpath = "//input[@name='quantity']")
+	@FindBy(xpath = "//input[contains(@name, \"items.0.quantity\")]")
 	WebElement quantity;
 
 	@FindBy(xpath = "//button[contains(@class,'btn btn-lg btn-primary me-3')]")
@@ -76,7 +75,7 @@ public class MaterialRequisitionPage extends TestBase {
 
 	public void selectDepartment() {
 		departmentList.click();
-		new Select(departmentList).selectByIndex(4);
+		new Select(departmentList).selectByIndex(3);
 	}
 
 	public void selectLocation() {
@@ -93,7 +92,7 @@ public class MaterialRequisitionPage extends TestBase {
 	public void enterQuantity() throws InterruptedException {
 		quantity.click();
 		quantity.sendKeys("1");
-		quantity.sendKeys(Keys.TAB);
+	
 	}
 
 	public void submitBtn() throws InterruptedException {
