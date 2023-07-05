@@ -59,7 +59,7 @@ public class Budgets extends TestBase {
 	@FindBy(xpath = "//body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[12]/div[1]/a[2]/span[1]")
 	private WebElement approveIcon;
 
-	@FindBy(xpath = "//span[normalize-space()='Approve']")
+	@FindBy(xpath ="//button[contains(@class, \"btn btn-lg  btn-primary me-3\")]")
 	private WebElement approveBtn;
 
 	@FindBy(xpath = "//button[@class='btn btn-lg btn-primary']//span[@class='indicator-label'][normalize-space()='Approve']")

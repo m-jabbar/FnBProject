@@ -1,49 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-04T19:44:04 PKT" name="Default suite" finished-at="2023-07-04T19:44:37 PKT" duration-ms="32751">
+  <suite started-at="2023-07-05T18:50:38 PKT" name="Default suite" finished-at="2023-07-05T18:51:05 PKT" duration-ms="27223">
     <groups>
     </groups>
-    <test started-at="2023-07-04T19:44:04 PKT" name="Default test" finished-at="2023-07-04T19:44:37 PKT" duration-ms="32751">
-      <class name="com.fb.qa.testcases.MaterialRequisitionTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialRequisitionTest@1941a8ff]" started-at="2023-07-04T19:44:05 PKT" name="setup" finished-at="2023-07-04T19:44:11 PKT" duration-ms="5955" status="PASS">
+    <test started-at="2023-07-05T18:50:38 PKT" name="Default test" finished-at="2023-07-05T18:51:05 PKT" duration-ms="27223">
+      <class name="com.fb.qa.testcases.MaterialInspectionTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialInspectionTest@3a12c404]" started-at="2023-07-05T18:50:38 PKT" name="setup" finished-at="2023-07-05T18:50:44 PKT" duration-ms="6555" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyPageTitle()[pri:1, instance:com.fb.qa.testcases.MaterialRequisitionTest@1941a8ff]" started-at="2023-07-04T19:44:11 PKT" name="verifyPageTitle" description="Verify Material Requisition page title" finished-at="2023-07-04T19:44:11 PKT" duration-ms="127" status="PASS">
+        <test-method signature="testMaterialInspectionProcess()[pri:1, instance:com.fb.qa.testcases.MaterialInspectionTest@3a12c404]" started-at="2023-07-05T18:50:44 PKT" name="testMaterialInspectionProcess" description="Perform Material Inspection Process" finished-at="2023-07-05T18:50:52 PKT" duration-ms="7970" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyPageTitle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.MaterialRequisitionTest@1941a8ff]" started-at="2023-07-04T19:44:11 PKT" name="tearDown" finished-at="2023-07-04T19:44:12 PKT" duration-ms="547" status="PASS">
+        </test-method> <!-- testMaterialInspectionProcess -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.MaterialInspectionTest@3a12c404]" started-at="2023-07-05T18:50:52 PKT" name="teardown" finished-at="2023-07-05T18:50:54 PKT" duration-ms="1471" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialRequisitionTest@1941a8ff]" started-at="2023-07-04T19:44:12 PKT" name="setup" finished-at="2023-07-04T19:44:17 PKT" duration-ms="5398" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="materialReqProcess()[pri:2, instance:com.fb.qa.testcases.MaterialRequisitionTest@1941a8ff]" started-at="2023-07-04T19:44:17 PKT" name="materialReqProcess" description="Perform Material Requisition process" finished-at="2023-07-04T19:44:25 PKT" duration-ms="7625" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- materialReqProcess -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.MaterialRequisitionTest@1941a8ff]" started-at="2023-07-04T19:44:25 PKT" name="tearDown" finished-at="2023-07-04T19:44:26 PKT" duration-ms="1411" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialRequisitionTest@1941a8ff]" started-at="2023-07-04T19:44:26 PKT" name="setup" finished-at="2023-07-04T19:44:31 PKT" duration-ms="5394" status="PASS">
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialInspectionTest@3a12c404]" started-at="2023-07-05T18:50:54 PKT" name="setup" finished-at="2023-07-05T18:50:59 PKT" duration-ms="5704" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="approveMaterialProcess()[pri:3, instance:com.fb.qa.testcases.MaterialRequisitionTest@1941a8ff]" started-at="2023-07-04T19:44:31 PKT" name="approveMaterialProcess" description="Perform Material Requisition approval process" finished-at="2023-07-04T19:44:37 PKT" duration-ms="5081" status="PASS">
+        <test-method signature="testApproveInspectionProcess()[pri:2, instance:com.fb.qa.testcases.MaterialInspectionTest@3a12c404]" started-at="2023-07-05T18:50:59 PKT" name="testApproveInspectionProcess" description="Perform Approval for Material Inspection" finished-at="2023-07-05T18:51:04 PKT" duration-ms="4854" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- approveMaterialProcess -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.MaterialRequisitionTest@1941a8ff]" started-at="2023-07-04T19:44:37 PKT" name="tearDown" finished-at="2023-07-04T19:44:37 PKT" duration-ms="497" status="PASS">
+        </test-method> <!-- testApproveInspectionProcess -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.MaterialInspectionTest@3a12c404]" started-at="2023-07-05T18:51:04 PKT" name="teardown" finished-at="2023-07-05T18:51:05 PKT" duration-ms="455" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fb.qa.testcases.MaterialRequisitionTest -->
+        </test-method> <!-- teardown -->
+      </class> <!-- com.fb.qa.testcases.MaterialInspectionTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

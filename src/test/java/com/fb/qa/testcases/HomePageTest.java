@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 
 import com.fb.qa.base.TestBase;
 import com.fb.qa.pages.HomePage;
-import com.fb.qa.pages.LoginPage;
 
 public class HomePageTest extends TestBase {
 
@@ -25,7 +24,7 @@ public class HomePageTest extends TestBase {
 		 */
 		try {
 			this.driver = initialization();
-			new LoginPage(driver);
+//			new LoginPage(driver);
 			homepage = new HomePage(driver);
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -8,24 +8,20 @@ import org.testng.annotations.Test;
 import com.fb.qa.base.TestBase;
 import com.fb.qa.listeners.MyListeners;
 import com.fb.qa.pages.HomePage;
-import com.fb.qa.pages.LoginPage;
 import com.fb.qa.pages.Products;
 @Listeners(MyListeners.class)
 public class ProductsTest extends TestBase {
 	public ProductsTest() {
 		super();
 	}
-	
-	LoginPage loginPage;
-	HomePage homepage;
+	HomePage homePage;
 	Products products;
 	
 	@BeforeMethod
 	public void setup() throws InterruptedException {
-		this.driver = initialization();
-		loginPage = new LoginPage(this.driver);
-		homepage= loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
-		products = homepage.clickOnProducts();
+		driver = initialization();
+		homePage = new HomePage(driver);
+		products = homePage.clickOnProducts();
 	}
 	@Test
 	public void ProductCategoryProcess() throws InterruptedException {

@@ -9,6 +9,7 @@
 			<class name="com.fb.qa.testcases.LoginPageTest"/>
 			<class name="com.fb.qa.testcases.HomePageTest"/>
 			<class name="com.fb.qa.testcases.InventoryTest"/>
+			
 			<class name="com.fb.qa.testcases.MaterialRequisitionTest"/>
 			<class name="com.fb.qa.testcases.MaterialIssuanceTest"/>
 			<class name="com.fb.qa.testcases.OutwardPageTest"/>

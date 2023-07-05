@@ -37,8 +37,6 @@ public class MaterialRequisitionTest extends TestBase {
 
 	@Test(priority = 2, description = "Perform Material Requisition process")
 	public void materialReqProcess() throws InterruptedException {
-//		materialRequisition.clickOnMaterialRequisition();
-//		Thread.sleep(1000);
 		materialRequisition.clickOnAddMaterialReq();
 		Thread.sleep(1000);
 		materialRequisition.selectDepartment();

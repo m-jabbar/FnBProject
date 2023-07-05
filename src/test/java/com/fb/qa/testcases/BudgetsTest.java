@@ -58,7 +58,7 @@ public class BudgetsTest extends TestBase {
 	public void approveBudgetTest() throws InterruptedException {
 		budgets.approveIcon();
 		Thread.sleep(1000);
-		scrollDown(driver, 0, 500);
+		scrollDown(driver, 0, 600);
 		budgets.approveBtn();
 		Thread.sleep(1000);
 		budgets.popupApproveBtn();
