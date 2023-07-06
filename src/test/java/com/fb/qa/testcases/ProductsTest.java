@@ -25,8 +25,6 @@ public class ProductsTest extends TestBase {
 	}
 	@Test
 	public void ProductCategoryProcess() throws InterruptedException {
-		products.clickOnProducts();
-		Thread.sleep(1000);
 		products.clickOnAddProducts();
 		Thread.sleep(1000);
 		products.selectCategory();
