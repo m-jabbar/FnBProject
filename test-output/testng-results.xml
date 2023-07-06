@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-05T19:13:19 PKT" name="Default suite" finished-at="2023-07-05T19:13:42 PKT" duration-ms="22906">
+  <suite started-at="2023-07-06T15:37:38 PKT" name="Default suite" finished-at="2023-07-06T15:37:52 PKT" duration-ms="14384">
     <groups>
     </groups>
-    <test started-at="2023-07-05T19:13:19 PKT" name="Default test" finished-at="2023-07-05T19:13:42 PKT" duration-ms="22906">
-      <class name="com.fb.qa.testcases.InventoryTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.InventoryTest@33fe57a9]" started-at="2023-07-05T19:13:19 PKT" name="setup" finished-at="2023-07-05T19:13:29 PKT" duration-ms="9546" status="PASS">
+    <test started-at="2023-07-06T15:37:38 PKT" name="Default test" finished-at="2023-07-06T15:37:52 PKT" duration-ms="14384">
+      <class name="com.fb.qa.testcases.ProductCategoryTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.ProductCategoryTest@1941a8ff]" started-at="2023-07-06T15:37:38 PKT" name="setup" finished-at="2023-07-06T15:37:45 PKT" duration-ms="6804" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="inventoryProcess()[pri:0, instance:com.fb.qa.testcases.InventoryTest@33fe57a9]" started-at="2023-07-05T19:13:29 PKT" name="inventoryProcess" description="Inventory test" finished-at="2023-07-05T19:13:40 PKT" duration-ms="10680" status="PASS">
+        <test-method signature="ProductCategoryProcess()[pri:0, instance:com.fb.qa.testcases.ProductCategoryTest@1941a8ff]" started-at="2023-07-06T15:37:45 PKT" name="ProductCategoryProcess" finished-at="2023-07-06T15:37:51 PKT" duration-ms="6240" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- inventoryProcess -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.InventoryTest@33fe57a9]" started-at="2023-07-05T19:13:40 PKT" name="tearDown" finished-at="2023-07-05T19:13:42 PKT" duration-ms="1812" status="PASS">
+        </test-method> <!-- ProductCategoryProcess -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.ProductCategoryTest@1941a8ff]" started-at="2023-07-06T15:37:51 PKT" name="teardown" finished-at="2023-07-06T15:37:52 PKT" duration-ms="735" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fb.qa.testcases.InventoryTest -->
+        </test-method> <!-- teardown -->
+      </class> <!-- com.fb.qa.testcases.ProductCategoryTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
