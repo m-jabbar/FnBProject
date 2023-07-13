@@ -8,7 +8,7 @@
     <classes>
       <class name="com.fb.qa.testcases.MaterialIssuanceTest">
         <methods>
-          <include name="materialIssuanceProcess"/>
+          <include name="approveIssuanceTest"/>
           <include name="setup"/>
           <include name="tearDown"/>
         </methods>

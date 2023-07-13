@@ -38,7 +38,7 @@ public class InventoryPage extends TestBase {
 	@FindBy(xpath = "//input[@placeholder='Select Date']")
 	private WebElement selectDate;
 
-	@FindBy(xpath ="//span[normalize-space()='31']")
+	@FindBy(xpath ="//div[@title='31 Jul 2023']")
 	private WebElement selectExpiryDate;
 
 	@FindBy(xpath = "//button[normalize-space()='OK']")

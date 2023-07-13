@@ -4,13 +4,15 @@
 	<listeners>
 		<listener class-name="com.fb.qa.listeners.MyListeners"></listener>
 	</listeners>
-  <test name="F and B Testcases">
-    <classes>
-			
-			<class name="com.fb.qa.testcases.MaterialRequisitionTest"/>
-			<class name="com.fb.qa.testcases.MaterialIssuanceTest"/>
-			<class name="com.fb.qa.testcases.OutwardPageTest"/>
-			<class name="com.fb.qa.testcases.InwardPageTest"/>
+	<test name="F and B Testcases">
+		<classes>
+			<class name="com.fb.qa.testcases.InventoryTest" />
+			<class name="com.fb.qa.testcases.MaterialRequisitionTest" />
+			<class name="com.fb.qa.testcases.MaterialIssuanceTest" />
+			<class name="com.fb.qa.testcases.OutwardPageTest" />
+			<class name="com.fb.qa.testcases.InwardPageTest" />
 		</classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+	</test> <!--
+	Test -->
+</suite> <!--
+Suite -->

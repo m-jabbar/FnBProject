@@ -16,6 +16,7 @@
 
 	<!-- Project dependencies -->
 	<dependencies>
+
 		<!-- Selenium -->
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -150,7 +151,7 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			
+
 			<!-- Versions Maven Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
