@@ -1,153 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-13T15:59:06 PKT" name="FnB Sanity Automation Suite" finished-at="2023-07-13T16:01:55 PKT" duration-ms="169115">
+  <suite started-at="2023-07-14T11:17:48 PKT" name="Default suite" finished-at="2023-07-14T11:18:23 PKT" duration-ms="35502">
     <groups>
     </groups>
-    <test started-at="2023-07-13T15:59:06 PKT" name="F and B Testcases" finished-at="2023-07-13T16:01:55 PKT" duration-ms="169115">
-      <class name="com.fb.qa.testcases.OutwardPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.OutwardPageTest@4df5bcb4]" started-at="2023-07-13T16:00:44 PKT" name="setup" finished-at="2023-07-13T16:00:53 PKT" duration-ms="8615" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="outwardProcess()[pri:1, instance:com.fb.qa.testcases.OutwardPageTest@4df5bcb4]" started-at="2023-07-13T16:00:53 PKT" name="outwardProcess" description="Perform the outward process" finished-at="2023-07-13T16:00:59 PKT" duration-ms="6037" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- outwardProcess -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.OutwardPageTest@4df5bcb4]" started-at="2023-07-13T16:00:59 PKT" name="teardown" finished-at="2023-07-13T16:00:59 PKT" duration-ms="407" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.OutwardPageTest@4df5bcb4]" started-at="2023-07-13T16:00:59 PKT" name="setup" finished-at="2023-07-13T16:01:12 PKT" duration-ms="12738" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="approveOutwardProcess()[pri:2, instance:com.fb.qa.testcases.OutwardPageTest@4df5bcb4]" started-at="2023-07-13T16:01:12 PKT" name="approveOutwardProcess" description="Approve the outward process" finished-at="2023-07-13T16:01:16 PKT" duration-ms="4052" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- approveOutwardProcess -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.OutwardPageTest@4df5bcb4]" started-at="2023-07-13T16:01:16 PKT" name="teardown" finished-at="2023-07-13T16:01:18 PKT" duration-ms="1582" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.fb.qa.testcases.OutwardPageTest -->
+    <test started-at="2023-07-14T11:17:48 PKT" name="Default test" finished-at="2023-07-14T11:18:23 PKT" duration-ms="35502">
       <class name="com.fb.qa.testcases.MaterialIssuanceTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@5629510]" started-at="2023-07-13T16:00:03 PKT" name="setup" finished-at="2023-07-13T16:00:11 PKT" duration-ms="8417" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@517d4a0d]" started-at="2023-07-14T11:17:48 PKT" name="setup" finished-at="2023-07-14T11:17:55 PKT" duration-ms="7174" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyPageTitle()[pri:1, instance:com.fb.qa.testcases.MaterialIssuanceTest@5629510]" started-at="2023-07-13T16:00:11 PKT" name="verifyPageTitle" finished-at="2023-07-13T16:00:11 PKT" duration-ms="33" status="PASS">
+        <test-method signature="verifyPageTitle()[pri:1, instance:com.fb.qa.testcases.MaterialIssuanceTest@517d4a0d]" started-at="2023-07-14T11:17:55 PKT" name="verifyPageTitle" finished-at="2023-07-14T11:17:55 PKT" duration-ms="97" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyPageTitle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@5629510]" started-at="2023-07-13T16:00:11 PKT" name="tearDown" finished-at="2023-07-13T16:00:12 PKT" duration-ms="780" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@517d4a0d]" started-at="2023-07-14T11:17:55 PKT" name="tearDown" finished-at="2023-07-14T11:17:56 PKT" duration-ms="525" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@5629510]" started-at="2023-07-13T16:00:12 PKT" name="setup" finished-at="2023-07-13T16:00:20 PKT" duration-ms="8419" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@517d4a0d]" started-at="2023-07-14T11:17:56 PKT" name="setup" finished-at="2023-07-14T11:18:02 PKT" duration-ms="5596" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="materialIssuanceProcess()[pri:2, instance:com.fb.qa.testcases.MaterialIssuanceTest@5629510]" started-at="2023-07-13T16:00:20 PKT" name="materialIssuanceProcess" description="Material Issuance Process" finished-at="2023-07-13T16:00:31 PKT" duration-ms="10204" status="PASS">
+        <test-method signature="materialIssuanceProcess()[pri:2, instance:com.fb.qa.testcases.MaterialIssuanceTest@517d4a0d]" started-at="2023-07-14T11:18:02 PKT" name="materialIssuanceProcess" description="Material Issuance Process" finished-at="2023-07-14T11:18:12 PKT" duration-ms="10313" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- materialIssuanceProcess -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@5629510]" started-at="2023-07-13T16:00:31 PKT" name="tearDown" finished-at="2023-07-13T16:00:31 PKT" duration-ms="566" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@517d4a0d]" started-at="2023-07-14T11:18:12 PKT" name="tearDown" finished-at="2023-07-14T11:18:12 PKT" duration-ms="433" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@5629510]" started-at="2023-07-13T16:00:31 PKT" name="setup" finished-at="2023-07-13T16:00:40 PKT" duration-ms="8954" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@517d4a0d]" started-at="2023-07-14T11:18:12 PKT" name="setup" finished-at="2023-07-14T11:18:18 PKT" duration-ms="6141" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="approveIssuanceTest()[pri:3, instance:com.fb.qa.testcases.MaterialIssuanceTest@5629510]" started-at="2023-07-13T16:00:40 PKT" name="approveIssuanceTest" description="Approve Material Issuance" finished-at="2023-07-13T16:00:44 PKT" duration-ms="3707" status="PASS">
+        <test-method signature="approveIssuanceTest()[pri:3, instance:com.fb.qa.testcases.MaterialIssuanceTest@517d4a0d]" started-at="2023-07-14T11:18:18 PKT" name="approveIssuanceTest" description="Approve Material Issuance" finished-at="2023-07-14T11:18:23 PKT" duration-ms="4151" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- approveIssuanceTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@5629510]" started-at="2023-07-13T16:00:44 PKT" name="tearDown" finished-at="2023-07-13T16:00:44 PKT" duration-ms="438" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.MaterialIssuanceTest@517d4a0d]" started-at="2023-07-14T11:18:23 PKT" name="tearDown" finished-at="2023-07-14T11:18:23 PKT" duration-ms="449" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.fb.qa.testcases.MaterialIssuanceTest -->
-      <class name="com.fb.qa.testcases.InwardPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.InwardPageTest@12c7a01b]" started-at="2023-07-13T16:01:18 PKT" name="setup" finished-at="2023-07-13T16:01:30 PKT" duration-ms="11737" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="inwardProcess()[pri:1, instance:com.fb.qa.testcases.InwardPageTest@12c7a01b]" started-at="2023-07-13T16:01:30 PKT" name="inwardProcess" description="Inward Process" finished-at="2023-07-13T16:01:35 PKT" duration-ms="5251" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- inwardProcess -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.InwardPageTest@12c7a01b]" started-at="2023-07-13T16:01:35 PKT" name="teardown" finished-at="2023-07-13T16:01:36 PKT" duration-ms="896" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.InwardPageTest@12c7a01b]" started-at="2023-07-13T16:01:36 PKT" name="setup" finished-at="2023-07-13T16:01:50 PKT" duration-ms="13529" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="approveInwardTest()[pri:2, instance:com.fb.qa.testcases.InwardPageTest@12c7a01b]" started-at="2023-07-13T16:01:50 PKT" name="approveInwardTest" description="Approve Inward" finished-at="2023-07-13T16:01:54 PKT" duration-ms="4272" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- approveInwardTest -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.InwardPageTest@12c7a01b]" started-at="2023-07-13T16:01:54 PKT" name="teardown" finished-at="2023-07-13T16:01:55 PKT" duration-ms="1365" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.fb.qa.testcases.InwardPageTest -->
-      <class name="com.fb.qa.testcases.MaterialRequisitionTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialRequisitionTest@6d3c5255]" started-at="2023-07-13T15:59:26 PKT" name="setup" finished-at="2023-07-13T15:59:32 PKT" duration-ms="6290" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyPageTitle()[pri:1, instance:com.fb.qa.testcases.MaterialRequisitionTest@6d3c5255]" started-at="2023-07-13T15:59:32 PKT" name="verifyPageTitle" description="Verify Material Requisition page title" finished-at="2023-07-13T15:59:32 PKT" duration-ms="56" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyPageTitle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.MaterialRequisitionTest@6d3c5255]" started-at="2023-07-13T15:59:32 PKT" name="tearDown" finished-at="2023-07-13T15:59:33 PKT" duration-ms="999" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialRequisitionTest@6d3c5255]" started-at="2023-07-13T15:59:33 PKT" name="setup" finished-at="2023-07-13T15:59:39 PKT" duration-ms="6222" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="materialReqProcess()[pri:2, instance:com.fb.qa.testcases.MaterialRequisitionTest@6d3c5255]" started-at="2023-07-13T15:59:39 PKT" name="materialReqProcess" description="Perform Material Requisition process" finished-at="2023-07-13T15:59:47 PKT" duration-ms="8003" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- materialReqProcess -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.MaterialRequisitionTest@6d3c5255]" started-at="2023-07-13T15:59:47 PKT" name="tearDown" finished-at="2023-07-13T15:59:49 PKT" duration-ms="1536" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.MaterialRequisitionTest@6d3c5255]" started-at="2023-07-13T15:59:49 PKT" name="setup" finished-at="2023-07-13T15:59:56 PKT" duration-ms="7665" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="approveMaterialProcess()[pri:3, instance:com.fb.qa.testcases.MaterialRequisitionTest@6d3c5255]" started-at="2023-07-13T15:59:56 PKT" name="approveMaterialProcess" description="Perform Material Requisition approval process" finished-at="2023-07-13T16:00:02 PKT" duration-ms="5978" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- approveMaterialProcess -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.MaterialRequisitionTest@6d3c5255]" started-at="2023-07-13T16:00:02 PKT" name="tearDown" finished-at="2023-07-13T16:00:03 PKT" duration-ms="469" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fb.qa.testcases.MaterialRequisitionTest -->
-      <class name="com.fb.qa.testcases.InventoryTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.InventoryTest@38831718]" started-at="2023-07-13T15:59:07 PKT" name="setup" finished-at="2023-07-13T15:59:13 PKT" duration-ms="6710" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="inventoryProcess()[pri:0, instance:com.fb.qa.testcases.InventoryTest@38831718]" started-at="2023-07-13T15:59:13 PKT" name="inventoryProcess" description="Inventory test" finished-at="2023-07-13T15:59:24 PKT" duration-ms="10609" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- inventoryProcess -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.fb.qa.testcases.InventoryTest@38831718]" started-at="2023-07-13T15:59:24 PKT" name="tearDown" finished-at="2023-07-13T15:59:26 PKT" duration-ms="1506" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.fb.qa.testcases.InventoryTest -->
-    </test> <!-- F and B Testcases -->
-  </suite> <!-- FnB Sanity Automation Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
