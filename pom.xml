@@ -131,6 +131,7 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
+					<reportsDirectory>${basedir}/test-output</reportsDirectory>
 				</configuration>
 				<dependencies>
 					<dependency>
@@ -140,6 +141,7 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+
 			<!-- Maven Failsafe Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

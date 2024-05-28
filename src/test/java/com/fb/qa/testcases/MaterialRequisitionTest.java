@@ -48,10 +48,13 @@ public class MaterialRequisitionTest extends TestBase {
 		materialRequisition.enterQuantity();
 		Thread.sleep(1000);
 		materialRequisition.submitBtn();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+//		materialRequisition.alertMessage();
+
 		String toastMessage = materialRequisition.getToastMessage();
 		Assert.assertEquals(toastMessage, "Material Requisition has been created", "Title is matched");
 		System.out.println("Congratulations! Your test Material Requisition has passed.");
+
 	}
 
 	@Test(priority = 3, description = "Perform Material Requisition approval process")

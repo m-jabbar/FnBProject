@@ -14,7 +14,6 @@ import com.fb.qa.base.TestBase;
 
 public class MaterialRequisitionPage extends TestBase {
 	public WebDriver driver;
-
 	@FindBy(xpath = "//a[contains(@href, 'material-requisition')]")
 	WebElement materialReq;
 
@@ -38,6 +37,9 @@ public class MaterialRequisitionPage extends TestBase {
 
 	@FindBy(xpath = "//button[contains(@class,'btn btn-lg btn-primary me-3')]")
 	WebElement submitBtn;
+
+//	@FindBy(xpath = "//div[@role='alert']")
+//	private WebElement alert;
 
 	@FindBy(xpath = "//div[@role='alert']")
 	WebElement toastMessage;
@@ -92,12 +94,21 @@ public class MaterialRequisitionPage extends TestBase {
 	public void enterQuantity() throws InterruptedException {
 		quantity.click();
 		quantity.sendKeys("1");
-	
+
 	}
 
 	public void submitBtn() throws InterruptedException {
 		submitBtn.click();
 	}
+
+	/*
+	 * public void alertMessage() { try { Alert alert = driver.switchTo().alert();
+	 * String text = alert.getText(); System.out.println("Alert text: " + text);
+	 * alert.accept(); } catch (NoAlertPresentException ex) {
+	 * System.out.println("No alert is present: " + ex.getMessage()); }
+	 * 
+	 * }
+	 */
 
 	public String getToastMessage() {
 		return toastMessage.getText();
