@@ -196,7 +196,7 @@ public class Suppliers extends TestBase {
 	}
 
 	public void approveIcon() {
-		approveIcon.click();
+//		approveIcon.click();
 	}
 
 	public void approveBtn() {

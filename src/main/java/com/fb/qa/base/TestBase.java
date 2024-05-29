@@ -73,16 +73,20 @@ public class TestBase {
 		loginPage.clickLoginButton();
 	}
 
-	public void failTestCases(String testMethodName) {
+	public void failTestCases(WebDriver driver, String testMethodName) {
 		if (driver != null) {
 			File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			String filePath = "C:\\Users\\muhammad.jabbar\\eclipse-workspace\\FBProject\\screenshots\\" + testMethodName
+					+ ".jpg";
 			try {
-				FileUtils.copyFile(srcFile,
-						new File("C:\\Users\\muhammad.jabbar\\eclipse-workspace\\fbProject\\screenshots\\"
-								+ testMethodName + ".jpg"));
+				FileUtils.copyFile(srcFile, new File(filePath));
+				System.out.println("Screenshot captured for method: " + testMethodName + " at path: " + filePath);
 			} catch (IOException e) {
+				System.err.println("Error while copying the screenshot file: " + e.getMessage());
 				e.printStackTrace();
 			}
+		} else {
+			System.err.println("Driver is null, cannot capture screenshot for method: " + testMethodName);
 		}
 	}
 

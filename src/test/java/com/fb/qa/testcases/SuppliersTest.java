@@ -93,6 +93,8 @@ public class SuppliersTest extends TestBase {
 
 	@AfterMethod
 	public void tearDown() {
-		super.tearDown();
+		 failTestCases(driver, "ApproveSuppliers");
+		    super.tearDown();
 	}
+
 }

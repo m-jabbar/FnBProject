@@ -29,11 +29,11 @@ public class MyListeners extends TestBase implements ITestListener {
 		extentTest.log(Status.PASS, testName + "Execution is Successful");
 	}
 
+	@Override
 	public void onTestFailure(ITestResult result) {
-		
-		System.out.println("Failed test");
-		failTestCases(result.getMethod().getMethodName());
-
+		String methodName = result.getMethod().getMethodName();
+		System.out.println("Test failed, capturing screenshot for method: " + methodName);
+		failTestCases(driver, methodName);
 	}
 
 	public void onTestSkipped(ITestResult result) {
