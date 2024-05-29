@@ -6,45 +6,6 @@
   </listeners>
   <test thread-count="5" name="F and B Testcases(failed)">
     <classes>
-      <class name="com.fb.qa.testcases.MaterialReturnTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="approveMaterialReturn"/>
-          <include name="materialReturnProcess"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.fb.qa.testcases.MaterialReturnTest -->
-      <class name="com.fb.qa.testcases.PurchaseOrdersTest">
-        <methods>
-          <include name="teardown"/>
-          <include name="approvePurchaseOrderProcess"/>
-          <include name="setup"/>
-          <include name="purchaseOrderProcess"/>
-        </methods>
-      </class> <!-- com.fb.qa.testcases.PurchaseOrdersTest -->
-      <class name="com.fb.qa.testcases.GoodsReceiveNotesTest">
-        <methods>
-          <include name="goodsReceiveProcess"/>
-          <include name="setup"/>
-          <include name="teardown"/>
-          <include name="approveGoodsReceiveTest"/>
-        </methods>
-      </class> <!-- com.fb.qa.testcases.GoodsReceiveNotesTest -->
-      <class name="com.fb.qa.testcases.HomePageTest">
-        <methods>
-          <include name="verifyHomePageTitleTest"/>
-          <include name="setup"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- com.fb.qa.testcases.HomePageTest -->
-      <class name="com.fb.qa.testcases.BudgetsTest">
-        <methods>
-          <include name="approveBudgetTest"/>
-          <include name="setup"/>
-          <include name="teardown"/>
-          <include name="createBudgetTest"/>
-        </methods>
-      </class> <!-- com.fb.qa.testcases.BudgetsTest -->
       <class name="com.fb.qa.testcases.SuppliersTest">
         <methods>
           <include name="ApproveSuppliers"/>
@@ -53,92 +14,6 @@
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.fb.qa.testcases.SuppliersTest -->
-      <class name="com.fb.qa.testcases.ProductsTest">
-        <methods>
-          <include name="teardown"/>
-          <include name="setup"/>
-          <include name="ProductCategoryProcess"/>
-        </methods>
-      </class> <!-- com.fb.qa.testcases.ProductsTest -->
-      <class name="com.fb.qa.testcases.InwardPageTest">
-        <methods>
-          <include name="approveInwardTest"/>
-          <include name="inwardProcess"/>
-          <include name="teardown"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.fb.qa.testcases.InwardPageTest -->
-      <class name="com.fb.qa.testcases.InventoryTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="inventoryProcess"/>
-        </methods>
-      </class> <!-- com.fb.qa.testcases.InventoryTest -->
-      <class name="com.fb.qa.testcases.MaterialRequisitionTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="approveMaterialProcess"/>
-          <include name="materialReqProcess"/>
-          <include name="verifyPageTitle"/>
-        </methods>
-      </class> <!-- com.fb.qa.testcases.MaterialRequisitionTest -->
-      <class name="com.fb.qa.testcases.LoginPageTest">
-        <methods>
-          <include name="setup"/>
-          <include name="loginTest"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- com.fb.qa.testcases.LoginPageTest -->
-      <class name="com.fb.qa.testcases.SuppliersBillsTest">
-        <methods>
-          <include name="approveSuppliers"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
-          <include name="suppliersBillsProcess"/>
-        </methods>
-      </class> <!-- com.fb.qa.testcases.SuppliersBillsTest -->
-      <class name="com.fb.qa.testcases.OutwardPageTest">
-        <methods>
-          <include name="approveOutwardProcess"/>
-          <include name="setup"/>
-          <include name="outwardProcess"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- com.fb.qa.testcases.OutwardPageTest -->
-      <class name="com.fb.qa.testcases.PurchaseOrderReturnTest">
-        <methods>
-          <include name="approvePurchaseOrderReturn"/>
-          <include name="purchaseOrderProcess"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.fb.qa.testcases.PurchaseOrderReturnTest -->
-      <class name="com.fb.qa.testcases.MaterialIssuanceTest">
-        <methods>
-          <include name="approveIssuanceTest"/>
-          <include name="verifyPageTitle"/>
-          <include name="materialIssuanceProcess"/>
-          <include name="setup"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.fb.qa.testcases.MaterialIssuanceTest -->
-      <class name="com.fb.qa.testcases.AssetsTest">
-        <methods>
-          <include name="teardown"/>
-          <include name="setup"/>
-          <include name="testAssetsProcess"/>
-        </methods>
-      </class> <!-- com.fb.qa.testcases.AssetsTest -->
-      <class name="com.fb.qa.testcases.MaterialInspectionTest">
-        <methods>
-          <include name="testMaterialInspectionProcess"/>
-          <include name="testApproveInspectionProcess"/>
-          <include name="teardown"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.fb.qa.testcases.MaterialInspectionTest -->
     </classes>
   </test> <!-- F and B Testcases(failed) -->
 </suite> <!-- Failed suite [FnB Automation Suite] -->

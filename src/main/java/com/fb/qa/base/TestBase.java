@@ -8,8 +8,8 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Properties;
-
 import org.apache.commons.io.FileUtils;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -75,14 +75,14 @@ public class TestBase {
 
 	public void failTestCases(WebDriver driver, String testMethodName) {
 		if (driver != null) {
-			File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			String filePath = "C:\\Users\\muhammad.jabbar\\eclipse-workspace\\FBProject\\screenshots\\" + testMethodName
-					+ ".jpg";
 			try {
+				File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+				String filePath = "C:\\Users\\muhammad.jabbar\\eclipse-workspace\\FBProject\\screenshots\\"
+						+ testMethodName + ".jpg";
 				FileUtils.copyFile(srcFile, new File(filePath));
 				System.out.println("Screenshot captured for method: " + testMethodName + " at path: " + filePath);
 			} catch (IOException e) {
-				System.err.println("Error while copying the screenshot file: " + e.getMessage());
+				System.err.println("Error while capturing or saving the screenshot: " + e.getMessage());
 				e.printStackTrace();
 			}
 		} else {

@@ -8,9 +8,11 @@
     <classes>
 			<class name="com.fb.qa.testcases.LoginPageTest"/>
 			<class name="com.fb.qa.testcases.HomePageTest"/>
-			<class name="com.fb.qa.testcases.InventoryTest"/>
+			<class name="com.fb.qa.testcases.SuppliersTest"/>
 			
-<!--			<class name="com.fb.qa.testcases.MaterialRequisitionTest"/>
+<!--			<class name="com.fb.qa.testcases.InventoryTest"/>
+			
+			<class name="com.fb.qa.testcases.MaterialRequisitionTest"/>
 			<class name="com.fb.qa.testcases.MaterialIssuanceTest"/>
 			<class name="com.fb.qa.testcases.OutwardPageTest"/>
 			<class name="com.fb.qa.testcases.InwardPageTest"/>
@@ -23,7 +25,7 @@
 			
 			<class name="com.fb.qa.testcases.PurchaseOrderReturnTest"/>
 			
-			<class name="com.fb.qa.testcases.AssetsTest"/>
+			<class name="com.fb.qa.testcases.AssetsTest"/
 			
 		
 			
@@ -31,10 +33,10 @@
 			
 			
 			
-			<class name="com.fb.qa.testcases.SuppliersTest"/>
+			
 			<class name="com.fb.qa.testcases.SuppliersBillsTest"/>
 			
-			<class name="com.fb.qa.testcases.ProductsTest"/>-->
+			<class name="com.fb.qa.testcases.ProductsTest"/>>-->
 			
 			
 		</classes>
