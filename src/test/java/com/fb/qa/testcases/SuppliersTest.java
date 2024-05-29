@@ -53,7 +53,7 @@ public class SuppliersTest extends TestBase {
 		scrollDown(driver, 0, 600);
 		suppliers.proCapacity();
 		Thread.sleep(1000);
-		suppliers.fbrRegisterStatus();
+//		suppliers.fbrRegisterStatus();
 		Thread.sleep(1000);
 		suppliers.orderCapacity();
 		Thread.sleep(1000);

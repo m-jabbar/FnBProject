@@ -36,7 +36,7 @@ public class AssetsTest extends TestBase {
 		Thread.sleep(1000);
 		assets.selectProduct();
 		Thread.sleep(1000);
-		assets.selectLocation();
+//		assets.selectLocation();
 		Thread.sleep(1000);
 		assets.clickSubmitBtn();
 		Thread.sleep(1000);

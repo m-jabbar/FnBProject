@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-29T12:18:13 PKT" name="Default suite" finished-at="2024-05-29T12:19:11 PKT" duration-ms="58456">
+  <suite started-at="2024-05-29T14:46:46 PKT" name="Default suite" finished-at="2024-05-29T14:47:45 PKT" duration-ms="59405">
     <groups>
     </groups>
-    <test started-at="2024-05-29T12:18:13 PKT" name="Default test" finished-at="2024-05-29T12:19:11 PKT" duration-ms="58456">
+    <test started-at="2024-05-29T14:46:46 PKT" name="Default test" finished-at="2024-05-29T14:47:45 PKT" duration-ms="59405">
       <class name="com.fb.qa.testcases.AssetsTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.AssetsTest@723e88f9]" started-at="2024-05-29T12:18:13 PKT" name="setup" finished-at="2024-05-29T12:18:28 PKT" duration-ms="14706" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.fb.qa.testcases.AssetsTest@723e88f9]" started-at="2024-05-29T14:46:46 PKT" name="setup" finished-at="2024-05-29T14:47:02 PKT" duration-ms="15346" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testAssetsProcess()[pri:0, instance:com.fb.qa.testcases.AssetsTest@723e88f9]" started-at="2024-05-29T12:18:28 PKT" name="testAssetsProcess" finished-at="2024-05-29T12:19:11 PKT" duration-ms="42634" status="FAIL">
+        <test-method signature="testAssetsProcess()[pri:0, instance:com.fb.qa.testcases.AssetsTest@723e88f9]" started-at="2024-05-29T14:47:02 PKT" name="testAssetsProcess" finished-at="2024-05-29T14:47:45 PKT" duration-ms="43110" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
               <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: /html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]' (tried for 10 second(s) with 500 milliseconds interval)]]>
@@ -54,9 +54,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1f2ca6a8c5eca9519b46676cd3b3bddc, findElement {using=xpath, value=/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.78, chrome: {chromedriverVersion: 125.0.6422.78 (14db42ec38ad..., userDataDir: C:\Users\MUHAMM~1.JAB\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60658}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60658/devtoo..., se:cdpVersion: 125.0.6422.78, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1f2ca6a8c5eca9519b46676cd3b3bddc
+Command: [e21781f6280c613f2a70984bba3ecde8, findElement {using=xpath, value=/html[1]/body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.78, chrome: {chromedriverVersion: 125.0.6422.78 (14db42ec38ad..., userDataDir: C:\Users\MUHAMM~1.JAB\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51767}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51767/devtoo..., se:cdpVersion: 125.0.6422.78, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e21781f6280c613f2a70984bba3ecde8
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
@@ -86,7 +86,7 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAssetsProcess -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.AssetsTest@723e88f9]" started-at="2024-05-29T12:19:11 PKT" name="teardown" finished-at="2024-05-29T12:19:11 PKT" duration-ms="462" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.fb.qa.testcases.AssetsTest@723e88f9]" started-at="2024-05-29T14:47:45 PKT" name="teardown" finished-at="2024-05-29T14:47:45 PKT" duration-ms="397" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
