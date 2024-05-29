@@ -33,7 +33,7 @@ public class InventoryTest extends TestBase {
 	public void inventoryProcess() throws InterruptedException {
 		inventory.addInventory();
 		Thread.sleep(1000);
-		inventory.selectInventoryType();
+//		inventory.selectInventoryType();
 		Thread.sleep(1000);
 		inventory.enterReference("It Is Mine");
 		Thread.sleep(1000);
