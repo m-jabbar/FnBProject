@@ -14,7 +14,7 @@ public class MyExtentReport implements ITestListener{
 
     public static ExtentReports generateExtentReport() {
         ExtentReports extentReport = new ExtentReports();
-        File extentReportFile = new File(System.getProperty("user.dir") + "/test-output/ExtentReports/extentreport.html");
+        File extentReportFile = new File(System.getProperty("user.dir") + "/Reports/ExtentReports/extentreport.html");
         ExtentSparkReporter spark = new ExtentSparkReporter(extentReportFile);
         spark.config().setTheme(Theme.DARK);
         spark.config().setReportName("F&B Test Automation Result Report");

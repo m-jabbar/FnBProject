@@ -51,7 +51,7 @@ public class MyListeners extends TestBase implements ITestListener {
 		if (driver != null) {
 			try {
 				File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-				String filePath = "C:\\Users\\muhammad.jabbar\\eclipse-workspace\\FnBProject\\screenshots\\"
+				String filePath = "C:\\Users\\muhammad.jabbar\\eclipse-workspace\\FnBProject\\Reports\\screenshots\\"
 						+ testMethodName + ".jpg";
 				FileUtils.copyFile(srcFile, new File(filePath));
 				System.out.println("Screenshot captured for method: " + testMethodName + " at path: " + filePath);
