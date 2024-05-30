@@ -1,5 +1,13 @@
+
 package com.fb.qa.listeners;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -33,7 +41,24 @@ public class MyListeners extends TestBase implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 		String methodName = result.getMethod().getMethodName();
 		System.out.println("Test failed, capturing screenshot for method: " + methodName);
-		failTestCases(driver, methodName);
+		failTestCases(TestBase.driver, methodName);
+	}
+
+	public void failTestCases(WebDriver driver, String testMethodName) {
+		if (driver != null) {
+			try {
+				File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+				String filePath = "C:\\Users\\muhammad.jabbar\\eclipse-workspace\\FBProject\\screenshots\\"
+						+ testMethodName + ".jpg";
+				FileUtils.copyFile(srcFile, new File(filePath));
+				System.out.println("Screenshot captured for method: " + testMethodName + " at path: " + filePath);
+			} catch (IOException e) {
+				System.err.println("Error while capturing or saving the screenshot: " + e.getMessage());
+				e.printStackTrace();
+			}
+		} else {
+			System.err.println("Driver is null, cannot capture screenshot for method: " + testMethodName);
+		}
 	}
 
 	public void onTestSkipped(ITestResult result) {

@@ -1,6 +1,5 @@
 package com.fb.qa.base;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -8,12 +7,9 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Properties;
-import org.apache.commons.io.FileUtils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -26,7 +22,7 @@ import com.fb.qa.util.TestUtil;
 
 public class TestBase {
 
-	public WebDriver driver;
+	protected static WebDriver driver;
 	public Properties prop;
 	public WebDriverWait wait;
 	String xpath;
@@ -60,8 +56,7 @@ public class TestBase {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
 		wait = new WebDriverWait(driver, Duration.ofSeconds(TestUtil.EXPLICIT_WAIT));
-		driver.get(prop.getProperty("url"));
-		// Perform login
+		driver.get(prop.getProperty("url")); // Perform login
 		login(prop.getProperty("username"), prop.getProperty("password"));
 		return driver;
 	}
@@ -73,22 +68,19 @@ public class TestBase {
 		loginPage.clickLoginButton();
 	}
 
-	public void failTestCases(WebDriver driver, String testMethodName) {
-		if (driver != null) {
-			try {
-				File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-				String filePath = "C:\\Users\\muhammad.jabbar\\eclipse-workspace\\FBProject\\screenshots\\"
-						+ testMethodName + ".jpg";
-				FileUtils.copyFile(srcFile, new File(filePath));
-				System.out.println("Screenshot captured for method: " + testMethodName + " at path: " + filePath);
-			} catch (IOException e) {
-				System.err.println("Error while capturing or saving the screenshot: " + e.getMessage());
-				e.printStackTrace();
-			}
-		} else {
-			System.err.println("Driver is null, cannot capture screenshot for method: " + testMethodName);
-		}
-	}
+	/*
+	 * public void failTestCases(WebDriver driver, String testMethodName) { if
+	 * (driver != null) { try { File srcFile = ((TakesScreenshot)
+	 * driver).getScreenshotAs(OutputType.FILE); String filePath =
+	 * "C:\\Users\\muhammad.jabbar\\eclipse-workspace\\FBProject\\screenshots\\" +
+	 * testMethodName + ".jpg"; FileUtils.copyFile(srcFile, new File(filePath));
+	 * System.out.println("Screenshot captured for method: " + testMethodName +
+	 * " at path: " + filePath); } catch (IOException e) {
+	 * System.err.println("Error while capturing or saving the screenshot: " +
+	 * e.getMessage()); e.printStackTrace(); } } else {
+	 * System.err.println("Driver is null, cannot capture screenshot for method: " +
+	 * testMethodName); } }
+	 */
 
 	public void scrollDown(WebDriver driver, int x, int y) {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -111,6 +103,8 @@ public class TestBase {
 	}
 
 	public void tearDown() {
-		driver.quit();
+		 if (driver != null) {
+	            driver.quit();
+	        }
 	}
 }

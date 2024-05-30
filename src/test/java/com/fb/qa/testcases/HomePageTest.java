@@ -23,7 +23,7 @@ public class HomePageTest extends TestBase {
 		 * loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 		 */
 		try {
-			this.driver = initialization();
+			TestBase.driver = initialization();
 //			new LoginPage(driver);
 			homepage = new HomePage(driver);
 		} catch (Exception e) {

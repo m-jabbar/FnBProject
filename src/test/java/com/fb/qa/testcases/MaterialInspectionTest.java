@@ -19,7 +19,7 @@ public class MaterialInspectionTest extends TestBase {
 
 	@BeforeMethod
 	public void setup() throws InterruptedException {
-		this.driver = initialization();
+		TestBase.driver = initialization();
 		homepage = new HomePage(driver);
 		materialInspection = homepage.clickOnMaterialInspection();
 	}

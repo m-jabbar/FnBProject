@@ -22,7 +22,7 @@ public class MaterialIssuanceTest extends TestBase {
 
 	@BeforeMethod
 	public void setup() throws InterruptedException {
-		this.driver = initialization();
+		TestBase.driver = initialization();
 		homepage = new HomePage(driver);
 		materialIssuance = homepage.clickOnMaterialIssuance();
 	}

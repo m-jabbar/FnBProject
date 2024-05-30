@@ -24,7 +24,7 @@ public class InventoryTest extends TestBase {
 
 	@BeforeMethod
 	public void setup() throws InterruptedException {
-		this.driver = initialization();
+		TestBase.driver = initialization();
 		homepage = new HomePage(driver);
 		inventory = homepage.clickOnInventory();
 	}

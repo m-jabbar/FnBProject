@@ -21,7 +21,7 @@ public class SuppliersBillsTest extends TestBase {
 
 	@BeforeMethod
 	public void setup() throws InterruptedException {
-		this.driver = initialization();
+		TestBase.driver = initialization();
 		homepage = new HomePage(driver);
 		suppliersBills = homepage.clickOnSuppliersBills();
 	}

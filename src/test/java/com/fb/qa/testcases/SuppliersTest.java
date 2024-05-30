@@ -23,7 +23,7 @@ public class SuppliersTest extends TestBase {
 
 	@BeforeMethod
 	public void setup() throws InterruptedException {
-		this.driver = initialization();
+		TestBase.driver = initialization();
 		homepage = new HomePage(driver);
 		suppliers = homepage.clickOnSuppliers();
 	}
@@ -93,7 +93,6 @@ public class SuppliersTest extends TestBase {
 
 	@AfterMethod
 	public void tearDown() {
-		 failTestCases(driver, "ApproveSuppliers");
 		    super.tearDown();
 	}
 

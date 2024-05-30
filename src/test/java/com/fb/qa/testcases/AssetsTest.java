@@ -21,7 +21,7 @@ public class AssetsTest extends TestBase {
 // before method
 	@BeforeMethod
 	public void setup() throws InterruptedException {
-		this.driver = initialization();
+		TestBase.driver = initialization();
 		homepage = new HomePage(driver);
 		assets = homepage.clickOnAssets();
 	}

@@ -22,7 +22,7 @@ public class GoodsReceiveNotesTest extends TestBase {
 
 	@BeforeMethod
 	public void setup() throws InterruptedException {
-		this.driver = initialization();
+		TestBase.driver = initialization();
 		homepage = new HomePage(driver);
 		goodsReceiveNotes = homepage.clickOnGoodsReceiveNotes();
 	}

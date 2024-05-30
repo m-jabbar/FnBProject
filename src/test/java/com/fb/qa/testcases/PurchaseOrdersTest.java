@@ -21,7 +21,7 @@ public class PurchaseOrdersTest extends TestBase {
 
 	@BeforeMethod
 	public void setup() throws InterruptedException {
-		driver = initialization();
+		TestBase.driver = initialization();
 		homepage = new HomePage(driver);
 		purchaseOrders = homepage.clickOnPurchaseOrders();
 	}

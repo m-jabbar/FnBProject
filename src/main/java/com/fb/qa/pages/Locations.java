@@ -8,7 +8,7 @@ import com.fb.qa.base.TestBase;
 public class Locations extends TestBase {
 	
 	public Locations(WebDriver driver) {
-		this.driver = driver;
+		TestBase.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
