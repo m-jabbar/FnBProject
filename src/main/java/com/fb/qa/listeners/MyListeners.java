@@ -42,13 +42,16 @@ public class MyListeners extends TestBase implements ITestListener {
 		String methodName = result.getMethod().getMethodName();
 		System.out.println("Test failed, capturing screenshot for method: " + methodName);
 		failTestCases(TestBase.driver, methodName);
+		extentTest.log(Status.FAIL, methodName + " execution failed");
+        extentTest.log(Status.FAIL, result.getThrowable());
+        extentTest.addScreenCaptureFromPath("C:\\Users\\muhammad.jabbar\\eclipse-workspace\\FnBProject\\screenshots\\" + methodName + ".jpg");
 	}
 
 	public void failTestCases(WebDriver driver, String testMethodName) {
 		if (driver != null) {
 			try {
 				File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-				String filePath = "C:\\Users\\muhammad.jabbar\\eclipse-workspace\\FBProject\\screenshots\\"
+				String filePath = "C:\\Users\\muhammad.jabbar\\eclipse-workspace\\FnBProject\\screenshots\\"
 						+ testMethodName + ".jpg";
 				FileUtils.copyFile(srcFile, new File(filePath));
 				System.out.println("Screenshot captured for method: " + testMethodName + " at path: " + filePath);

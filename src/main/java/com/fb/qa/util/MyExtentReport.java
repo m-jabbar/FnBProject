@@ -4,11 +4,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+import org.testng.ITestListener;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-public class MyExtentReport {
+public class MyExtentReport implements ITestListener{
 
     public static ExtentReports generateExtentReport() {
         ExtentReports extentReport = new ExtentReports();
